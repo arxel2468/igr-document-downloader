@@ -1,4 +1,9 @@
+pytest
+pytest-mock
 selenium
-webdriver-manager
+pillow
 pytesseract
-Pillow
+pdfkit
+webdriver-manager
+flask
+flask-cors

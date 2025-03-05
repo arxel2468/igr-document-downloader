@@ -1,0 +1,2021 @@
+2025-03-05 10:29:25,448 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.67.18:5000
+2025-03-05 10:29:25,450 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 10:29:25,453 - INFO -  * Restarting with stat
+2025-03-05 10:29:27,608 - WARNING -  * Debugger is active!
+2025-03-05 10:29:27,643 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 10:29:40,672 - INFO - 127.0.0.1 - - [05/Mar/2025 10:29:40] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 10:29:40,932 - INFO - 127.0.0.1 - - [05/Mar/2025 10:29:40] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 10:29:52,924 - INFO - 127.0.0.1 - - [05/Mar/2025 10:29:52] "GET / HTTP/1.1" 200 -
+2025-03-05 10:29:55,317 - INFO - 127.0.0.1 - - [05/Mar/2025 10:29:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-05 10:30:36,612 - INFO - 127.0.0.1 - - [05/Mar/2025 10:30:36] "OPTIONS /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:30:36,883 - INFO - 127.0.0.1 - - [05/Mar/2025 10:30:36] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:30:36,887 - INFO - ====== WebDriver manager ======
+2025-03-05 10:30:39,237 - INFO - 127.0.0.1 - - [05/Mar/2025 10:30:39] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:30:39,245 - INFO - ====== WebDriver manager ======
+2025-03-05 10:30:39,659 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:40,331 - INFO - 127.0.0.1 - - [05/Mar/2025 10:30:40] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:30:40,335 - INFO - ====== WebDriver manager ======
+2025-03-05 10:30:40,509 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:40,758 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:30:41,097 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:41,345 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:41,600 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:30:42,686 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:42,966 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:30:43,198 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:30:44,510 - INFO - Website opened
+2025-03-05 10:30:45,758 - INFO - Website opened
+2025-03-05 10:30:46,824 - INFO - Pop-up closed
+2025-03-05 10:30:47,090 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:30:47,141 - INFO - Pop-up closed
+2025-03-05 10:30:47,456 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:30:47,535 - INFO - Year 2025 selected
+2025-03-05 10:30:47,989 - INFO - Year 2025 selected
+2025-03-05 10:30:52,480 - INFO - Property number '1' entered
+2025-03-05 10:30:52,845 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:30:52,999 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:30:53,057 - INFO - Property number '1' entered
+2025-03-05 10:30:53,478 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:30:53,614 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:30:53,774 - ERROR - Error with technique 0: 'utf-8' codec can't decode byte 0x89 in position 106: invalid start byte
+2025-03-05 10:30:54,062 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'B3CA67' (VALID FORMAT)
+2025-03-05 10:30:54,119 - ERROR - Error with technique 1: (1, 'Error in findFileFormatStream: truncated file Error during processing.')
+2025-03-05 10:30:54,396 - INFO - Technique 1: 'High contrast grayscale' - Result: 'B3CAG7' (VALID FORMAT)
+2025-03-05 10:30:54,441 - ERROR - Error with technique 2: (1, 'Error in findFileFormatStream: truncated file Error during processing.')
+2025-03-05 10:30:54,692 - INFO - Website opened
+2025-03-05 10:30:54,794 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'B3CAG7' (VALID FORMAT)
+2025-03-05 10:30:54,943 - INFO - Technique 3: 'Sharpening filter' - Result: 'B3CA67' (VALID FORMAT)
+2025-03-05 10:30:54,946 - INFO - CAPTCHA solution: 'B3CA67'
+2025-03-05 10:30:55,486 - INFO - Technique 3: 'Sharpening filter' - Result: 'B3CA67' (VALID FORMAT)
+2025-03-05 10:30:55,488 - INFO - CAPTCHA solution: 'B3CA67'
+2025-03-05 10:30:55,648 - INFO - Search button clicked
+2025-03-05 10:30:56,114 - INFO - Search button clicked
+2025-03-05 10:30:56,714 - ERROR - Error during CAPTCHA attempt 1: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FBFE10]
+	(No symbol) [0x00FDD89A]
+	(No symbol) [0x01043DDF]
+	(No symbol) [0x0105E059]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 10:30:56,918 - ERROR - Automation error: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD0340]
+	(No symbol) [0x0100B278]
+	(No symbol) [0x0103CE86]
+	(No symbol) [0x01038861]
+	(No symbol) [0x01037DE6]
+	(No symbol) [0x00FA3245]
+	(No symbol) [0x00FA379E]
+	(No symbol) [0x00FA3C1D]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x00FA2F10]
+	(No symbol) [0x00FA2AD6]
+	GetHandleVerifier [0x0150717C+3852396]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 172, in solve_and_submit_captcha
+    WebDriverWait(driver, 15).until(
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 137, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 173, in <lambda>
+    lambda d: EC.presence_of_element_located((By.CLASS_NAME, "resultTable"))(d) or
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 110, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FBFE10]
+	(No symbol) [0x00FDD89A]
+	(No symbol) [0x01043DDF]
+	(No symbol) [0x0105E059]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 362, in run_automation
+    if not solve_and_submit_captcha(driver):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 216, in solve_and_submit_captcha
+    driver.save_screenshot(f"temp_captchas/error_captcha_{attempt+1}.png")
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 994, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 969, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1003, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1013, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD0340]
+	(No symbol) [0x0100B278]
+	(No symbol) [0x0103CE86]
+	(No symbol) [0x01038861]
+	(No symbol) [0x01037DE6]
+	(No symbol) [0x00FA3245]
+	(No symbol) [0x00FA379E]
+	(No symbol) [0x00FA3C1D]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x00FA2F10]
+	(No symbol) [0x00FA2AD6]
+	GetHandleVerifier [0x0150717C+3852396]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 10:30:57,445 - ERROR - Error during CAPTCHA attempt 1: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FBFE10]
+	(No symbol) [0x00FDD89A]
+	(No symbol) [0x01043DDF]
+	(No symbol) [0x0105E059]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 10:30:57,652 - ERROR - Automation error: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD0340]
+	(No symbol) [0x0100B278]
+	(No symbol) [0x0103CE86]
+	(No symbol) [0x01038861]
+	(No symbol) [0x01037DE6]
+	(No symbol) [0x00FA3245]
+	(No symbol) [0x00FA379E]
+	(No symbol) [0x00FA3C1D]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x00FA2F10]
+	(No symbol) [0x00FA2AD6]
+	GetHandleVerifier [0x0150717C+3852396]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 172, in solve_and_submit_captcha
+    WebDriverWait(driver, 15).until(
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 137, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 173, in <lambda>
+    lambda d: EC.presence_of_element_located((By.CLASS_NAME, "resultTable"))(d) or
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 110, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FBFE10]
+	(No symbol) [0x00FDD89A]
+	(No symbol) [0x01043DDF]
+	(No symbol) [0x0105E059]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 362, in run_automation
+    if not solve_and_submit_captcha(driver):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 216, in solve_and_submit_captcha
+    driver.save_screenshot(f"temp_captchas/error_captcha_{attempt+1}.png")
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 994, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 969, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1003, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1013, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD0340]
+	(No symbol) [0x0100B278]
+	(No symbol) [0x0103CE86]
+	(No symbol) [0x01038861]
+	(No symbol) [0x01037DE6]
+	(No symbol) [0x00FA3245]
+	(No symbol) [0x00FA379E]
+	(No symbol) [0x00FA3C1D]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x00FA2F10]
+	(No symbol) [0x00FA2AD6]
+	GetHandleVerifier [0x0150717C+3852396]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 10:30:59,390 - INFO - Browser closed
+2025-03-05 10:30:59,437 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:30:59,687 - INFO - Browser closed
+2025-03-05 10:31:03,479 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8C54E4E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:31:07,551 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8C5CE240>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:31:11,615 - ERROR - Automation error: HTTPConnectionPool(host='localhost', port=50343): Max retries exceeded with url: /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8C4470E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1326, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1085, in _send_output
+    self.send(msg)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1029, in send
+    self.connect()
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000022A8C4470E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\app.py", line 256, in run_automation
+    driver.save_screenshot(os.path.join(debug_dir, "homepage.png"))
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 994, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 969, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1003, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1013, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\_request_methods.py", line 135, in request
+    return self.request_encode_url(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\_request_methods.py", line 182, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=50343): Max retries exceeded with url: /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8C4470E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-03-05 10:31:15,742 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8C54C590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:31:19,482 - INFO - 127.0.0.1 - - [05/Mar/2025 10:31:19] "OPTIONS /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:31:19,751 - INFO - 127.0.0.1 - - [05/Mar/2025 10:31:19] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:31:19,753 - INFO - ====== WebDriver manager ======
+2025-03-05 10:31:19,811 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8D937380>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:31:21,573 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:31:21,897 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:31:22,143 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:31:23,878 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8D936BD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf/screenshot
+2025-03-05 10:31:25,716 - INFO - Website opened
+2025-03-05 10:31:26,463 - INFO - Pop-up closed
+2025-03-05 10:31:26,599 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:31:26,938 - INFO - Year 2025 selected
+2025-03-05 10:31:31,704 - INFO - Property number '1' entered
+2025-03-05 10:31:32,002 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:31:32,048 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8D936B10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf
+2025-03-05 10:31:32,151 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:31:32,408 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '3CDB22' (VALID FORMAT)
+2025-03-05 10:31:32,666 - INFO - Technique 1: 'High contrast grayscale' - Result: '3CDB22' (VALID FORMAT)
+2025-03-05 10:31:32,941 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '3CDB22' (VALID FORMAT)
+2025-03-05 10:31:33,154 - INFO - Technique 3: 'Sharpening filter' - Result: '3CDB22' (VALID FORMAT)
+2025-03-05 10:31:33,155 - INFO - CAPTCHA solution: '3CDB22'
+2025-03-05 10:31:33,680 - INFO - Search button clicked
+2025-03-05 10:31:36,157 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8DA10740>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf
+2025-03-05 10:31:40,263 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A8DA10BF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/60f5b1f626448cad0c6978f3ac722bdf
+2025-03-05 10:31:48,466 - INFO - Browser closed
+2025-03-05 10:31:48,769 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:31:53,930 - INFO - Results found after additional wait
+2025-03-05 10:32:24,169 - ERROR - No results found or page timed out
+2025-03-05 10:32:27,021 - INFO - Browser closed
+2025-03-05 10:33:50,839 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\app.py', reloading
+2025-03-05 10:34:07,168 - INFO -  * Restarting with stat
+2025-03-05 10:34:08,973 - WARNING -  * Debugger is active!
+2025-03-05 10:34:08,981 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 10:34:09,059 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:09] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 10:34:09,062 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:09] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 10:34:18,594 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:18] "OPTIONS /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:34:18,858 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:18] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:34:18,861 - INFO - ====== WebDriver manager ======
+2025-03-05 10:34:20,728 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:34:21,034 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:34:21,361 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:34:21,885 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:21] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:25,503 - INFO - Website opened
+2025-03-05 10:34:25,734 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:25] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:26,319 - INFO - Pop-up closed
+2025-03-05 10:34:26,530 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:34:26,956 - INFO - Year 2025 selected
+2025-03-05 10:34:28,435 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:28] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:31,716 - INFO - Property number '1' entered
+2025-03-05 10:34:31,732 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:31] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:32,069 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:34:32,197 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:34:32,640 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:32,884 - INFO - Technique 1: 'High contrast grayscale' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:33,124 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:33,409 - INFO - Technique 3: 'Sharpening filter' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:33,409 - INFO - CAPTCHA solution: 'AB79D3'
+2025-03-05 10:34:33,899 - INFO - Search button clicked
+2025-03-05 10:34:34,421 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:34] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:37,731 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:37] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:40,435 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:40] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:43,740 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:43] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:46,423 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:46] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:48,988 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:34:49,126 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 10:34:49,237 - INFO - CAPTCHA attempt 2/3
+2025-03-05 10:34:49,531 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:49,725 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:49] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:49,745 - INFO - Technique 1: 'High contrast grayscale' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:49,962 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:50,182 - INFO - Technique 3: 'Sharpening filter' - Result: 'AB79D3' (VALID FORMAT)
+2025-03-05 10:34:50,183 - INFO - CAPTCHA solution: 'AB79D3'
+2025-03-05 10:34:50,652 - INFO - Search button clicked
+2025-03-05 10:34:52,737 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:52] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:55,429 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:55] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:34:58,741 - INFO - 127.0.0.1 - - [05/Mar/2025 10:34:58] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:01,437 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:01] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:04,744 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:04] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:05,785 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:35:07,425 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:07] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:10,755 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:10] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:10,941 - INFO - Results found after additional wait
+2025-03-05 10:35:13,435 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:13] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:16,734 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:16] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:19,429 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:19] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:35:41,272 - ERROR - No results found or page timed out
+2025-03-05 10:35:44,038 - INFO - Browser closed
+2025-03-05 10:35:45,749 - INFO - 127.0.0.1 - - [05/Mar/2025 10:35:45] "GET /api/job_status/job_1741151058 HTTP/1.1" 200 -
+2025-03-05 10:39:13,814 - INFO - 127.0.0.1 - - [05/Mar/2025 10:39:13] "[33mGET /ui HTTP/1.1[0m" 404 -
+2025-03-05 10:39:59,499 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.67.18:5000
+2025-03-05 10:39:59,500 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 10:39:59,504 - INFO -  * Restarting with stat
+2025-03-05 10:40:00,853 - WARNING -  * Debugger is active!
+2025-03-05 10:40:00,860 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 10:40:08,079 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:08] "GET / HTTP/1.1" 200 -
+2025-03-05 10:40:14,586 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:14] "GET /ui HTTP/1.1" 200 -
+2025-03-05 10:40:15,180 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:15] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 10:40:15,484 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:15] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 10:40:28,892 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:28] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:40:28,896 - INFO - ====== WebDriver manager ======
+2025-03-05 10:40:30,721 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:40:31,040 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:40:31,318 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:40:31,596 - INFO - 127.0.0.1 - - [05/Mar/2025 10:40:31] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 10:40:35,113 - INFO - Website opened
+2025-03-05 10:40:35,941 - INFO - Pop-up closed
+2025-03-05 10:40:36,116 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:40:36,393 - INFO - Year 2025 selected
+2025-03-05 10:40:41,283 - INFO - Property number '1' entered
+2025-03-05 10:40:41,636 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:40:41,784 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:40:42,329 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '1D81C9' (VALID FORMAT)
+2025-03-05 10:40:42,666 - INFO - Technique 1: 'High contrast grayscale' - Result: '1DB1C9' (VALID FORMAT)
+2025-03-05 10:40:42,908 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '1IDBICO' (INVALID FORMAT)
+2025-03-05 10:40:43,135 - INFO - Technique 3: 'Sharpening filter' - Result: '1DBICS' (VALID FORMAT)
+2025-03-05 10:40:43,136 - INFO - CAPTCHA solution: '1D81C9'
+2025-03-05 10:40:43,689 - INFO - Search button clicked
+2025-03-05 10:40:58,820 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:40:58,952 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 10:40:59,062 - INFO - CAPTCHA attempt 2/3
+2025-03-05 10:40:59,312 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '3D3A41' (VALID FORMAT)
+2025-03-05 10:40:59,529 - INFO - Technique 1: 'High contrast grayscale' - Result: 'SDSA41' (VALID FORMAT)
+2025-03-05 10:40:59,751 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '3D3A41' (VALID FORMAT)
+2025-03-05 10:40:59,955 - INFO - Technique 3: 'Sharpening filter' - Result: 'SD3A41' (VALID FORMAT)
+2025-03-05 10:40:59,956 - INFO - CAPTCHA solution: '3D3A41'
+2025-03-05 10:41:00,545 - INFO - Search button clicked
+2025-03-05 10:41:15,713 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:41:20,840 - INFO - Results found after additional wait
+2025-03-05 10:41:51,162 - ERROR - No results found or page timed out
+2025-03-05 10:41:53,959 - INFO - Browser closed
+2025-03-05 10:45:36,430 - INFO - 127.0.0.1 - - [05/Mar/2025 10:45:36] "GET /api/job_status/job_1741151428_b3fa14f1 HTTP/1.1" 200 -
+2025-03-05 10:50:36,414 - INFO - 127.0.0.1 - - [05/Mar/2025 10:50:36] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 10:50:59,730 - INFO - Removed job job_1741151428_b3fa14f1 from tracking
+2025-03-05 10:50:59,731 - INFO - 127.0.0.1 - - [05/Mar/2025 10:50:59] "DELETE /api/cleanup_job/job_1741151428_b3fa14f1 HTTP/1.1" 200 -
+2025-03-05 10:51:02,165 - INFO - 127.0.0.1 - - [05/Mar/2025 10:51:02] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 10:52:29,343 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 10:52:33,533 - INFO -  * Restarting with stat
+2025-03-05 10:52:35,023 - WARNING -  * Debugger is active!
+2025-03-05 10:52:35,030 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 10:52:51,174 - INFO - 127.0.0.1 - - [05/Mar/2025 10:52:51] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 10:52:51,177 - INFO - ====== WebDriver manager ======
+2025-03-05 10:52:53,133 - INFO - 127.0.0.1 - - [05/Mar/2025 10:52:53] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 10:52:53,340 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:52:53,638 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 10:52:54,000 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 10:52:59,507 - INFO - Website opened
+2025-03-05 10:53:00,251 - INFO - Pop-up closed
+2025-03-05 10:53:00,499 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 10:53:01,340 - INFO - Year 2025 selected
+2025-03-05 10:53:06,022 - INFO - Property number '1' entered
+2025-03-05 10:53:06,346 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 10:53:06,467 - INFO - CAPTCHA attempt 1/3
+2025-03-05 10:53:06,849 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '9AC376' (VALID FORMAT)
+2025-03-05 10:53:07,071 - INFO - Technique 1: 'High contrast grayscale' - Result: '9AC376' (VALID FORMAT)
+2025-03-05 10:53:07,295 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '9AC376' (VALID FORMAT)
+2025-03-05 10:53:07,534 - INFO - Technique 3: 'Sharpening filter' - Result: '9AC376' (VALID FORMAT)
+2025-03-05 10:53:07,535 - INFO - CAPTCHA solution: '9AC376'
+2025-03-05 10:53:08,110 - INFO - Search button clicked
+2025-03-05 10:53:23,191 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:53:23,333 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 10:53:23,422 - INFO - CAPTCHA attempt 2/3
+2025-03-05 10:53:23,679 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'ABDAIA' (VALID FORMAT)
+2025-03-05 10:53:23,894 - INFO - Technique 1: 'High contrast grayscale' - Result: 'ABDAIA' (VALID FORMAT)
+2025-03-05 10:53:24,113 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'ABDAIA' (VALID FORMAT)
+2025-03-05 10:53:24,352 - INFO - Technique 3: 'Sharpening filter' - Result: 'AGDATA' (VALID FORMAT)
+2025-03-05 10:53:24,353 - INFO - CAPTCHA solution: 'ABDAIA'
+2025-03-05 10:53:24,820 - INFO - Search button clicked
+2025-03-05 10:53:39,947 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:53:40,064 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 10:53:40,162 - INFO - CAPTCHA attempt 3/3
+2025-03-05 10:53:40,440 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'AASBCO' (VALID FORMAT)
+2025-03-05 10:53:40,677 - INFO - Technique 1: 'High contrast grayscale' - Result: 'AASBCO' (VALID FORMAT)
+2025-03-05 10:53:40,896 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'AASBCO' (VALID FORMAT)
+2025-03-05 10:53:41,294 - INFO - Technique 3: 'Sharpening filter' - Result: 'A4SBC9' (VALID FORMAT)
+2025-03-05 10:53:41,295 - INFO - CAPTCHA solution: 'AASBCO'
+2025-03-05 10:53:41,806 - INFO - Search button clicked
+2025-03-05 10:53:56,934 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 10:53:57,084 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 10:53:57,086 - ERROR - All CAPTCHA attempts failed
+2025-03-05 10:53:57,087 - ERROR - Failed to solve CAPTCHA after multiple attempts
+2025-03-05 10:54:00,000 - INFO - Browser closed
+2025-03-05 10:59:04,651 - INFO - 127.0.0.1 - - [05/Mar/2025 10:59:04] "GET /api/job_status/job_1741152171_21d251a3 HTTP/1.1" 200 -
+2025-03-05 11:02:59,891 - INFO - 127.0.0.1 - - [05/Mar/2025 11:02:59] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 11:02:59,894 - INFO - ====== WebDriver manager ======
+2025-03-05 11:03:02,051 - INFO - 127.0.0.1 - - [05/Mar/2025 11:03:02] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:03:02,696 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:03:03,024 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:03:03,267 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 11:04:04,796 - ERROR - Automation error: Message: timeout: Timed out receiving message from renderer: -0.008
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FC116B]
+	(No symbol) [0x00FC0EA1]
+	(No symbol) [0x00FBED80]
+	(No symbol) [0x00FBF92D]
+	(No symbol) [0x00FCBDF9]
+	(No symbol) [0x00FDD2B5]
+	(No symbol) [0x00FE2BA6]
+	(No symbol) [0x00FBFF3D]
+	(No symbol) [0x00FDD07E]
+	(No symbol) [0x0105E687]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 252, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.008
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x01160B43+25139]
+	(No symbol) [0x010F13F4]
+	(No symbol) [0x00FD04E3]
+	(No symbol) [0x00FC116B]
+	(No symbol) [0x00FC0EA1]
+	(No symbol) [0x00FBED80]
+	(No symbol) [0x00FBF92D]
+	(No symbol) [0x00FCBDF9]
+	(No symbol) [0x00FDD2B5]
+	(No symbol) [0x00FE2BA6]
+	(No symbol) [0x00FBFF3D]
+	(No symbol) [0x00FDD07E]
+	(No symbol) [0x0105E687]
+	(No symbol) [0x0103CDC6]
+	(No symbol) [0x0100BDE9]
+	(No symbol) [0x0100D124]
+	GetHandleVerifier [0x01464373+3185251]
+	GetHandleVerifier [0x0148291A+3309578]
+	GetHandleVerifier [0x0147CF42+3286578]
+	GetHandleVerifier [0x011F7AE0+643536]
+	(No symbol) [0x010FA20D]
+	(No symbol) [0x010F70B8]
+	(No symbol) [0x010F7257]
+	(No symbol) [0x010E9E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 11:04:07,123 - INFO - Browser closed
+2025-03-05 11:04:11,716 - INFO - 127.0.0.1 - - [05/Mar/2025 11:04:11] "GET /api/job_status/job_1741152779_759273eb HTTP/1.1" 200 -
+2025-03-05 11:04:22,521 - INFO - 127.0.0.1 - - [05/Mar/2025 11:04:22] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:07:18,486 - INFO - 127.0.0.1 - - [05/Mar/2025 11:07:18] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 11:07:18,487 - INFO - ====== WebDriver manager ======
+2025-03-05 11:07:19,735 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:07:20,516 - INFO - 127.0.0.1 - - [05/Mar/2025 11:07:20] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:07:24,054 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:07:24,280 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 11:07:32,319 - INFO - Website opened
+2025-03-05 11:07:32,585 - INFO - Pop-up closed
+2025-03-05 11:07:32,659 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 11:07:37,417 - INFO - Year 2025 selected
+2025-03-05 11:07:41,722 - INFO - Property number '1' entered
+2025-03-05 11:07:41,902 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 11:07:41,998 - INFO - CAPTCHA attempt 1/3
+2025-03-05 11:07:42,816 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'BD73A4' (VALID FORMAT)
+2025-03-05 11:07:42,959 - INFO - Technique 1: 'High contrast grayscale' - Result: 'BD73A4' (VALID FORMAT)
+2025-03-05 11:07:43,102 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'BD73A4' (VALID FORMAT)
+2025-03-05 11:07:43,247 - INFO - Technique 3: 'Sharpening filter' - Result: 'BD73A4' (VALID FORMAT)
+2025-03-05 11:07:43,248 - INFO - CAPTCHA solution: 'BD73A4'
+2025-03-05 11:07:43,533 - INFO - Search button clicked
+2025-03-05 11:07:58,781 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 11:07:58,838 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 11:07:58,897 - INFO - CAPTCHA attempt 2/3
+2025-03-05 11:07:59,027 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'TATOBT' (VALID FORMAT)
+2025-03-05 11:07:59,165 - INFO - Technique 1: 'High contrast grayscale' - Result: 'TATOBT' (VALID FORMAT)
+2025-03-05 11:07:59,296 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'TAT9BT' (VALID FORMAT)
+2025-03-05 11:07:59,425 - INFO - Technique 3: 'Sharpening filter' - Result: 'TATOBT' (VALID FORMAT)
+2025-03-05 11:07:59,426 - INFO - CAPTCHA solution: 'TATOBT'
+2025-03-05 11:07:59,709 - INFO - Search button clicked
+2025-03-05 11:08:14,953 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 11:08:15,012 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 11:08:15,070 - INFO - CAPTCHA attempt 3/3
+2025-03-05 11:08:15,212 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'GAAA64' (VALID FORMAT)
+2025-03-05 11:08:15,339 - INFO - Technique 1: 'High contrast grayscale' - Result: 'GAA4G4' (VALID FORMAT)
+2025-03-05 11:08:15,478 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'GAALB4' (VALID FORMAT)
+2025-03-05 11:08:15,605 - INFO - Technique 3: 'Sharpening filter' - Result: 'GAAAG4' (VALID FORMAT)
+2025-03-05 11:08:15,606 - INFO - CAPTCHA solution: 'GAAA64'
+2025-03-05 11:08:15,857 - INFO - Search button clicked
+2025-03-05 11:08:31,091 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 11:08:31,160 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 11:08:31,160 - ERROR - All CAPTCHA attempts failed
+2025-03-05 11:08:31,161 - ERROR - Failed to solve CAPTCHA after multiple attempts
+2025-03-05 11:08:33,510 - INFO - Browser closed
+2025-03-05 11:08:35,291 - INFO - Removed job job_1741153038_7e8c0051 from tracking
+2025-03-05 11:08:35,291 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:35] "DELETE /api/cleanup_job/job_1741153038_7e8c0051 HTTP/1.1" 200 -
+2025-03-05 11:08:37,610 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:37] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:08:40,027 - INFO - Removed job job_1741152779_759273eb from tracking
+2025-03-05 11:08:40,027 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:40] "DELETE /api/cleanup_job/job_1741152779_759273eb HTTP/1.1" 200 -
+2025-03-05 11:08:41,260 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:41] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:08:43,448 - INFO - Removed job job_1741152171_21d251a3 from tracking
+2025-03-05 11:08:43,449 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:43] "DELETE /api/cleanup_job/job_1741152171_21d251a3 HTTP/1.1" 200 -
+2025-03-05 11:08:44,067 - INFO - 127.0.0.1 - - [05/Mar/2025 11:08:44] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:11:50,355 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 11:11:58,653 - INFO -  * Restarting with stat
+2025-03-05 11:12:00,057 - WARNING -  * Debugger is active!
+2025-03-05 11:12:00,063 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 11:13:50,402 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 11:13:50,463 - INFO -  * Restarting with stat
+2025-03-05 11:13:51,514 - WARNING -  * Debugger is active!
+2025-03-05 11:13:51,519 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 11:13:55,469 - INFO - 127.0.0.1 - - [05/Mar/2025 11:13:55] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 11:13:55,470 - INFO - ====== WebDriver manager ======
+2025-03-05 11:13:56,570 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:13:56,811 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:13:57,116 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 11:13:57,183 - INFO - 127.0.0.1 - - [05/Mar/2025 11:13:57] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:14:19,724 - INFO - Website opened
+2025-03-05 11:14:20,143 - INFO - Pop-up closed
+2025-03-05 11:14:20,235 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 11:14:27,569 - INFO - Year 2025 selected
+2025-03-05 11:14:35,917 - ERROR - Failed to select tahsil: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.142); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x003E0B43+25139]
+	(No symbol) [0x003713F4]
+	(No symbol) [0x002504E3]
+	(No symbol) [0x00256F01]
+	(No symbol) [0x0025900A]
+	(No symbol) [0x00259087]
+	(No symbol) [0x00293327]
+	(No symbol) [0x002BCFCC]
+	(No symbol) [0x0028D9A4]
+	(No symbol) [0x002BD244]
+	(No symbol) [0x002DE778]
+	(No symbol) [0x002BCDC6]
+	(No symbol) [0x0028BDE9]
+	(No symbol) [0x0028D124]
+	GetHandleVerifier [0x006E4373+3185251]
+	GetHandleVerifier [0x0070291A+3309578]
+	GetHandleVerifier [0x006FCF42+3286578]
+	GetHandleVerifier [0x00477AE0+643536]
+	(No symbol) [0x0037A20D]
+	(No symbol) [0x003770B8]
+	(No symbol) [0x00377257]
+	(No symbol) [0x00369E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 11:14:36,087 - ERROR - Automation error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.142); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x003E0B43+25139]
+	(No symbol) [0x003713F4]
+	(No symbol) [0x002504E3]
+	(No symbol) [0x00256F01]
+	(No symbol) [0x0025900A]
+	(No symbol) [0x00259087]
+	(No symbol) [0x00293327]
+	(No symbol) [0x002BCFCC]
+	(No symbol) [0x0028D9A4]
+	(No symbol) [0x002BD244]
+	(No symbol) [0x002DE778]
+	(No symbol) [0x002BCDC6]
+	(No symbol) [0x0028BDE9]
+	(No symbol) [0x0028D124]
+	GetHandleVerifier [0x006E4373+3185251]
+	GetHandleVerifier [0x0070291A+3309578]
+	GetHandleVerifier [0x006FCF42+3286578]
+	GetHandleVerifier [0x00477AE0+643536]
+	(No symbol) [0x0037A20D]
+	(No symbol) [0x003770B8]
+	(No symbol) [0x00377257]
+	(No symbol) [0x00369E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 314, in run_automation
+    WebDriverWait(driver, 10).until(
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 137, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 315, in <lambda>
+    lambda d: len(Select(d.find_element(By.ID, "ddltahsil")).options) > 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 38, in __init__
+    if webelement.tag_name.lower() != "select":
+       ^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in tag_name
+    return self._execute(Command.GET_ELEMENT_TAG_NAME)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 572, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.142); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x003E0B43+25139]
+	(No symbol) [0x003713F4]
+	(No symbol) [0x002504E3]
+	(No symbol) [0x00256F01]
+	(No symbol) [0x0025900A]
+	(No symbol) [0x00259087]
+	(No symbol) [0x00293327]
+	(No symbol) [0x002BCFCC]
+	(No symbol) [0x0028D9A4]
+	(No symbol) [0x002BD244]
+	(No symbol) [0x002DE778]
+	(No symbol) [0x002BCDC6]
+	(No symbol) [0x0028BDE9]
+	(No symbol) [0x0028D124]
+	GetHandleVerifier [0x006E4373+3185251]
+	GetHandleVerifier [0x0070291A+3309578]
+	GetHandleVerifier [0x006FCF42+3286578]
+	GetHandleVerifier [0x00477AE0+643536]
+	(No symbol) [0x0037A20D]
+	(No symbol) [0x003770B8]
+	(No symbol) [0x00377257]
+	(No symbol) [0x00369E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 11:14:38,526 - INFO - Browser closed
+2025-03-05 11:20:51,980 - INFO - 127.0.0.1 - - [05/Mar/2025 11:20:51] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:20:53,521 - INFO - 127.0.0.1 - - [05/Mar/2025 11:20:53] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 11:20:53,523 - INFO - ====== WebDriver manager ======
+2025-03-05 11:20:54,627 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:20:55,945 - INFO - 127.0.0.1 - - [05/Mar/2025 11:20:55] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 11:20:58,655 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 11:21:01,341 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 11:21:37,087 - INFO - Website opened
+2025-03-05 11:21:37,379 - INFO - Pop-up closed
+2025-03-05 11:21:37,466 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 11:21:39,711 - INFO - Year 2025 selected
+2025-03-05 11:21:47,156 - INFO - Property number '1' entered
+2025-03-05 11:21:47,334 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 11:21:47,408 - INFO - CAPTCHA attempt 1/3
+2025-03-05 11:21:47,782 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '6BAAC2' (VALID FORMAT)
+2025-03-05 11:21:47,927 - INFO - Technique 1: 'Sharpening filter' - Result: '6BAAC2' (VALID FORMAT)
+2025-03-05 11:21:47,927 - INFO - CAPTCHA solution: '6BAAC2'
+2025-03-05 11:21:48,202 - INFO - Search button clicked
+2025-03-05 11:22:03,466 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 11:22:08,533 - INFO - Results found after additional wait
+2025-03-05 11:22:38,562 - ERROR - No results found or page timed out
+2025-03-05 11:22:40,992 - INFO - Browser closed
+2025-03-05 11:22:49,526 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 11:22:57,880 - INFO -  * Restarting with stat
+2025-03-05 11:22:59,188 - WARNING -  * Debugger is active!
+2025-03-05 11:22:59,194 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:10:07,207 - INFO - 127.0.0.1 - - [05/Mar/2025 15:10:07] "[33mGET /api/job_status/job_1741153853_deb2afdf HTTP/1.1[0m" 404 -
+2025-03-05 15:10:11,126 - INFO - 127.0.0.1 - - [05/Mar/2025 15:10:11] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:13:22,214 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:13:22,543 - INFO -  * Restarting with stat
+2025-03-05 15:13:23,987 - WARNING -  * Debugger is active!
+2025-03-05 15:13:23,995 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:13:27,232 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:13:27,330 - INFO -  * Restarting with stat
+2025-03-05 15:13:28,585 - WARNING -  * Debugger is active!
+2025-03-05 15:13:28,593 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:14:18,560 - INFO - 127.0.0.1 - - [05/Mar/2025 15:14:18] "[33mGET /u HTTP/1.1[0m" 404 -
+2025-03-05 15:14:20,793 - INFO - 127.0.0.1 - - [05/Mar/2025 15:14:20] "GET / HTTP/1.1" 200 -
+2025-03-05 15:14:31,059 - INFO - 127.0.0.1 - - [05/Mar/2025 15:14:31] "GET /ui HTTP/1.1" 200 -
+2025-03-05 15:14:31,357 - INFO - 127.0.0.1 - - [05/Mar/2025 15:14:31] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 15:14:31,358 - INFO - 127.0.0.1 - - [05/Mar/2025 15:14:31] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:15:22,845 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:15:23,038 - INFO -  * Restarting with stat
+2025-03-05 15:15:24,865 - WARNING -  * Debugger is active!
+2025-03-05 15:15:24,875 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:15:32,342 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:15:32,422 - INFO -  * Restarting with stat
+2025-03-05 15:16:43,750 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.18:5000
+2025-03-05 15:16:43,751 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 15:16:43,754 - INFO -  * Restarting with stat
+2025-03-05 15:16:44,723 - WARNING -  * Debugger is active!
+2025-03-05 15:16:44,731 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:16:49,572 - INFO - 127.0.0.1 - - [05/Mar/2025 15:16:49] "GET /ui HTTP/1.1" 200 -
+2025-03-05 15:16:50,239 - INFO - 127.0.0.1 - - [05/Mar/2025 15:16:50] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 15:16:50,239 - INFO - 127.0.0.1 - - [05/Mar/2025 15:16:50] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:17:06,848 - INFO - 127.0.0.1 - - [05/Mar/2025 15:17:06] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:17:06,849 - INFO - ====== WebDriver manager ======
+2025-03-05 15:17:08,248 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:17:09,112 - INFO - 127.0.0.1 - - [05/Mar/2025 15:17:09] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:17:11,145 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:17:14,462 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 15:18:16,443 - ERROR - Automation error: Message: timeout: Timed out receiving message from renderer: 8.999
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00DA0B43+25139]
+	(No symbol) [0x00D313F4]
+	(No symbol) [0x00C104E3]
+	(No symbol) [0x00C0116B]
+	(No symbol) [0x00C00EA1]
+	(No symbol) [0x00BFED80]
+	(No symbol) [0x00BFF92D]
+	(No symbol) [0x00C0BDF9]
+	(No symbol) [0x00C1D2B5]
+	(No symbol) [0x00C22BA6]
+	(No symbol) [0x00BFFF3D]
+	(No symbol) [0x00C1D07E]
+	(No symbol) [0x00C9EA66]
+	(No symbol) [0x00C7CDC6]
+	(No symbol) [0x00C4BDE9]
+	(No symbol) [0x00C4D124]
+	GetHandleVerifier [0x010A4373+3185251]
+	GetHandleVerifier [0x010C291A+3309578]
+	GetHandleVerifier [0x010BCF42+3286578]
+	GetHandleVerifier [0x00E37AE0+643536]
+	(No symbol) [0x00D3A20D]
+	(No symbol) [0x00D370B8]
+	(No symbol) [0x00D37257]
+	(No symbol) [0x00D29E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 256, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 8.999
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00DA0B43+25139]
+	(No symbol) [0x00D313F4]
+	(No symbol) [0x00C104E3]
+	(No symbol) [0x00C0116B]
+	(No symbol) [0x00C00EA1]
+	(No symbol) [0x00BFED80]
+	(No symbol) [0x00BFF92D]
+	(No symbol) [0x00C0BDF9]
+	(No symbol) [0x00C1D2B5]
+	(No symbol) [0x00C22BA6]
+	(No symbol) [0x00BFFF3D]
+	(No symbol) [0x00C1D07E]
+	(No symbol) [0x00C9EA66]
+	(No symbol) [0x00C7CDC6]
+	(No symbol) [0x00C4BDE9]
+	(No symbol) [0x00C4D124]
+	GetHandleVerifier [0x010A4373+3185251]
+	GetHandleVerifier [0x010C291A+3309578]
+	GetHandleVerifier [0x010BCF42+3286578]
+	GetHandleVerifier [0x00E37AE0+643536]
+	(No symbol) [0x00D3A20D]
+	(No symbol) [0x00D370B8]
+	(No symbol) [0x00D37257]
+	(No symbol) [0x00D29E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 15:18:18,740 - INFO - Browser closed
+2025-03-05 15:18:30,648 - INFO - 127.0.0.1 - - [05/Mar/2025 15:18:30] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:18:30,650 - INFO - ====== WebDriver manager ======
+2025-03-05 15:18:31,495 - INFO - 127.0.0.1 - - [05/Mar/2025 15:18:31] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:18:31,666 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:18:32,937 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:18:34,068 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 15:18:51,462 - INFO - Website opened
+2025-03-05 15:18:51,760 - INFO - Pop-up closed
+2025-03-05 15:18:51,856 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 15:18:54,705 - INFO - Year 2025 selected
+2025-03-05 15:19:02,192 - INFO - Property number '1' entered
+2025-03-05 15:19:02,365 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 15:19:02,448 - INFO - CAPTCHA attempt 1/3
+2025-03-05 15:19:02,856 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'D7A542' (VALID FORMAT)
+2025-03-05 15:19:02,991 - INFO - Technique 1: 'High contrast grayscale' - Result: 'D7AS42' (VALID FORMAT)
+2025-03-05 15:19:03,127 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'D7AS42' (VALID FORMAT)
+2025-03-05 15:19:03,258 - INFO - Technique 3: 'Sharpening filter' - Result: 'DYAS42' (VALID FORMAT)
+2025-03-05 15:19:03,392 - INFO - Technique 4: 'Adaptive thresholding' - Result: 'D7A542' (VALID FORMAT)
+2025-03-05 15:19:03,393 - INFO - CAPTCHA solution: 'D7A542'
+2025-03-05 15:19:03,699 - INFO - Search button clicked
+2025-03-05 15:19:18,983 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 15:19:24,053 - INFO - Results found after additional wait
+2025-03-05 15:19:25,590 - INFO - Results loaded successfully!
+2025-03-05 15:19:25,777 - INFO - Found 10 documents to download
+2025-03-05 15:19:25,778 - INFO - Processing document 1/10...
+2025-03-05 15:19:26,803 - INFO - Clicked on IndexII button for document 1
+2025-03-05 15:20:07,273 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:20:09,037 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:20:15,097 - INFO - Processing document 2/10...
+2025-03-05 15:20:16,126 - INFO - Clicked on IndexII button for document 2
+2025-03-05 15:20:31,200 - ERROR - New tab did not open for document 2
+2025-03-05 15:20:34,303 - INFO - Processing document 3/10...
+2025-03-05 15:20:35,331 - INFO - Clicked on IndexII button for document 3
+2025-03-05 15:20:50,539 - ERROR - New tab did not open for document 3
+2025-03-05 15:20:53,643 - INFO - Processing document 4/10...
+2025-03-05 15:20:54,672 - INFO - Clicked on IndexII button for document 4
+2025-03-05 15:21:09,747 - ERROR - New tab did not open for document 4
+2025-03-05 15:21:12,851 - INFO - Processing document 5/10...
+2025-03-05 15:21:13,883 - INFO - Clicked on IndexII button for document 5
+2025-03-05 15:21:28,987 - ERROR - New tab did not open for document 5
+2025-03-05 15:21:32,083 - INFO - Processing document 6/10...
+2025-03-05 15:21:33,123 - INFO - Clicked on IndexII button for document 6
+2025-03-05 15:21:48,211 - ERROR - New tab did not open for document 6
+2025-03-05 15:21:51,306 - INFO - Processing document 7/10...
+2025-03-05 15:21:52,344 - INFO - Clicked on IndexII button for document 7
+2025-03-05 15:22:07,447 - ERROR - New tab did not open for document 7
+2025-03-05 15:22:10,551 - INFO - Processing document 8/10...
+2025-03-05 15:22:11,584 - INFO - Clicked on IndexII button for document 8
+2025-03-05 15:22:26,703 - ERROR - New tab did not open for document 8
+2025-03-05 15:22:29,796 - INFO - Processing document 9/10...
+2025-03-05 15:22:30,835 - INFO - Clicked on IndexII button for document 9
+2025-03-05 15:22:45,951 - ERROR - New tab did not open for document 9
+2025-03-05 15:22:49,052 - INFO - Processing document 10/10...
+2025-03-05 15:22:50,080 - INFO - Clicked on IndexII button for document 10
+2025-03-05 15:23:05,148 - ERROR - New tab did not open for document 10
+2025-03-05 15:23:08,326 - INFO - Job completed successfully. Downloaded 1/10 documents.
+2025-03-05 15:23:10,923 - INFO - Browser closed
+2025-03-05 15:23:22,668 - INFO - 127.0.0.1 - - [05/Mar/2025 15:23:22] "GET /api/job_status/job_1741168110_0dba15fc HTTP/1.1" 200 -
+2025-03-05 15:23:26,231 - INFO - 127.0.0.1 - - [05/Mar/2025 15:23:26] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:33:05,550 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:33:14,052 - INFO -  * Restarting with stat
+2025-03-05 15:33:15,158 - WARNING -  * Debugger is active!
+2025-03-05 15:33:15,167 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:34:08,207 - INFO - 127.0.0.1 - - [05/Mar/2025 15:34:08] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:34:10,010 - INFO - 127.0.0.1 - - [05/Mar/2025 15:34:10] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:35:54,479 - INFO - 127.0.0.1 - - [05/Mar/2025 15:35:54] "GET /api/job_status/job_1741169048_0028c5d3 HTTP/1.1" 200 -
+2025-03-05 15:35:56,867 - INFO - 127.0.0.1 - - [05/Mar/2025 15:35:56] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:36:04,653 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:04] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:36:05,433 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:05] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:36:48,504 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:48] "GET /api/job_status/job_1741169164_e53bcb83 HTTP/1.1" 200 -
+2025-03-05 15:36:50,708 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:50] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:36:51,446 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:51] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:36:51,711 - INFO - 127.0.0.1 - - [05/Mar/2025 15:36:51] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:37:25,137 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:37:25,193 - INFO -  * Restarting with stat
+2025-03-05 15:37:26,288 - WARNING -  * Debugger is active!
+2025-03-05 15:37:26,293 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:38:14,204 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:38:14,270 - INFO -  * Restarting with stat
+2025-03-05 15:38:15,158 - WARNING -  * Debugger is active!
+2025-03-05 15:38:15,164 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:38:18,381 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:38:18,447 - INFO -  * Restarting with stat
+2025-03-05 15:38:19,388 - WARNING -  * Debugger is active!
+2025-03-05 15:38:19,394 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:38:22,750 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.18:5000
+2025-03-05 15:38:22,750 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 15:38:22,752 - INFO -  * Restarting with stat
+2025-03-05 15:38:23,777 - WARNING -  * Debugger is active!
+2025-03-05 15:38:23,785 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:38:24,683 - INFO - 127.0.0.1 - - [05/Mar/2025 15:38:24] "GET /ui HTTP/1.1" 200 -
+2025-03-05 15:38:25,222 - INFO - 127.0.0.1 - - [05/Mar/2025 15:38:25] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:38:25,530 - INFO - 127.0.0.1 - - [05/Mar/2025 15:38:25] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 15:38:38,825 - INFO - 127.0.0.1 - - [05/Mar/2025 15:38:38] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:38:38,827 - INFO - ====== WebDriver manager ======
+2025-03-05 15:38:39,879 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:38:40,138 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:38:40,349 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 15:38:45,419 - INFO - 127.0.0.1 - - [05/Mar/2025 15:38:45] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:39:41,912 - ERROR - Automation error: Message: timeout: Timed out receiving message from renderer: -0.020
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x007B0B43+25139]
+	(No symbol) [0x007413F4]
+	(No symbol) [0x006204E3]
+	(No symbol) [0x0061116B]
+	(No symbol) [0x00610EA1]
+	(No symbol) [0x0060ED80]
+	(No symbol) [0x0060F92D]
+	(No symbol) [0x0061BDF9]
+	(No symbol) [0x0062D2B5]
+	(No symbol) [0x00632BA6]
+	(No symbol) [0x0060FF3D]
+	(No symbol) [0x0062D07E]
+	(No symbol) [0x006AE687]
+	(No symbol) [0x0068CDC6]
+	(No symbol) [0x0065BDE9]
+	(No symbol) [0x0065D124]
+	GetHandleVerifier [0x00AB4373+3185251]
+	GetHandleVerifier [0x00AD291A+3309578]
+	GetHandleVerifier [0x00ACCF42+3286578]
+	GetHandleVerifier [0x00847AE0+643536]
+	(No symbol) [0x0074A20D]
+	(No symbol) [0x007470B8]
+	(No symbol) [0x00747257]
+	(No symbol) [0x00739E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 259, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.020
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x007B0B43+25139]
+	(No symbol) [0x007413F4]
+	(No symbol) [0x006204E3]
+	(No symbol) [0x0061116B]
+	(No symbol) [0x00610EA1]
+	(No symbol) [0x0060ED80]
+	(No symbol) [0x0060F92D]
+	(No symbol) [0x0061BDF9]
+	(No symbol) [0x0062D2B5]
+	(No symbol) [0x00632BA6]
+	(No symbol) [0x0060FF3D]
+	(No symbol) [0x0062D07E]
+	(No symbol) [0x006AE687]
+	(No symbol) [0x0068CDC6]
+	(No symbol) [0x0065BDE9]
+	(No symbol) [0x0065D124]
+	GetHandleVerifier [0x00AB4373+3185251]
+	GetHandleVerifier [0x00AD291A+3309578]
+	GetHandleVerifier [0x00ACCF42+3286578]
+	GetHandleVerifier [0x00847AE0+643536]
+	(No symbol) [0x0074A20D]
+	(No symbol) [0x007470B8]
+	(No symbol) [0x00747257]
+	(No symbol) [0x00739E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-05 15:39:44,167 - INFO - Browser closed
+2025-03-05 15:40:27,469 - INFO - 127.0.0.1 - - [05/Mar/2025 15:40:27] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:40:28,739 - INFO - 127.0.0.1 - - [05/Mar/2025 15:40:28] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 15:40:28,741 - INFO - ====== WebDriver manager ======
+2025-03-05 15:40:29,745 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:40:29,969 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:40:30,173 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 15:40:36,914 - INFO - Website opened
+2025-03-05 15:40:37,189 - INFO - Pop-up closed
+2025-03-05 15:40:37,266 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 15:40:39,512 - INFO - Year 2025 selected
+2025-03-05 15:40:45,437 - INFO - Property number '1' entered
+2025-03-05 15:40:45,612 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 15:40:45,683 - INFO - CAPTCHA attempt 1/3
+2025-03-05 15:40:46,012 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '39DSC2' (VALID FORMAT)
+2025-03-05 15:40:46,155 - INFO - Technique 1: 'High contrast grayscale' - Result: '39DSC2' (VALID FORMAT)
+2025-03-05 15:40:46,301 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '39D5C2' (VALID FORMAT)
+2025-03-05 15:40:46,452 - INFO - Technique 3: 'Sharpening filter' - Result: '39D5C2' (VALID FORMAT)
+2025-03-05 15:40:46,629 - INFO - Technique 4: 'Adaptive thresholding' - Result: '39D5C2' (VALID FORMAT)
+2025-03-05 15:40:46,629 - INFO - CAPTCHA solution: '39D5C2'
+2025-03-05 15:40:46,925 - INFO - Search button clicked
+2025-03-05 15:41:02,218 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 15:41:02,285 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 15:41:02,340 - INFO - CAPTCHA attempt 2/3
+2025-03-05 15:41:02,484 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '8A45B8' (VALID FORMAT)
+2025-03-05 15:41:02,631 - INFO - Technique 1: 'High contrast grayscale' - Result: 'BA45BS' (VALID FORMAT)
+2025-03-05 15:41:02,774 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'BA45B8' (VALID FORMAT)
+2025-03-05 15:41:02,938 - INFO - Technique 3: 'Sharpening filter' - Result: '8A45B8' (VALID FORMAT)
+2025-03-05 15:41:03,087 - INFO - Technique 4: 'Adaptive thresholding' - Result: '8A45B8' (VALID FORMAT)
+2025-03-05 15:41:03,088 - INFO - CAPTCHA solution: '8A45B8'
+2025-03-05 15:41:03,351 - INFO - Search button clicked
+2025-03-05 15:41:18,657 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 15:41:23,742 - INFO - Results found after additional wait
+2025-03-05 15:41:27,836 - INFO - Results loaded successfully!
+2025-03-05 15:41:28,026 - INFO - Found 10 documents to download
+2025-03-05 15:41:28,026 - INFO - Processing document 1/10...
+2025-03-05 15:41:29,053 - INFO - Clicked on IndexII button for document 1
+2025-03-05 15:41:36,443 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:41:37,344 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:41:43,411 - INFO - Processing document 2/10...
+2025-03-05 15:41:44,436 - INFO - Clicked on IndexII button for document 2
+2025-03-05 15:41:53,080 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:41:53,696 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:41:59,757 - INFO - Processing document 3/10...
+2025-03-05 15:42:00,787 - INFO - Clicked on IndexII button for document 3
+2025-03-05 15:42:07,931 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:42:08,526 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:42:14,592 - INFO - Processing document 4/10...
+2025-03-05 15:42:15,623 - INFO - Clicked on IndexII button for document 4
+2025-03-05 15:42:23,548 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:42:24,146 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:42:30,174 - INFO - Processing document 5/10...
+2025-03-05 15:42:31,203 - INFO - Clicked on IndexII button for document 5
+2025-03-05 15:42:38,306 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:42:38,907 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:42:44,970 - INFO - Processing document 6/10...
+2025-03-05 15:42:46,003 - INFO - Clicked on IndexII button for document 6
+2025-03-05 15:42:57,156 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:42:57,756 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:43:03,825 - INFO - Processing document 7/10...
+2025-03-05 15:43:04,848 - INFO - Clicked on IndexII button for document 7
+2025-03-05 15:43:13,448 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:43:14,031 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:43:20,060 - INFO - Processing document 8/10...
+2025-03-05 15:43:21,088 - INFO - Clicked on IndexII button for document 8
+2025-03-05 15:43:29,226 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:43:29,838 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:43:35,870 - INFO - Processing document 9/10...
+2025-03-05 15:43:36,900 - INFO - Clicked on IndexII button for document 9
+2025-03-05 15:43:47,195 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:43:47,790 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:43:53,857 - INFO - Processing document 10/10...
+2025-03-05 15:43:54,884 - INFO - Clicked on IndexII button for document 10
+2025-03-05 15:44:11,649 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 15:44:12,248 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 15:44:18,311 - INFO - Job completed successfully. Downloaded 10/10 documents.
+2025-03-05 15:44:20,505 - INFO - Browser closed
+2025-03-05 15:45:12,781 - INFO - 127.0.0.1 - - [05/Mar/2025 15:45:12] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 15:46:14,264 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 15:46:22,516 - INFO -  * Restarting with stat
+2025-03-05 15:46:23,603 - WARNING -  * Debugger is active!
+2025-03-05 15:46:23,608 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:48:05,357 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:48:05,460 - INFO -  * Restarting with stat
+2025-03-05 15:48:06,463 - WARNING -  * Debugger is active!
+2025-03-05 15:48:06,469 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:48:34,944 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:48:35,061 - INFO -  * Restarting with stat
+2025-03-05 15:48:35,991 - WARNING -  * Debugger is active!
+2025-03-05 15:48:35,996 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:48:45,444 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:48:45,562 - INFO -  * Restarting with stat
+2025-03-05 15:48:46,638 - WARNING -  * Debugger is active!
+2025-03-05 15:48:46,645 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:49:00,386 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:49:00,447 - INFO -  * Restarting with stat
+2025-03-05 15:49:01,461 - WARNING -  * Debugger is active!
+2025-03-05 15:49:01,467 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:49:32,750 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:49:32,824 - INFO -  * Restarting with stat
+2025-03-05 15:49:33,743 - WARNING -  * Debugger is active!
+2025-03-05 15:49:33,748 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:49:34,858 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:49:34,918 - INFO -  * Restarting with stat
+2025-03-05 15:49:35,840 - WARNING -  * Debugger is active!
+2025-03-05 15:49:35,847 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:49:36,986 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:49:37,050 - INFO -  * Restarting with stat
+2025-03-05 15:49:37,929 - WARNING -  * Debugger is active!
+2025-03-05 15:49:37,934 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:50:18,644 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:50:18,705 - INFO -  * Restarting with stat
+2025-03-05 15:50:19,531 - WARNING -  * Debugger is active!
+2025-03-05 15:50:19,536 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:50:26,865 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:50:26,925 - INFO -  * Restarting with stat
+2025-03-05 15:50:27,809 - WARNING -  * Debugger is active!
+2025-03-05 15:50:27,814 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:51:26,029 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:51:26,104 - INFO -  * Restarting with stat
+2025-03-05 15:51:26,935 - WARNING -  * Debugger is active!
+2025-03-05 15:51:26,941 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:51:52,089 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\tests\\test.py', reloading
+2025-03-05 15:51:52,155 - INFO -  * Restarting with stat
+2025-03-05 15:51:53,077 - WARNING -  * Debugger is active!
+2025-03-05 15:51:53,084 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 15:55:13,146 - INFO - ====== WebDriver manager ======
+2025-03-05 15:55:14,811 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:55:15,089 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 15:55:15,328 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 15:55:16,717 - INFO - Starting job test_job_123 for property  in , ,  ()
+2025-03-05 15:55:23,416 - INFO - Website opened
+2025-03-05 15:55:23,916 - INFO - Pop-up closed
+2025-03-05 15:55:24,111 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 15:55:26,543 - ERROR - Failed to select year: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2025-03-05 15:55:26,815 - ERROR - Automation error: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 294, in run_automation
+    Select(year_dropdown).select_by_value(year)
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 84, in select_by_value
+    raise NoSuchElementException(f"Cannot locate option with value: {value}")
+selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2025-03-05 15:55:29,675 - INFO - Browser closed
+2025-03-05 15:55:33,900 - INFO - ====== WebDriver manager ======
+2025-03-05 15:55:33,901 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 15:55:33,902 - ERROR - Automation error: Test early exit
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 258, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Test early exit
+2025-03-05 15:55:33,904 - INFO - Browser closed
+2025-03-05 15:55:33,908 - INFO - ====== WebDriver manager ======
+2025-03-05 15:55:33,910 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 15:55:33,910 - INFO - Website opened
+2025-03-05 15:55:36,916 - INFO - No pop-up found, proceeding...
+2025-03-05 15:55:46,934 - ERROR - Failed to click 'Rest of Maharashtra': Message: 
+
+2025-03-05 15:55:46,935 - ERROR - Automation error: Message: 
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 276, in run_automation
+    rest_maha_button = WebDriverWait(driver, 10).until(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2025-03-05 15:55:46,942 - INFO - Browser closed
+2025-03-05 15:55:46,989 - INFO - CAPTCHA attempt 1/3
+2025-03-05 15:55:46,991 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 15:55:57,005 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 15:55:57,006 - INFO - CAPTCHA attempt 2/3
+2025-03-05 15:55:57,008 - INFO - CAPTCHA solution: 'CD456'
+2025-03-05 15:56:07,022 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 15:56:07,023 - INFO - CAPTCHA attempt 3/3
+2025-03-05 15:56:07,024 - INFO - CAPTCHA solution: 'EF789'
+2025-03-05 15:56:17,804 - ERROR - Error during CAPTCHA attempt 3: Message: 
+
+2025-03-05 15:56:17,805 - ERROR - All CAPTCHA attempts failed
+2025-03-05 15:56:17,866 - INFO - CAPTCHA attempt 1/3
+2025-03-05 15:56:17,866 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 15:56:38,725 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 15:56:38,750 - INFO - CAPTCHA attempt 2/3
+2025-03-05 15:56:38,753 - INFO - CAPTCHA solution: 'CD456'
+2025-03-05 15:56:48,756 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 15:56:48,757 - INFO - CAPTCHA attempt 3/3
+2025-03-05 15:56:48,758 - ERROR - Error during CAPTCHA attempt 3: 
+2025-03-05 15:56:48,758 - ERROR - All CAPTCHA attempts failed
+2025-03-05 15:56:48,789 - INFO - CAPTCHA attempt 1/3
+2025-03-05 15:56:48,789 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 15:56:58,803 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 15:56:58,804 - INFO - CAPTCHA attempt 2/3
+2025-03-05 15:56:58,804 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 15:57:08,819 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 15:57:08,819 - INFO - CAPTCHA attempt 3/3
+2025-03-05 15:57:08,819 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 15:57:18,834 - ERROR - Error during CAPTCHA attempt 3: Message: 
+
+2025-03-05 15:57:18,835 - ERROR - All CAPTCHA attempts failed
+2025-03-05 15:57:19,031 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'AB12' (VALID FORMAT)
+2025-03-05 15:57:19,033 - INFO - Technique 1: 'High contrast grayscale' - Result: 'AB12' (VALID FORMAT)
+2025-03-05 15:57:19,035 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'A812' (VALID FORMAT)
+2025-03-05 15:57:19,040 - INFO - Technique 3: 'Sharpening filter' - Result: 'A812' (VALID FORMAT)
+2025-03-05 15:57:19,042 - INFO - Technique 4: 'Adaptive thresholding' - Result: 'AB12' (VALID FORMAT)
+2025-03-05 15:57:21,070 - INFO - ====== WebDriver manager ======
+2025-03-05 15:57:21,078 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 15:57:21,079 - INFO - Website opened
+2025-03-05 15:57:24,094 - INFO - No pop-up found, proceeding...
+2025-03-05 15:57:34,132 - ERROR - Failed to click 'Rest of Maharashtra': Message: 
+
+2025-03-05 15:57:34,133 - ERROR - Automation error: Message: 
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 276, in run_automation
+    rest_maha_button = WebDriverWait(driver, 10).until(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2025-03-05 15:57:34,142 - INFO - Browser closed
+2025-03-05 15:57:34,146 - INFO - ====== WebDriver manager ======
+2025-03-05 15:57:34,149 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 15:57:34,150 - ERROR - Automation error: Test website error
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 258, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Test website error
+2025-03-05 15:57:34,157 - INFO - Browser closed
+2025-03-05 17:48:17,368 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.21.18:5000
+2025-03-05 17:48:17,369 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 17:48:17,372 - INFO -  * Restarting with stat
+2025-03-05 17:48:18,819 - WARNING -  * Debugger is active!
+2025-03-05 17:48:18,827 - INFO -  * Debugger PIN: 507-832-315
+2025-03-05 17:48:20,249 - INFO - 127.0.0.1 - - [05/Mar/2025 17:48:20] "GET / HTTP/1.1" 200 -
+2025-03-05 17:48:23,353 - INFO - 127.0.0.1 - - [05/Mar/2025 17:48:23] "GET /ui HTTP/1.1" 200 -
+2025-03-05 17:48:24,130 - INFO - 127.0.0.1 - - [05/Mar/2025 17:48:24] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 17:48:24,448 - INFO - 127.0.0.1 - - [05/Mar/2025 17:48:24] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:33:23,436 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.21.18:5000
+2025-03-05 19:33:23,437 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 19:33:23,462 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:33:24,520 - WARNING -  * Debugger is active!
+2025-03-05 19:33:24,527 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:33:24,547 - INFO - 127.0.0.1 - - [05/Mar/2025 19:33:24] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:33:25,120 - INFO - 127.0.0.1 - - [05/Mar/2025 19:33:25] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 19:33:25,121 - INFO - 127.0.0.1 - - [05/Mar/2025 19:33:25] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:36:32,713 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:36:32,716 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:36:33,273 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:36:35,098 - WARNING -  * Debugger is active!
+2025-03-05 19:36:35,105 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:36:35,875 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:36:35,876 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:36:35,876 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:36:36,274 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:36:37,416 - WARNING -  * Debugger is active!
+2025-03-05 19:36:37,422 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:37:17,870 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:17,871 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:18,656 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:37:19,777 - WARNING -  * Debugger is active!
+2025-03-05 19:37:19,784 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:37:22,689 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:22,689 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:22,690 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:22,946 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:37:24,021 - WARNING -  * Debugger is active!
+2025-03-05 19:37:24,029 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:37:25,261 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:25,263 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:25,264 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:26,213 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:37:27,367 - WARNING -  * Debugger is active!
+2025-03-05 19:37:27,374 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:37:35,496 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:35,497 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:35,497 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:37:36,538 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:37:37,636 - WARNING -  * Debugger is active!
+2025-03-05 19:37:37,644 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:37:40,644 - INFO - 127.0.0.1 - - [05/Mar/2025 19:37:40] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:37:41,036 - INFO - 127.0.0.1 - - [05/Mar/2025 19:37:41] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:37:41,044 - INFO - 127.0.0.1 - - [05/Mar/2025 19:37:41] "[35m[1mGET /api/get_districts HTTP/1.1[0m" 500 -
+2025-03-05 19:38:23,198 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:38:23,198 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:38:23,889 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:38:57,823 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.21.18:5000
+2025-03-05 19:38:57,823 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 19:38:57,833 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:38:58,902 - WARNING -  * Debugger is active!
+2025-03-05 19:38:58,910 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:39:12,466 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:39:12,467 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:39:12,467 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:39:13,088 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:39:14,152 - WARNING -  * Debugger is active!
+2025-03-05 19:39:14,157 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:39:15,302 - INFO - 127.0.0.1 - - [05/Mar/2025 19:39:15] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:39:15,557 - INFO - 127.0.0.1 - - [05/Mar/2025 19:39:15] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 19:39:15,557 - INFO - 127.0.0.1 - - [05/Mar/2025 19:39:15] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:40:17,999 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.21.18:5000
+2025-03-05 19:40:18,000 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-05 19:40:18,011 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:40:19,003 - WARNING -  * Debugger is active!
+2025-03-05 19:40:19,009 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:40:22,997 - INFO - 127.0.0.1 - - [05/Mar/2025 19:40:22] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:40:23,244 - INFO - 127.0.0.1 - - [05/Mar/2025 19:40:23] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 19:40:23,250 - INFO - 127.0.0.1 - - [05/Mar/2025 19:40:23] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:43:37,734 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:37,734 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:38,663 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:43:39,853 - WARNING -  * Debugger is active!
+2025-03-05 19:43:39,861 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:43:42,330 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:42,330 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:43,005 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:43:44,028 - WARNING -  * Debugger is active!
+2025-03-05 19:43:44,034 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:43:48,369 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:48,373 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:48,374 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:43:49,185 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:43:50,304 - WARNING -  * Debugger is active!
+2025-03-05 19:43:50,311 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:44:12,163 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:44:12,164 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:44:12,527 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:44:13,725 - WARNING -  * Debugger is active!
+2025-03-05 19:44:13,731 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:44:17,700 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:44:17,701 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:44:17,887 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:44:18,981 - WARNING -  * Debugger is active!
+2025-03-05 19:44:18,988 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:44:26,799 - INFO - 127.0.0.1 - - [05/Mar/2025 19:44:26] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:44:26,976 - INFO - 127.0.0.1 - - [05/Mar/2025 19:44:26] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 19:44:27,064 - INFO - 127.0.0.1 - - [05/Mar/2025 19:44:27] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:44:41,870 - INFO - 127.0.0.1 - - [05/Mar/2025 19:44:41] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 19:44:41,874 - INFO - ====== WebDriver manager ======
+2025-03-05 19:44:43,742 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:44:44,450 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:44:45,084 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 19:44:46,058 - INFO - 127.0.0.1 - - [05/Mar/2025 19:44:46] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:44:51,787 - INFO - Website opened
+2025-03-05 19:44:52,050 - INFO - Pop-up closed
+2025-03-05 19:44:52,125 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 19:44:53,336 - INFO - Year 2025 selected
+2025-03-05 19:44:57,693 - INFO - Property number '1' entered
+2025-03-05 19:44:57,873 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 19:44:57,954 - INFO - CAPTCHA attempt 1/3
+2025-03-05 19:44:59,165 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '63D437' (VALID FORMAT)
+2025-03-05 19:44:59,316 - INFO - Technique 1: 'High contrast grayscale' - Result: '63D437' (VALID FORMAT)
+2025-03-05 19:44:59,449 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '63D437' (VALID FORMAT)
+2025-03-05 19:44:59,581 - INFO - Technique 3: 'Sharpening filter' - Result: '63D437' (VALID FORMAT)
+2025-03-05 19:44:59,716 - INFO - Technique 4: 'Adaptive thresholding' - Result: '63D437' (VALID FORMAT)
+2025-03-05 19:44:59,716 - INFO - CAPTCHA solution: '63D437'
+2025-03-05 19:45:00,022 - INFO - Search button clicked
+2025-03-05 19:45:15,311 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:45:15,373 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 19:45:15,431 - INFO - CAPTCHA attempt 2/3
+2025-03-05 19:45:15,563 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:15,695 - INFO - Technique 1: 'High contrast grayscale' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:15,825 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'S74713' (VALID FORMAT)
+2025-03-05 19:45:15,957 - INFO - Technique 3: 'Sharpening filter' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:16,088 - INFO - Technique 4: 'Adaptive thresholding' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:16,089 - INFO - CAPTCHA solution: '574713'
+2025-03-05 19:45:16,387 - INFO - Search button clicked
+2025-03-05 19:45:31,660 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:45:31,757 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 19:45:31,836 - INFO - CAPTCHA attempt 3/3
+2025-03-05 19:45:32,007 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:32,151 - INFO - Technique 1: 'High contrast grayscale' - Result: 'S74713' (VALID FORMAT)
+2025-03-05 19:45:32,292 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:32,428 - INFO - Technique 3: 'Sharpening filter' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:32,568 - INFO - Technique 4: 'Adaptive thresholding' - Result: '574713' (VALID FORMAT)
+2025-03-05 19:45:32,568 - INFO - CAPTCHA solution: '574713'
+2025-03-05 19:45:32,778 - INFO - Search button clicked
+2025-03-05 19:45:48,025 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:45:53,124 - INFO - Results found after additional wait
+2025-03-05 19:46:04,098 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:46:04,098 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\selenium_automation.py', reloading
+2025-03-05 19:46:04,515 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:46:06,400 - WARNING -  * Debugger is active!
+2025-03-05 19:46:06,408 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:47:09,023 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\igr-frontend\\node_modules\\es-iterator-helpers\\Iterator.zip', reloading
+2025-03-05 19:47:09,024 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\igr-frontend\\node_modules\\es-iterator-helpers\\Iterator.zip', reloading
+2025-03-05 19:47:09,025 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\igr-frontend\\node_modules\\es-iterator-helpers\\Iterator.zip', reloading
+2025-03-05 19:47:09,026 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\igr-frontend\\node_modules\\es-iterator-helpers\\Iterator.zip', reloading
+2025-03-05 19:47:09,026 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\igr-frontend\\node_modules\\es-iterator-helpers\\Iterator.zip', reloading
+2025-03-05 19:47:09,787 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:47:11,296 - WARNING -  * Debugger is active!
+2025-03-05 19:47:11,302 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:47:17,756 - INFO - 127.0.0.1 - - [05/Mar/2025 19:47:17] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:47:19,994 - INFO - 127.0.0.1 - - [05/Mar/2025 19:47:19] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 19:47:19,996 - INFO - ====== WebDriver manager ======
+2025-03-05 19:47:21,494 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:47:22,134 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:47:22,773 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 19:47:23,001 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\sockshandler.py', reloading
+2025-03-05 19:47:23,002 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\typing_extensions.py', reloading
+2025-03-05 19:47:23,006 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\socks.py', reloading
+2025-03-05 19:47:23,007 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\converters.py', reloading
+2025-03-05 19:47:23,010 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\exceptions.py', reloading
+2025-03-05 19:47:23,025 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\filters.py', reloading
+2025-03-05 19:47:23,029 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\setters.py', reloading
+2025-03-05 19:47:23,030 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\validators.py', reloading
+2025-03-05 19:47:23,043 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_cmp.py', reloading
+2025-03-05 19:47:23,063 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_compat.py', reloading
+2025-03-05 19:47:23,064 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_config.py', reloading
+2025-03-05 19:47:23,065 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_funcs.py', reloading
+2025-03-05 19:47:23,080 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_make.py', reloading
+2025-03-05 19:47:23,081 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_next_gen.py', reloading
+2025-03-05 19:47:23,082 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\_version_info.py', reloading
+2025-03-05 19:47:23,083 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attr\\__init__.py', reloading
+2025-03-05 19:47:23,114 - INFO - 127.0.0.1 - - [05/Mar/2025 19:47:23] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:47:23,150 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\converters.py', reloading
+2025-03-05 19:47:23,151 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\exceptions.py', reloading
+2025-03-05 19:47:23,153 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\filters.py', reloading
+2025-03-05 19:47:23,154 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\setters.py', reloading
+2025-03-05 19:47:23,155 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\validators.py', reloading
+2025-03-05 19:47:23,155 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\attrs\\__init__.py', reloading
+2025-03-05 19:47:23,222 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\blinker\\base.py', reloading
+2025-03-05 19:47:23,224 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\blinker\\_utilities.py', reloading
+2025-03-05 19:47:23,224 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\blinker\\__init__.py', reloading
+2025-03-05 19:47:23,262 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\certifi\\core.py', reloading
+2025-03-05 19:47:23,263 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\certifi\\__init__.py', reloading
+2025-03-05 19:47:23,264 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\certifi\\__main__.py', reloading
+2025-03-05 19:47:23,316 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\api.py', reloading
+2025-03-05 19:47:23,317 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\backend_ctypes.py', reloading
+2025-03-05 19:47:23,319 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\cffi_opcode.py', reloading
+2025-03-05 19:47:23,334 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\commontypes.py', reloading
+2025-03-05 19:47:23,335 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\cparser.py', reloading
+2025-03-05 19:47:23,337 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\error.py', reloading
+2025-03-05 19:47:23,352 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\ffiplatform.py', reloading
+2025-03-05 19:47:23,352 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\lock.py', reloading
+2025-03-05 19:47:23,353 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\cffi\\model.py', reloading
+2025-03-05 19:47:23,523 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:47:25,507 - WARNING -  * Debugger is active!
+2025-03-05 19:47:25,517 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:47:25,551 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\http2\\connection.py', reloading
+2025-03-05 19:47:25,552 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\http2\\probe.py', reloading
+2025-03-05 19:47:25,553 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\http2\\__init__.py', reloading
+2025-03-05 19:47:25,556 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\connection.py', reloading
+2025-03-05 19:47:25,557 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\proxy.py', reloading
+2025-03-05 19:47:25,558 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\request.py', reloading
+2025-03-05 19:47:25,559 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\response.py', reloading
+2025-03-05 19:47:25,560 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\retry.py', reloading
+2025-03-05 19:47:25,561 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\ssltransport.py', reloading
+2025-03-05 19:47:25,561 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\ssl_.py', reloading
+2025-03-05 19:47:25,562 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\ssl_match_hostname.py', reloading
+2025-03-05 19:47:25,563 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\timeout.py', reloading
+2025-03-05 19:47:25,563 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\url.py', reloading
+2025-03-05 19:47:25,564 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\util.py', reloading
+2025-03-05 19:47:25,565 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\wait.py', reloading
+2025-03-05 19:47:25,565 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\urllib3\\util\\__init__.py', reloading
+2025-03-05 19:47:25,585 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\chrome.py', reloading
+2025-03-05 19:47:25,587 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\firefox.py', reloading
+2025-03-05 19:47:25,588 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\microsoft.py', reloading
+2025-03-05 19:47:25,589 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\opera.py', reloading
+2025-03-05 19:47:25,590 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\__init__.py', reloading
+2025-03-05 19:47:25,590 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\archive.py', reloading
+2025-03-05 19:47:25,591 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\config.py', reloading
+2025-03-05 19:47:25,592 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\constants.py', reloading
+2025-03-05 19:47:25,594 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\download_manager.py', reloading
+2025-03-05 19:47:25,594 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\driver.py', reloading
+2025-03-05 19:47:25,595 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\driver_cache.py', reloading
+2025-03-05 19:47:25,596 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\file_manager.py', reloading
+2025-03-05 19:47:25,596 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\http.py', reloading
+2025-03-05 19:47:25,597 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\logger.py', reloading
+2025-03-05 19:47:25,598 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\manager.py', reloading
+2025-03-05 19:47:25,599 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\os_manager.py', reloading
+2025-03-05 19:47:25,600 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\utils.py', reloading
+2025-03-05 19:47:25,600 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\core\\__init__.py', reloading
+2025-03-05 19:47:25,610 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\chrome.py', reloading
+2025-03-05 19:47:25,611 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\edge.py', reloading
+2025-03-05 19:47:25,612 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\firefox.py', reloading
+2025-03-05 19:47:25,613 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\ie.py', reloading
+2025-03-05 19:47:25,614 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\opera.py', reloading
+2025-03-05 19:47:25,615 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\webdriver_manager\\drivers\\__init__.py', reloading
+2025-03-05 19:47:25,636 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_abnf.py', reloading
+2025-03-05 19:47:25,636 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_app.py', reloading
+2025-03-05 19:47:25,637 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_cookiejar.py', reloading
+2025-03-05 19:47:25,638 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_core.py', reloading
+2025-03-05 19:47:25,639 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_exceptions.py', reloading
+2025-03-05 19:47:25,640 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_handshake.py', reloading
+2025-03-05 19:47:25,640 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_http.py', reloading
+2025-03-05 19:47:25,641 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_logging.py', reloading
+2025-03-05 19:47:25,642 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_socket.py', reloading
+2025-03-05 19:47:25,642 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_ssl_compat.py', reloading
+2025-03-05 19:47:25,643 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_url.py', reloading
+2025-03-05 19:47:25,643 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_utils.py', reloading
+2025-03-05 19:47:25,644 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\_wsdump.py', reloading
+2025-03-05 19:47:25,645 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\__init__.py', reloading
+2025-03-05 19:47:25,645 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\echo-server.py', reloading
+2025-03-05 19:47:25,646 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_abnf.py', reloading
+2025-03-05 19:47:25,647 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_app.py', reloading
+2025-03-05 19:47:25,647 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_cookiejar.py', reloading
+2025-03-05 19:47:25,648 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_http.py', reloading
+2025-03-05 19:47:25,649 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_url.py', reloading
+2025-03-05 19:47:25,650 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\test_websocket.py', reloading
+2025-03-05 19:47:25,650 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\websocket\\tests\\__init__.py', reloading
+2025-03-05 19:47:25,674 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\exceptions.py', reloading
+2025-03-05 19:47:25,675 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\formparser.py', reloading
+2025-03-05 19:47:25,676 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\http.py', reloading
+2025-03-05 19:47:25,677 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\local.py', reloading
+2025-03-05 19:47:25,678 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\security.py', reloading
+2025-03-05 19:47:25,680 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\serving.py', reloading
+2025-03-05 19:47:25,680 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\test.py', reloading
+2025-03-05 19:47:25,682 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\testapp.py', reloading
+2025-03-05 19:47:25,683 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\urls.py', reloading
+2025-03-05 19:47:25,684 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\user_agent.py', reloading
+2025-03-05 19:47:25,685 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2025-03-05 19:47:25,686 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\wsgi.py', reloading
+2025-03-05 19:47:25,686 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\_internal.py', reloading
+2025-03-05 19:47:25,687 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\_reloader.py', reloading
+2025-03-05 19:47:25,688 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\__init__.py', reloading
+2025-03-05 19:47:25,688 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\accept.py', reloading
+2025-03-05 19:47:25,690 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\auth.py', reloading
+2025-03-05 19:47:25,691 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\cache_control.py', reloading
+2025-03-05 19:47:25,692 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\csp.py', reloading
+2025-03-05 19:47:25,693 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\etag.py', reloading
+2025-03-05 19:47:25,693 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\file_storage.py', reloading
+2025-03-05 19:47:25,694 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\headers.py', reloading
+2025-03-05 19:47:25,695 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\mixins.py', reloading
+2025-03-05 19:47:25,695 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\range.py', reloading
+2025-03-05 19:47:25,696 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\structures.py', reloading
+2025-03-05 19:47:25,697 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-03-05 19:47:25,705 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\debug\\console.py', reloading
+2025-03-05 19:47:25,706 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\debug\\repr.py', reloading
+2025-03-05 19:47:25,707 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\debug\\tbtools.py', reloading
+2025-03-05 19:47:25,708 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-03-05 19:47:25,718 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\dispatcher.py', reloading
+2025-03-05 19:47:25,719 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\http_proxy.py', reloading
+2025-03-05 19:47:25,720 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\lint.py', reloading
+2025-03-05 19:47:25,721 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\profiler.py', reloading
+2025-03-05 19:47:25,721 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\proxy_fix.py', reloading
+2025-03-05 19:47:25,723 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\shared_data.py', reloading
+2025-03-05 19:47:25,724 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\middleware\\__init__.py', reloading
+2025-03-05 19:47:25,730 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\converters.py', reloading
+2025-03-05 19:47:25,731 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\exceptions.py', reloading
+2025-03-05 19:47:25,732 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\map.py', reloading
+2025-03-05 19:47:25,733 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\matcher.py', reloading
+2025-03-05 19:47:25,734 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py', reloading
+2025-03-05 19:47:25,735 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\routing\\__init__.py', reloading
+2025-03-05 19:47:25,742 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\http.py', reloading
+2025-03-05 19:47:25,743 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\multipart.py', reloading
+2025-03-05 19:47:25,744 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-03-05 19:47:25,744 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-03-05 19:47:25,745 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\utils.py', reloading
+2025-03-05 19:47:25,745 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\sansio\\__init__.py', reloading
+2025-03-05 19:47:25,752 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-03-05 19:47:25,754 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-03-05 19:47:25,755 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-03-05 19:47:25,774 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\connection.py', reloading
+2025-03-05 19:47:25,775 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\events.py', reloading
+2025-03-05 19:47:25,776 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\extensions.py', reloading
+2025-03-05 19:47:25,776 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\frame_protocol.py', reloading
+2025-03-05 19:47:25,777 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\handshake.py', reloading
+2025-03-05 19:47:25,777 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\typing.py', reloading
+2025-03-05 19:47:25,778 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\utilities.py', reloading
+2025-03-05 19:47:25,779 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\venv\\Lib\\site-packages\\wsproto\\__init__.py', reloading
+2025-03-05 19:47:25,811 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\app.py', reloading
+2025-03-05 19:47:25,811 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\config.py', reloading
+2025-03-05 19:47:25,813 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\main.py', reloading
+2025-03-05 19:47:25,814 - INFO -  * Detected change in 'D:\\Projects\\Projects\\igr-document-downloader\\utils.py', reloading
+2025-03-05 19:47:26,708 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-05 19:47:27,927 - WARNING -  * Debugger is active!
+2025-03-05 19:47:27,933 - INFO -  * Debugger PIN: 214-995-109
+2025-03-05 19:49:14,162 - INFO - 127.0.0.1 - - [05/Mar/2025 19:49:14] "GET /ui HTTP/1.1" 200 -
+2025-03-05 19:49:14,474 - INFO - 127.0.0.1 - - [05/Mar/2025 19:49:14] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-05 19:49:14,475 - INFO - 127.0.0.1 - - [05/Mar/2025 19:49:14] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:49:27,430 - INFO - 127.0.0.1 - - [05/Mar/2025 19:49:27] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-05 19:49:27,432 - INFO - ====== WebDriver manager ======
+2025-03-05 19:49:28,454 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:49:28,518 - INFO - 127.0.0.1 - - [05/Mar/2025 19:49:28] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:49:29,038 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:49:29,561 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 19:49:34,221 - INFO - Website opened
+2025-03-05 19:49:34,519 - INFO - Pop-up closed
+2025-03-05 19:49:34,607 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 19:49:35,837 - INFO - Year 2025 selected
+2025-03-05 19:49:40,125 - INFO - Property number '1' entered
+2025-03-05 19:49:40,298 - INFO - Attempting to solve CAPTCHA...
+2025-03-05 19:49:40,380 - INFO - CAPTCHA attempt 1/3
+2025-03-05 19:49:40,591 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '543811' (VALID FORMAT)
+2025-03-05 19:49:40,733 - INFO - Technique 1: 'High contrast grayscale' - Result: '5438110' (INVALID FORMAT)
+2025-03-05 19:49:40,876 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '543811' (VALID FORMAT)
+2025-03-05 19:49:41,027 - INFO - Technique 3: 'Sharpening filter' - Result: '543811' (VALID FORMAT)
+2025-03-05 19:49:41,164 - INFO - Technique 4: 'Adaptive thresholding' - Result: '543811' (VALID FORMAT)
+2025-03-05 19:49:41,164 - INFO - CAPTCHA solution: '543811'
+2025-03-05 19:49:41,486 - INFO - Search button clicked
+2025-03-05 19:49:56,726 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:49:56,810 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 19:49:56,870 - INFO - CAPTCHA attempt 2/3
+2025-03-05 19:49:57,014 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: '430749' (VALID FORMAT)
+2025-03-05 19:49:57,156 - INFO - Technique 1: 'High contrast grayscale' - Result: '430749' (VALID FORMAT)
+2025-03-05 19:49:57,302 - INFO - Technique 2: 'Noise reduction with median filter' - Result: '430749' (VALID FORMAT)
+2025-03-05 19:49:57,437 - INFO - Technique 3: 'Sharpening filter' - Result: 'A3C7A9' (VALID FORMAT)
+2025-03-05 19:49:57,580 - INFO - Technique 4: 'Adaptive thresholding' - Result: '430749' (VALID FORMAT)
+2025-03-05 19:49:57,581 - INFO - CAPTCHA solution: '430749'
+2025-03-05 19:49:57,871 - INFO - Search button clicked
+2025-03-05 19:50:13,109 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:50:13,193 - INFO - CAPTCHA changed (likely incorrect), trying again
+2025-03-05 19:50:13,259 - INFO - CAPTCHA attempt 3/3
+2025-03-05 19:50:13,406 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'AB4395' (VALID FORMAT)
+2025-03-05 19:50:13,543 - INFO - Technique 1: 'High contrast grayscale' - Result: 'AB4395' (VALID FORMAT)
+2025-03-05 19:50:13,684 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'ABA395' (VALID FORMAT)
+2025-03-05 19:50:13,817 - INFO - Technique 3: 'Sharpening filter' - Result: 'ABA395' (VALID FORMAT)
+2025-03-05 19:50:13,960 - INFO - Technique 4: 'Adaptive thresholding' - Result: 'AB4395' (VALID FORMAT)
+2025-03-05 19:50:13,960 - INFO - CAPTCHA solution: 'AB4395'
+2025-03-05 19:50:14,234 - INFO - Search button clicked
+2025-03-05 19:50:29,495 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-05 19:50:34,594 - INFO - Results found after additional wait
+2025-03-05 19:50:34,607 - INFO - Results loaded successfully!
+2025-03-05 19:50:34,801 - INFO - Found 10 documents to download
+2025-03-05 19:50:34,802 - INFO - Processing document 1/10...
+2025-03-05 19:50:35,842 - INFO - Clicked on IndexII button for document 1
+2025-03-05 19:50:38,296 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:50:39,403 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:50:45,468 - INFO - Processing document 2/10...
+2025-03-05 19:50:46,496 - INFO - Clicked on IndexII button for document 2
+2025-03-05 19:50:49,122 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:50:49,713 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:50:55,778 - INFO - Processing document 3/10...
+2025-03-05 19:50:56,808 - INFO - Clicked on IndexII button for document 3
+2025-03-05 19:50:58,974 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:50:59,548 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:51:05,576 - INFO - Processing document 4/10...
+2025-03-05 19:51:06,599 - INFO - Clicked on IndexII button for document 4
+2025-03-05 19:51:09,796 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:51:10,391 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:51:16,467 - INFO - Processing document 5/10...
+2025-03-05 19:51:17,500 - INFO - Clicked on IndexII button for document 5
+2025-03-05 19:51:21,320 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:51:21,903 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:51:27,967 - INFO - Processing document 6/10...
+2025-03-05 19:51:29,006 - INFO - Clicked on IndexII button for document 6
+2025-03-05 19:51:33,859 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:51:34,474 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:51:40,540 - INFO - Processing document 7/10...
+2025-03-05 19:51:41,567 - INFO - Clicked on IndexII button for document 7
+2025-03-05 19:51:47,468 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:51:48,109 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:51:54,171 - INFO - Processing document 8/10...
+2025-03-05 19:51:55,203 - INFO - Clicked on IndexII button for document 8
+2025-03-05 19:51:58,906 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:51:59,534 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:52:05,603 - INFO - Processing document 9/10...
+2025-03-05 19:52:06,625 - INFO - Clicked on IndexII button for document 9
+2025-03-05 19:52:12,924 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:52:13,543 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:52:19,605 - INFO - Processing document 10/10...
+2025-03-05 19:52:20,635 - INFO - Clicked on IndexII button for document 10
+2025-03-05 19:52:28,103 - INFO - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-05 19:52:28,702 - ERROR - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-05 19:52:34,767 - INFO - Job completed successfully. Downloaded 10/10 documents.
+2025-03-05 19:52:36,996 - INFO - Browser closed
+2025-03-05 19:53:48,021 - INFO - 127.0.0.1 - - [05/Mar/2025 19:53:48] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-05 19:56:09,248 - INFO - ====== WebDriver manager ======
+2025-03-05 19:56:10,218 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:56:10,959 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-05 19:56:11,480 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-05 19:56:12,575 - INFO - Starting job test_job_123 for property  in , ,  ()
+2025-03-05 19:56:17,641 - INFO - Website opened
+2025-03-05 19:56:17,905 - INFO - Pop-up closed
+2025-03-05 19:56:17,977 - INFO - Selected 'Rest of Maharashtra'
+2025-03-05 19:56:19,175 - ERROR - Failed to select year: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2025-03-05 19:56:19,323 - ERROR - Automation error: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 313, in run_automation
+    Select(year_dropdown).select_by_value(year)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\select.py", line 84, in select_by_value
+    raise NoSuchElementException(f"Cannot locate option with value: {value}")
+selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: ; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+
+2025-03-05 19:56:21,702 - INFO - Browser closed
+2025-03-05 19:56:23,933 - INFO - ====== WebDriver manager ======
+2025-03-05 19:56:23,934 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 19:56:23,934 - ERROR - Automation error: Test early exit
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 277, in run_automation
+    driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+Exception: Test early exit
+2025-03-05 19:56:23,936 - INFO - Browser closed
+2025-03-05 19:56:23,940 - INFO - ====== WebDriver manager ======
+2025-03-05 19:56:23,941 - INFO - Starting job test_job_123 for property 123 in Test Village, Test Tahsil, Test District (2023)
+2025-03-05 19:56:23,941 - INFO - Website opened
+2025-03-05 19:56:26,946 - INFO - No pop-up found, proceeding...
+2025-03-05 19:56:37,459 - ERROR - Failed to click 'Rest of Maharashtra': Message: 
+
+2025-03-05 19:56:37,459 - ERROR - Automation error: Message: 
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 295, in run_automation
+    rest_maha_button = WebDriverWait(driver, 10).until(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2025-03-05 19:56:37,464 - INFO - Browser closed
+2025-03-05 19:56:37,473 - INFO - CAPTCHA attempt 1/3
+2025-03-05 19:56:37,473 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 19:56:47,490 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 19:56:47,491 - INFO - CAPTCHA attempt 2/3
+2025-03-05 19:56:47,493 - INFO - CAPTCHA solution: 'CD456'
+2025-03-05 19:56:57,921 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 19:56:57,965 - INFO - CAPTCHA attempt 3/3
+2025-03-05 19:56:57,966 - INFO - CAPTCHA solution: 'EF789'
+2025-03-05 19:57:07,974 - ERROR - Error during CAPTCHA attempt 3: Message: 
+
+2025-03-05 19:57:07,974 - ERROR - All CAPTCHA attempts failed
+2025-03-05 19:57:09,216 - INFO - CAPTCHA attempt 1/3
+2025-03-05 19:57:09,217 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 19:57:46,053 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 19:57:46,096 - INFO - CAPTCHA attempt 2/3
+2025-03-05 19:57:46,097 - INFO - CAPTCHA solution: 'CD456'
+2025-03-05 19:57:56,099 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 19:57:56,099 - INFO - CAPTCHA attempt 3/3
+2025-03-05 19:57:56,100 - ERROR - Error during CAPTCHA attempt 3: 
+2025-03-05 19:57:56,101 - ERROR - All CAPTCHA attempts failed
+2025-03-05 19:57:56,131 - INFO - CAPTCHA attempt 1/3
+2025-03-05 19:57:56,132 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 19:58:06,146 - ERROR - Error during CAPTCHA attempt 1: Message: 
+
+2025-03-05 19:58:06,146 - INFO - CAPTCHA attempt 2/3
+2025-03-05 19:58:06,147 - INFO - CAPTCHA solution: 'AB123'
+2025-03-05 19:58:16,162 - ERROR - Error during CAPTCHA attempt 2: Message: 
+
+2025-03-05 19:58:16,163 - INFO - CAPTCHA attempt 3/3
+2025-03-05 19:58:16,163 - INFO - CAPTCHA solution: 'AB123'
