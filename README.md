@@ -42,6 +42,7 @@ pillow
 pdfkit
 flask
 flask-cors
+pytest
 
 ```
 
@@ -95,6 +96,23 @@ python selenium_automation.py
 ```
 
 The API server will start and listen for requests on port 5000 by default.
+
+### Running Tests
+Execute the test suite by running:
+
+```
+
+pytest test.py -v
+
+```
+
+For more detailed output with logging information:
+
+```
+
+pytest test.py -v --log-cli-level=INFO
+
+```
 
 ### API Endpoints
 
