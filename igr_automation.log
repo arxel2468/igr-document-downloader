@@ -2173,3 +2173,14 @@ Traceback (most recent call last):
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 
+2025-03-06 16:24:40,479 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.18:5000
+2025-03-06 16:24:40,481 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-06 16:24:40,504 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-06 16:24:41,762 - WARNING -  * Debugger is active!
+2025-03-06 16:24:41,774 - INFO -  * Debugger PIN: 214-995-109
+2025-03-06 16:24:41,797 - INFO - 127.0.0.1 - - [06/Mar/2025 16:24:41] "GET /ui HTTP/1.1" 200 -
+2025-03-06 16:24:42,163 - INFO - 127.0.0.1 - - [06/Mar/2025 16:24:42] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-06 16:24:42,476 - INFO - 127.0.0.1 - - [06/Mar/2025 16:24:42] "GET /api/list_jobs HTTP/1.1" 200 -
