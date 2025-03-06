@@ -2019,3 +2019,157 @@ selenium.common.exceptions.TimeoutException: Message:
 
 2025-03-05 19:58:16,163 - INFO - CAPTCHA attempt 3/3
 2025-03-05 19:58:16,163 - INFO - CAPTCHA solution: 'AB123'
+2025-03-06 16:02:46,213 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.18:5000
+2025-03-06 16:02:46,215 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-06 16:02:46,251 - INFO -  * Restarting with watchdog (windowsapi)
+2025-03-06 16:02:48,082 - WARNING -  * Debugger is active!
+2025-03-06 16:02:48,095 - INFO -  * Debugger PIN: 214-995-109
+2025-03-06 16:03:31,426 - INFO - 127.0.0.1 - - [06/Mar/2025 16:03:31] "GET / HTTP/1.1" 200 -
+2025-03-06 16:03:32,188 - INFO - 127.0.0.1 - - [06/Mar/2025 16:03:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-06 16:03:57,516 - INFO - 127.0.0.1 - - [06/Mar/2025 16:03:57] "GET /ui HTTP/1.1" 200 -
+2025-03-06 16:03:58,922 - INFO - 127.0.0.1 - - [06/Mar/2025 16:03:58] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-06 16:03:58,928 - INFO - 127.0.0.1 - - [06/Mar/2025 16:03:58] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-06 16:04:25,650 - INFO - 127.0.0.1 - - [06/Mar/2025 16:04:25] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-06 16:04:25,655 - INFO - ====== WebDriver manager ======
+2025-03-06 16:04:27,973 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:04:28,475 - INFO - 127.0.0.1 - - [06/Mar/2025 16:04:28] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-06 16:04:29,196 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:04:30,472 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:04:32,555 - INFO - WebDriver version 133.0.6943.141 selected
+2025-03-06 16:04:32,562 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/win32/chromedriver-win32.zip
+2025-03-06 16:04:32,563 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/133.0.6943.141/win32/chromedriver-win32.zip
+2025-03-06 16:04:33,469 - INFO - Driver downloading response is 200
+2025-03-06 16:04:38,541 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:04:39,788 - INFO - Driver has been saved in cache [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141]
+2025-03-06 16:04:58,891 - INFO - Website opened
+2025-03-06 16:04:59,627 - INFO - Pop-up closed
+2025-03-06 16:04:59,868 - INFO - Selected 'Rest of Maharashtra'
+2025-03-06 16:05:05,964 - INFO - Year 2025 selected
+2025-03-06 16:05:21,481 - INFO - Property number '1' entered
+2025-03-06 16:05:21,731 - INFO - Attempting to solve CAPTCHA...
+2025-03-06 16:05:21,846 - INFO - CAPTCHA attempt 1/3
+2025-03-06 16:05:23,939 - INFO - Technique 0: 'Standard grayscale with contrast' - Result: 'BDB9D5' (VALID FORMAT)
+2025-03-06 16:05:24,152 - INFO - Technique 1: 'High contrast grayscale' - Result: 'BDB9D5' (VALID FORMAT)
+2025-03-06 16:05:24,372 - INFO - Technique 2: 'Noise reduction with median filter' - Result: 'BDB9DS' (VALID FORMAT)
+2025-03-06 16:05:24,631 - INFO - Technique 3: 'Sharpening filter' - Result: 'BDB9D5' (VALID FORMAT)
+2025-03-06 16:05:24,866 - INFO - Technique 4: 'Adaptive thresholding' - Result: 'BDB9DS5' (INVALID FORMAT)
+2025-03-06 16:05:24,867 - INFO - CAPTCHA solution: 'BDB9D5'
+2025-03-06 16:05:25,255 - INFO - Search button clicked
+2025-03-06 16:05:40,330 - WARNING - No results or error message found after CAPTCHA submission
+2025-03-06 16:05:40,383 - ERROR - Error during CAPTCHA attempt 1: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."}
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00DE0B43+25139]
+	(No symbol) [0x00D713F4]
+	(No symbol) [0x00C504E3]
+	(No symbol) [0x00C406FA]
+	(No symbol) [0x00C3F095]
+	(No symbol) [0x00C3F92D]
+	(No symbol) [0x00C5DE1A]
+	(No symbol) [0x00C957C4]
+	(No symbol) [0x00CBCFCC]
+	(No symbol) [0x00C8D9A4]
+	(No symbol) [0x00CBD244]
+	(No symbol) [0x00CDE778]
+	(No symbol) [0x00CBCDC6]
+	(No symbol) [0x00C8BDE9]
+	(No symbol) [0x00C8D124]
+	GetHandleVerifier [0x010E4373+3185251]
+	GetHandleVerifier [0x0110291A+3309578]
+	GetHandleVerifier [0x010FCF42+3286578]
+	GetHandleVerifier [0x00E77AE0+643536]
+	(No symbol) [0x00D7A20D]
+	(No symbol) [0x00D770B8]
+	(No symbol) [0x00D77257]
+	(No symbol) [0x00D69E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-06 16:05:40,672 - ERROR - Error during CAPTCHA attempt 2: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."}
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00DE0B43+25139]
+	(No symbol) [0x00D713F4]
+	(No symbol) [0x00C504E3]
+	(No symbol) [0x00C406FA]
+	(No symbol) [0x00C3F095]
+	(No symbol) [0x00C3F92D]
+	(No symbol) [0x00C5DE1A]
+	(No symbol) [0x00C957C4]
+	(No symbol) [0x00CBCFCC]
+	(No symbol) [0x00C8D9A4]
+	(No symbol) [0x00CBD244]
+	(No symbol) [0x00CDE778]
+	(No symbol) [0x00CBCDC6]
+	(No symbol) [0x00C8BDE9]
+	(No symbol) [0x00C8D124]
+	GetHandleVerifier [0x010E4373+3185251]
+	GetHandleVerifier [0x0110291A+3309578]
+	GetHandleVerifier [0x010FCF42+3286578]
+	GetHandleVerifier [0x00E77AE0+643536]
+	(No symbol) [0x00D7A20D]
+	(No symbol) [0x00D770B8]
+	(No symbol) [0x00D77257]
+	(No symbol) [0x00D69E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-06 16:05:40,966 - ERROR - Error during CAPTCHA attempt 3: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."}
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00DE0B43+25139]
+	(No symbol) [0x00D713F4]
+	(No symbol) [0x00C504E3]
+	(No symbol) [0x00C406FA]
+	(No symbol) [0x00C3F095]
+	(No symbol) [0x00C3F92D]
+	(No symbol) [0x00C5DE1A]
+	(No symbol) [0x00C957C4]
+	(No symbol) [0x00CBCFCC]
+	(No symbol) [0x00C8D9A4]
+	(No symbol) [0x00CBD244]
+	(No symbol) [0x00CDE778]
+	(No symbol) [0x00CBCDC6]
+	(No symbol) [0x00C8BDE9]
+	(No symbol) [0x00C8D124]
+	GetHandleVerifier [0x010E4373+3185251]
+	GetHandleVerifier [0x0110291A+3309578]
+	GetHandleVerifier [0x010FCF42+3286578]
+	GetHandleVerifier [0x00E77AE0+643536]
+	(No symbol) [0x00D7A20D]
+	(No symbol) [0x00D770B8]
+	(No symbol) [0x00D77257]
+	(No symbol) [0x00D69E00]
+	BaseThreadInitThunk [0x76A05D49+25]
+	RtlInitializeExceptionChain [0x7788CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7788CD71+561]
+
+2025-03-06 16:05:41,158 - ERROR - All CAPTCHA attempts failed
+2025-03-06 16:05:41,159 - ERROR - Failed to solve CAPTCHA after multiple attempts
+2025-03-06 16:05:43,805 - INFO - Browser closed
+2025-03-06 16:06:28,944 - INFO - 127.0.0.1 - - [06/Mar/2025 16:06:28] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-06 16:06:42,482 - INFO - 127.0.0.1 - - [06/Mar/2025 16:06:42] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-06 16:06:42,489 - INFO - ====== WebDriver manager ======
+2025-03-06 16:06:44,686 - INFO - 127.0.0.1 - - [06/Mar/2025 16:06:44] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-06 16:06:45,213 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:06:46,195 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-06 16:06:47,227 - INFO - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-06 16:06:57,960 - INFO - Website opened
+2025-03-06 16:06:58,488 - INFO - Pop-up closed
+2025-03-06 16:06:58,623 - INFO - Selected 'Rest of Maharashtra'
+2025-03-06 16:07:04,194 - INFO - Year 2025 selected
+2025-03-06 16:07:26,120 - ERROR - Failed to select village: Message: 
+
+2025-03-06 16:07:26,369 - ERROR - Automation error: Message: 
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 358, in run_automation
+    WebDriverWait(driver, 10).until(
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+

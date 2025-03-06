@@ -7,3 +7,4 @@ pdfkit
 webdriver-manager
 flask
 flask-cors
+webdriver-manager
