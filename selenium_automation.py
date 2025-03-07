@@ -3,65 +3,175 @@ import os
 import re
 import json
 import logging
+import threading
+import uuid
+from concurrent.futures import ThreadPoolExecutor
+from functools import lru_cache
+import hashlib
+from io import BytesIO
+import shutil
+import sys
+
+# Web automation imports
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException, StaleElementReferenceException
+from selenium.common.exceptions import (
+    NoSuchElementException, 
+    TimeoutException, 
+    ElementClickInterceptedException, 
+    StaleElementReferenceException,
+    WebDriverException
+)
 from webdriver_manager.chrome import ChromeDriverManager
-import hashlib
-import pdfkit
+
+# Image processing imports
 import platform
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import pytesseract
-import threading
-import uuid
-from flask import Flask, request, jsonify, send_file
+
+# PDF generation
+import pdfkit
+
+# Web server
+from flask import Flask, request, jsonify, send_file, render_template
 from flask_cors import CORS
 import zipfile
-from io import BytesIO
-import shutil
 
-# Load the JSON data
-with open('maharashtra_locations_final.json', 'r', encoding='utf-8') as f:
-    location_data = json.load(f)
-    
-# Create districts list
-districts_data = list(location_data.keys())
 
-# Create tahsil_data dictionary
-tahsil_data = {}
-for district, tahsils_data in location_data.items():
-    tahsil_data[district] = list(tahsils_data.keys())
-
-# Create village_data dictionary
-village_data = {}
-for district, tahsils_data in location_data.items():
-    for tahsil, villages in tahsils_data.items():
-        village_data[tahsil] = villages
-
-# Configure logging
+# Configure logging with a more detailed format and proper encoding
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(levelname)s - %(threadName)s - %(message)s',
     handlers=[
-        logging.FileHandler("igr_automation.log"),
-        logging.StreamHandler()
+        logging.FileHandler("igr_automation.log", encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)  # This will use the system's default encoding
     ]
 )
 logger = logging.getLogger(__name__)
 
+# Load location data with proper error handling
+try:
+    with open('maharashtra_locations_final.json', 'r', encoding='utf-8') as f:
+        location_data = json.load(f)
+        
+    # Create location data structures
+    districts_data = list(location_data.keys())
+    
+    # Create tahsil_data dictionary
+    tahsil_data = {district: list(tahsils_data.keys()) for district, tahsils_data in location_data.items()}
+    
+    # Create village_data dictionary
+    village_data = {}
+    for district, tahsils_data in location_data.items():
+        for tahsil, villages in tahsils_data.items():
+            village_data[tahsil] = villages
+            
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    logger.critical(f"Failed to load location data: {str(e)}")
+    location_data = {}
+    districts_data = []
+    tahsil_data = {}
+    village_data = {}
+
+
 # Configure Tesseract path based on OS
-if platform.system() == 'Windows':
-    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-elif platform.system() == 'Linux':
-    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
-else:  # macOS
-    pytesseract.pytesseract.tesseract_cmd = "/usr/local/bin/tesseract"
+def configure_tesseract():
+    """Configure Tesseract path based on operating system"""
+    if platform.system() == 'Windows':
+        pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    elif platform.system() == 'Linux':
+        pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+    else:  # macOS
+        pytesseract.pytesseract.tesseract_cmd = "/usr/local/bin/tesseract"
+
+configure_tesseract()
+
+
+# WebDriver pool to reuse browser instances
+class WebDriverPool:
+    def __init__(self, max_drivers=3):
+        self.max_drivers = max_drivers
+        self.available_drivers = []
+        self.lock = threading.Lock()
+        
+    def get_driver(self):
+        """Get a WebDriver from the pool or create a new one"""
+        with self.lock:
+            if self.available_drivers:
+                driver = self.available_drivers.pop()
+                logger.debug("Reusing existing WebDriver")
+                return driver
+            
+        # Create a new WebDriver if none available
+        logger.debug("Creating new WebDriver")
+        options = Options()
+        options.add_argument("--disable-popup-blocking")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        
+        # Uncomment for headless mode in production
+        # options.add_argument("--headless")
+        
+        # Add performance optimization
+        options.add_argument("--disable-gpu")
+        options.add_argument("--disable-extensions")
+        options.page_load_strategy = 'eager'
+        
+        try:
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=options)
+            driver.set_page_load_timeout(60)
+            driver.set_script_timeout(30)
+            return driver
+        except Exception as e:
+            logger.error(f"Failed to create WebDriver: {str(e)}")
+            raise
+    
+    def return_driver(self, driver):
+        """Return a WebDriver to the pool or quit it if pool is full"""
+        if driver:
+            try:
+                # Clear cookies and reset state
+                driver.delete_all_cookies()
+                
+                with self.lock:
+                    if len(self.available_drivers) < self.max_drivers:
+                        self.available_drivers.append(driver)
+                        logger.debug("Returned WebDriver to pool")
+                        return
+                    
+                # If pool is full, quit the driver
+                logger.debug("Pool full, quitting WebDriver")
+                driver.quit()
+            except Exception as e:
+                logger.error(f"Error returning driver to pool: {str(e)}")
+                try:
+                    driver.quit()
+                except:
+                    pass
+    
+    def shutdown(self):
+        """Quit all WebDrivers in the pool"""
+        with self.lock:
+            for driver in self.available_drivers:
+                try:
+                    driver.quit()
+                except:
+                    pass
+            self.available_drivers.clear()
+
+
+# Create a global WebDriver pool
+driver_pool = WebDriverPool(max_drivers=3)
+
 
 def solve_captcha_with_multiple_techniques(image_path):
-    """Try multiple techniques to solve CAPTCHA"""
+    """Try multiple techniques to solve CAPTCHA with improved error handling"""
     techniques = [
         {
             "description": "Standard grayscale with contrast",
@@ -82,12 +192,26 @@ def solve_captcha_with_multiple_techniques(image_path):
         {
             "description": "Adaptive thresholding",
             "preprocess": lambda img: ImageOps.autocontrast(img.convert('L'))
+        },
+        {
+            "description": "Bilateral filter simulation",
+            "preprocess": lambda img: ImageEnhance.Contrast(
+                ImageEnhance.Sharpness(img.convert('L')).enhance(2)
+            ).enhance(2.5).point(lambda p: p > 130 and 255)
+        },
+        {
+            "description": "Inverted colors",
+            "preprocess": lambda img: ImageOps.invert(img.convert('L'))
         }
     ]
     
     results = []
     
-    img = Image.open(image_path)
+    try:
+        img = Image.open(image_path)
+    except Exception as e:
+        logger.error(f"Failed to open CAPTCHA image: {str(e)}")
+        return ""
     
     for i, technique in enumerate(techniques):
         try:
@@ -103,6 +227,10 @@ def solve_captcha_with_multiple_techniques(image_path):
                 preprocessed_path,
                 config='--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
             ).strip()
+            
+            # Process the detected text to fix common OCR errors
+            captcha_text = captcha_text.replace('O', '0').replace('I', '1').replace('L', '1')
+            captcha_text = re.sub(r'[^A-Z0-9]', '', captcha_text.upper())
             
             # Check if result looks like a valid CAPTCHA (typically 5-6 alphanumeric characters)
             if re.match(r'^[A-Z0-9]{4,6}$', captcha_text):
@@ -121,128 +249,261 @@ def solve_captcha_with_multiple_techniques(image_path):
         return most_common
     
     # If no valid results, return the best guess from the first technique
-    return pytesseract.image_to_string(
-        f"{image_path}_technique_0.png",
-        config='--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    ).strip()
+    try:
+        return pytesseract.image_to_string(
+            f"{image_path}_technique_0.png",
+            config='--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        ).strip()
+    except Exception as e:
+        logger.error(f"Failed to get fallback CAPTCHA text: {str(e)}")
+        return ""
+
 
 def get_captcha_hash(image_path):
     """Generate a hash of the CAPTCHA image to detect changes."""
-    with open(image_path, "rb") as f:
-        return hashlib.md5(f.read()).hexdigest()
+    try:
+        with open(image_path, "rb") as f:
+            return hashlib.md5(f.read()).hexdigest()
+    except Exception as e:
+        logger.error(f"Failed to hash CAPTCHA image: {str(e)}")
+        return ""
 
+
+@lru_cache(maxsize=1)
 def configure_pdfkit():
-    """Return the proper configuration for pdfkit based on OS."""
-    if platform.system() == 'Windows':
-        return pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
-    elif platform.system() == 'Linux':
-        return pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-    else:  # macOS
-        return pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+    """Return the proper configuration for pdfkit based on OS with caching."""
+    try:
+        if platform.system() == 'Windows':
+            return pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
+        elif platform.system() == 'Linux':
+            return pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+        else:  # macOS
+            return pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+    except Exception as e:
+        logger.error(f"Failed to configure pdfkit: {str(e)}")
+        return None
+
 
 def wait_for_new_tab(driver, original_handles, timeout=10):
-    """Wait for a new tab to open and return its handle."""
+    """Wait for a new tab to open and return its handle with improved error handling."""
     end_time = time.time() + timeout
     while time.time() < end_time:
-        current_handles = driver.window_handles
-        if len(current_handles) > len(original_handles):
-            # Return the new handle
-            new_handles = set(current_handles) - set(original_handles)
-            return list(new_handles)[0]
+        try:
+            current_handles = driver.window_handles
+            if len(current_handles) > len(original_handles):
+                # Return the new handle
+                new_handles = set(current_handles) - set(original_handles)
+                return list(new_handles)[0]
+        except WebDriverException as e:
+            logger.error(f"WebDriver error while waiting for new tab: {str(e)}")
+            time.sleep(0.5)
+            continue
         time.sleep(0.5)
     raise TimeoutException("New tab did not open within the timeout period")
 
-def solve_and_submit_captcha(driver, max_attempts=3):
-    """Solves and submits the CAPTCHA, with multiple retry attempts."""
+
+def solve_and_submit_captcha(driver, property_no, max_attempts=5):
+    """Solves and submits the CAPTCHA with improved error handling and more retries."""
+    
+    # Take a screenshot of initial state
+    os.makedirs("temp_captchas", exist_ok=True)
+    driver.save_screenshot("temp_captchas/initial_state.png")
+    
+    # First check ONLY for document links, ignore RegistrationGrid
+    index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+    if index_buttons:
+        logger.info(f"Found {len(index_buttons)} document links already - no CAPTCHA needed")
+        return True
+        
+    # Check for "No Records Found" message
+    if "No Records Found" in driver.page_source:
+        logger.info("No records found message detected initially")
+        return "NO_RECORDS"
+    
+    # If we get here, we need to solve the CAPTCHA
     for attempt in range(max_attempts):
         try:
-            captcha_element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "imgCaptcha_new"))
-            )
-            
-            # Create a temp directory for CAPTCHA images if it doesn't exist
-            os.makedirs("temp_captchas", exist_ok=True)
-            
-            captcha_image_path = os.path.join("temp_captchas", f"captcha_attempt_{attempt}.png")
-            captcha_element.screenshot(captcha_image_path)
-            
             logger.info(f"CAPTCHA attempt {attempt+1}/{max_attempts}")
             
-            old_captcha_hash = get_captcha_hash(captcha_image_path)
+            # Look for CAPTCHA element
+            captcha_elements = driver.find_elements(By.ID, "imgCaptcha_new")
+            if not captcha_elements:
+                logger.warning("CAPTCHA element not found, checking for results anyway")
+                
+                # Check for document links
+                index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+                if index_buttons:
+                    logger.info(f"Found {len(index_buttons)} document links")
+                    return True
+                    
+                # Check for "No Records Found" message
+                if "No Records Found" in driver.page_source:
+                    logger.info("No records found message detected")
+                    return "NO_RECORDS"
+                
+                logger.warning("No CAPTCHA and no results - waiting a moment")
+                time.sleep(3)
+                continue
+            
+            # Take screenshot of CAPTCHA and get its hash
+            captcha_element = captcha_elements[0]
+            captcha_image_path = os.path.join("temp_captchas", f"captcha_attempt_{attempt}.png")
+            captcha_element.screenshot(captcha_image_path)
+            captcha_hash = get_captcha_hash(captcha_image_path)
+            
+            # Solve CAPTCHA
             captcha_text = solve_captcha_with_multiple_techniques(captcha_image_path)
             
+            if not captcha_text:
+                logger.warning(f"Empty CAPTCHA solution on attempt {attempt+1}")
+                time.sleep(1)
+                continue
+                
             logger.info(f"CAPTCHA solution: '{captcha_text}'")
             
-            # Enter CAPTCHA and submit
-            captcha_input = WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.ID, "txtImg1"))
-            )
-            captcha_input.clear()
-            captcha_input.send_keys(captcha_text)
-            
-            # Take screenshot before clicking search
-            driver.save_screenshot(f"temp_captchas/before_search_{attempt}.png")
-            
-            search_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "//input[@id='btnSearch_RestMaha']"))
-            )
-            driver.execute_script("arguments[0].click();", search_button)
-            
-            logger.info("Search button clicked")
-            
-            # Wait for either results table or error message
+            # Before entering, verify CAPTCHA hasn't changed
             try:
-                WebDriverWait(driver, 15).until(
-                    lambda d: EC.presence_of_element_located((By.CLASS_NAME, "RegistrationGrid"))(d) or 
-                              "Invalid Verification Code" in d.page_source
-                )
+                current_captcha_elements = driver.find_elements(By.ID, "imgCaptcha_new")
+                if current_captcha_elements:
+                    current_captcha = current_captcha_elements[0]
+                    current_path = os.path.join("temp_captchas", f"captcha_current_{attempt}.png")
+                    current_captcha.screenshot(current_path)
+                    current_hash = get_captcha_hash(current_path)
+                    
+                    if current_hash != captcha_hash:
+                        logger.info("CAPTCHA changed before entering solution, retrying...")
+                        continue
+            except Exception as e:
+                logger.warning(f"Error checking if CAPTCHA changed: {str(e)}")
+            
+            # Enter property number and CAPTCHA
+            try:
+                property_input = driver.find_element(By.ID, "txtAttributeValue1")
+                property_input.clear()
+                property_input.send_keys(property_no)
+                logger.info(f"Property number '{property_no}' entered")
                 
-                # Check for invalid CAPTCHA message
-                if "Invalid Verification Code" in driver.page_source:
-                    logger.warning("Invalid CAPTCHA detected, retrying...")
+                captcha_input = driver.find_element(By.ID, "txtImg1")
+                captcha_input.clear()
+                captcha_input.send_keys(captcha_text)
+            except Exception as e:
+                logger.warning(f"Error entering property number or CAPTCHA: {str(e)}")
+                continue
+            
+            # Verify CAPTCHA hasn't changed before clicking search
+            try:
+                current_captcha_elements = driver.find_elements(By.ID, "imgCaptcha_new")
+                if current_captcha_elements:
+                    current_captcha = current_captcha_elements[0]
+                    current_path = os.path.join("temp_captchas", f"captcha_before_click_{attempt}.png")
+                    current_captcha.screenshot(current_path)
+                    current_hash = get_captcha_hash(current_path)
+                    
+                    if current_hash != captcha_hash:
+                        logger.info("CAPTCHA changed after entering solution but before clicking search, retrying...")
+                        continue
+            except Exception as e:
+                logger.warning(f"Error checking if CAPTCHA changed before click: {str(e)}")
+            
+            # Click search button
+            try:
+                search_buttons = driver.find_elements(By.ID, "btnSearch_RestMaha")
+                if not search_buttons:
+                    logger.warning("Search button not found")
                     continue
                 
-                # Check for results table
-                if driver.find_elements(By.CLASS_NAME, "RegistrationGrid"):
-                    logger.info("Search successful! Results table found.")
-                    return True
-                    
-            except TimeoutException:
-                logger.warning("No results or error message found after CAPTCHA submission")
-                
-            # Check if CAPTCHA has changed (indicating incorrect input)
-            try:
-                new_captcha = driver.find_element(By.ID, "imgCaptcha_new")
-                new_captcha.screenshot(captcha_image_path)
-                new_hash = get_captcha_hash(captcha_image_path)
-                
-                if new_hash != old_captcha_hash:
-                    logger.info("CAPTCHA changed (likely incorrect), trying again")
-                    continue
-                    
-            except NoSuchElementException:
-                # If CAPTCHA is gone, maybe we're on results page
-                logger.info("CAPTCHA element no longer found, checking for results")
-                if "RegistrationGrid" in driver.page_source:
-                    return True
+                search_button = search_buttons[0]
+                driver.execute_script("arguments[0].scrollIntoView(true);", search_button)
+                time.sleep(0.5)
+                driver.execute_script("arguments[0].click();", search_button)
+                logger.info("Search button clicked")
+            except Exception as e:
+                logger.warning(f"Error clicking search: {str(e)}")
+                continue
             
-            # Additional wait for slow servers
-            time.sleep(5)
+            # Wait for results or new CAPTCHA
+            logger.info("Waiting for results...")
             
-            # Final check for results
-            if "RegistrationGrid" in driver.page_source:
-                logger.info("Results found after additional wait")
+            # Wait up to 30 seconds
+            start_time = time.time()
+            
+            while time.time() - start_time < 30:
+                # Check for document links
+                index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+                if index_buttons:
+                    logger.info(f"Found {len(index_buttons)} document links after {int(time.time() - start_time)} seconds")
+                    return True
+                
+                # Check for "No Records Found"
+                if "No Records Found" in driver.page_source:
+                    logger.info("No records found message displayed")
+                    return "NO_RECORDS"
+                
+                # Check if CAPTCHA changed (indicating incorrect solution)
+                current_captcha_elements = driver.find_elements(By.ID, "imgCaptcha_new")
+                if current_captcha_elements:
+                    try:
+                        current_captcha = current_captcha_elements[0]
+                        current_path = os.path.join("temp_captchas", f"captcha_during_wait_{attempt}.png")
+                        current_captcha.screenshot(current_path)
+                        current_hash = get_captcha_hash(current_path)
+                        
+                        if current_hash != captcha_hash:
+                            logger.info("CAPTCHA changed during wait (incorrect solution)")
+                            break  # Break out of wait loop, try next CAPTCHA
+                    except:
+                        pass
+                
+                # Take progress screenshots every 5 seconds
+                if int(time.time() - start_time) % 5 == 0:
+                    driver.save_screenshot(f"temp_captchas/waiting_{attempt}_{int(time.time() - start_time)}.png")
+                
+                time.sleep(1)
+            
+            # After waiting, check one more time for results
+            index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+            if index_buttons:
+                logger.info(f"Found {len(index_buttons)} document links after wait")
                 return True
                 
+            # Check for "No Records Found" again
+            if "No Records Found" in driver.page_source:
+                logger.info("No records found message detected after wait")
+                return "NO_RECORDS"
+                
+            logger.info("No results found after this attempt, trying again")
+            
         except Exception as e:
             logger.error(f"Error during CAPTCHA attempt {attempt+1}: {str(e)}")
             driver.save_screenshot(f"temp_captchas/error_captcha_{attempt+1}.png")
             
+            # Even after error, check for results
+            index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+            if index_buttons:
+                logger.info(f"Found {len(index_buttons)} document links despite error")
+                return True
+            
+            time.sleep(2)  # Delay before next attempt
+    
+    # After all attempts, check one more time for results
+    index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+    if index_buttons:
+        logger.info(f"Found {len(index_buttons)} document links after all attempts")
+        return True
+        
+    # Check for "No Records Found" one final time
+    if "No Records Found" in driver.page_source:
+        logger.info("No records found message detected at end")
+        return "NO_RECORDS"
+        
     logger.error("All CAPTCHA attempts failed")
     return False
 
+
 def run_automation(year, district, tahsil, village, property_no, job_id, jobs):
-    """Run the automation to download documents and update job status."""
+    """Run the automation to download documents with improved error handling and recovery."""
+    
+    driver = None
     jobs[job_id]["status"] = "running"
     
     # Create directories
@@ -252,30 +513,26 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs):
     debug_dir = os.path.join(output_dir, "debug")
     os.makedirs(debug_dir, exist_ok=True)
     
-    print(output_dir)
-    
-    driver = None
+    logger.info(f"Starting job {job_id} for property {property_no} in {village}, {tahsil}, {district} ({year})")
     
     try:
-        # Set up WebDriver
-        options = webdriver.ChromeOptions()
-        options.add_argument("--disable-popup-blocking")
-        options.add_argument("--window-size=1920,1080")
+        # Get WebDriver from pool
+        driver = driver_pool.get_driver()
         
-        # When running in production, uncomment these
-        # options.add_argument("--headless")
-        # options.add_argument("--no-sandbox")
-        # options.add_argument("--disable-dev-shm-usage")
-        
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
-        driver.set_page_load_timeout(60)
-        
-        logger.info(f"Starting job {job_id} for property {property_no} in {village}, {tahsil}, {district} ({year})")
-        
-        # Open Website
-        driver.get("https://freesearchigrservice.maharashtra.gov.in/")
-        logger.info("Website opened")
+        # Open Website with retry logic
+        for attempt in range(3):
+            try:
+                driver.get("https://freesearchigrservice.maharashtra.gov.in/")
+                WebDriverWait(driver, 15).until(
+                    EC.presence_of_element_located((By.TAG_NAME, "body"))
+                )
+                logger.info("Website opened successfully")
+                break
+            except (TimeoutException, WebDriverException) as e:
+                if attempt == 2:  # Last attempt
+                    raise
+                logger.warning(f"Failed to load website (attempt {attempt+1}): {str(e)}")
+                time.sleep(2)
         
         # Take screenshot of home page
         driver.save_screenshot(os.path.join(debug_dir, "homepage.png"))
@@ -290,161 +547,199 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs):
         except (TimeoutException, NoSuchElementException):
             logger.info("No pop-up found, proceeding...")
         
-        # Click "Rest of Maharashtra"
-        try:
-            rest_maha_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "//input[@id='btnOtherdistrictSearch']"))
-            )
-            rest_maha_button.click()
-            logger.info("Selected 'Rest of Maharashtra'")
-        except Exception as e:
-            logger.error(f"Failed to click 'Rest of Maharashtra': {e}")
-            driver.save_screenshot(os.path.join(debug_dir, "rest_maha_error.png"))
-            raise
+        # Click "Rest of Maharashtra" with retry logic
+        for attempt in range(3):
+            try:
+                rest_maha_button = WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable((By.XPATH, "//input[@id='btnOtherdistrictSearch']"))
+                )
+                driver.execute_script("arguments[0].scrollIntoView(true);", rest_maha_button)
+                time.sleep(0.5)  # Small delay after scrolling
+                driver.execute_script("arguments[0].click();", rest_maha_button)
+                logger.info("Selected 'Rest of Maharashtra'")
+                
+                # Wait for form to appear
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID, "ddlFromYear1"))
+                )
+                break
+            except Exception as e:
+                if attempt == 2:  # Last attempt
+                    raise
+                logger.warning(f"Failed to click 'Rest of Maharashtra' (attempt {attempt+1}): {str(e)}")
+                time.sleep(2)
         
         # Take screenshot after "Rest of Maharashtra" selection
         driver.save_screenshot(os.path.join(debug_dir, "after_rest_maha.png"))
         
+        # Form filling with more robust logic
+        
         # Select Year
         try:
-            year_dropdown = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "ddlFromYear1"))
+            # Wait for dropdown to be properly loaded
+            WebDriverWait(driver, 10).until(
+                lambda d: len(Select(d.find_element(By.ID, "ddlFromYear1")).options) > 1
             )
-            Select(year_dropdown).select_by_value(year)
+            
+            year_dropdown = driver.find_element(By.ID, "ddlFromYear1")
+            year_select = Select(year_dropdown)
+            year_select.select_by_value(year)
             logger.info(f"Year {year} selected")
+            time.sleep(1)  # Small delay after selection
         except Exception as e:
-            logger.error(f"Failed to select year: {e}")
+            logger.error(f"Failed to select year: {str(e)}")
             driver.save_screenshot(os.path.join(debug_dir, "year_select_error.png"))
             raise
         
         # Select District
         try:
-            district_dropdown = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "ddlDistrict1"))
+            # Wait for dropdown to be properly loaded
+            WebDriverWait(driver, 10).until(
+                lambda d: len(Select(d.find_element(By.ID, "ddlDistrict1")).options) > 1
             )
+            
+            district_dropdown = driver.find_element(By.ID, "ddlDistrict1")
             district_select = Select(district_dropdown)
             district_select.select_by_visible_text(district)
             logger.info(f"District '{district}' selected")
             
-            # Wait for district selection to update
-            time.sleep(2)
+            # Wait for district selection to update with verification
+            WebDriverWait(driver, 10).until(
+                lambda d: len(Select(d.find_element(By.ID, "ddltahsil")).options) > 1
+            )
         except Exception as e:
-            logger.error(f"Failed to select district: {e}")
+            logger.error(f"Failed to select district: {str(e)}")
             driver.save_screenshot(os.path.join(debug_dir, "district_select_error.png"))
             raise
         
         # Select Tahsil
         try:
-            # Wait for Tahsil dropdown to update
-            WebDriverWait(driver, 10).until(
-                lambda d: len(Select(d.find_element(By.ID, "ddltahsil")).options) > 1
-            )
+            # Wait for the next dropdown to become properly populated
+            time.sleep(2)  # Allow time for AJAX updates
             
-            tahsil_dropdown = driver.find_element(By.ID, "ddltahsil")
+            tahsil_dropdown = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.ID, "ddltahsil"))
+            )
             tahsil_select = Select(tahsil_dropdown)
             tahsil_select.select_by_visible_text(tahsil)
             logger.info(f"Tahsil '{tahsil}' selected")
             
-            # Wait for tahsil selection to update
-            time.sleep(2)
+            # Wait for tahsil selection to update with verification
+            WebDriverWait(driver, 10).until(
+                lambda d: len(Select(d.find_element(By.ID, "ddlvillage")).options) > 1
+            )
         except Exception as e:
-            logger.error(f"Failed to select tahsil: {e}")
+            logger.error(f"Failed to select tahsil: {str(e)}")
             driver.save_screenshot(os.path.join(debug_dir, "tahsil_select_error.png"))
             raise
         
         # Select Village
         try:
-            # Wait for Village dropdown to update
-            WebDriverWait(driver, 10).until(
-                lambda d: len(Select(d.find_element(By.ID, "ddlvillage")).options) > 1
-            )
+            # Wait for the next dropdown to become properly populated
+            time.sleep(2)  # Allow time for AJAX updates
             
-            village_dropdown = driver.find_element(By.ID, "ddlvillage")
+            village_dropdown = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.ID, "ddlvillage"))
+            )
             village_select = Select(village_dropdown)
             village_select.select_by_visible_text(village)
             logger.info(f"Village '{village}' selected")
         except Exception as e:
-            logger.error(f"Failed to select village: {e}")
+            logger.error(f"Failed to select village: {str(e)}")
             driver.save_screenshot(os.path.join(debug_dir, "village_select_error.png"))
             raise
         
         # Input Property No.
         try:
-            property_input = driver.find_element(By.ID, "txtAttributeValue1")
+            property_input = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.ID, "txtAttributeValue1"))
+            )
             property_input.send_keys(property_no)
             logger.info(f"Property number '{property_no}' entered")
         except Exception as e:
-            logger.error(f"Failed to enter property number: {e}")
+            logger.error(f"Failed to enter property number: {str(e)}")
             driver.save_screenshot(os.path.join(debug_dir, "property_input_error.png"))
             raise
         
         # Take screenshot of form before submission
         driver.save_screenshot(os.path.join(debug_dir, "form_filled.png"))
         
-        # Solve CAPTCHA
+        # Solve CAPTCHA with improved handling
         logger.info("Attempting to solve CAPTCHA...")
-        if not solve_and_submit_captcha(driver):
+        captcha_result = solve_and_submit_captcha(driver, property_no, max_attempts=5)
+
+        if captcha_result == "NO_RECORDS":
+            jobs[job_id]["status"] = "completed"
+            jobs[job_id]["message"] = "No records found for the given criteria"
+            logger.info("Job completed: No records found")
+            return
+        elif not captcha_result:
             error_msg = "Failed to solve CAPTCHA after multiple attempts"
             logger.error(error_msg)
             jobs[job_id]["status"] = "failed"
             jobs[job_id]["error"] = error_msg
             driver.save_screenshot(os.path.join(debug_dir, "captcha_failed.png"))
             return
-        
-        # Wait for Results Table
-        try:
-            WebDriverWait(driver, 30).until(
-                EC.presence_of_element_located((By.ID, "RegistrationGrid"))
-            )
-            logger.info("Results loaded successfully!")
-            
-            # Take screenshot of results
-            driver.save_screenshot(os.path.join(debug_dir, "results_table.png"))
-        except TimeoutException:
-            error_msg = "No results found or page timed out"
-            logger.error(error_msg)
-            jobs[job_id]["status"] = "failed"
-            jobs[job_id]["error"] = error_msg
-            driver.save_screenshot(os.path.join(debug_dir, "no_results.png"))
-            return
-        
+
+        # CAPTCHA successful - results should be visible now
+        logger.info("CAPTCHA solved successfully, results should be visible")
+        driver.save_screenshot(os.path.join(debug_dir, "after_captcha_success.png"))
+
+        # Wait a moment for any final page updates
+        time.sleep(3)
+
         # Get total number of documents
-        index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
-        total_documents = len(index_buttons)
-        
-        jobs[job_id]["total_documents"] = total_documents
-        logger.info(f"Found {total_documents} documents to download")
-        
-        if total_documents == 0:
-            jobs[job_id]["status"] = "completed"
-            jobs[job_id]["message"] = "No documents found for the given criteria"
+        try:
+            index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+            total_documents = len(index_buttons)
+            
+            jobs[job_id]["total_documents"] = total_documents
+            logger.info(f"Found {total_documents} documents to download")
+            
+            if total_documents == 0:
+                # If we got here with zero documents, check for "No Records Found" message
+                if "No Records Found" in driver.page_source:
+                    jobs[job_id]["status"] = "completed"
+                    jobs[job_id]["message"] = "No records found for the given criteria"
+                else:
+                    jobs[job_id]["status"] = "completed"
+                    jobs[job_id]["message"] = "Search completed but no documents found for download"
+                return
+        except Exception as e:
+            logger.error(f"Error finding document links: {str(e)}")
+            jobs[job_id]["status"] = "failed"
+            jobs[job_id]["error"] = "Failed to find document links"
+            driver.save_screenshot(os.path.join(debug_dir, "no_document_links.png"))
             return
-        
-        # Process documents one by one
+        # Process documents one by one with improved handling
         successfully_downloaded = 0
         
         for i in range(total_documents):
             logger.info(f"Processing document {i+1}/{total_documents}...")
             
             # Re-fetch the elements to avoid stale references
-            index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+            for fetch_attempt in range(3):
+                try:
+                    index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
+                    if index_buttons:
+                        break
+                        
+                    logger.warning(f"Index buttons not found, refreshing page (attempt {fetch_attempt+1})")
+                    driver.refresh()
+                    time.sleep(5)
+                    
+                    # Re-solve CAPTCHA if needed
+                    if "imgCaptcha_new" in driver.page_source:
+                        if not solve_and_submit_captcha(driver):
+                            logger.error("Failed to re-solve CAPTCHA after page refresh")
+                            break
+                except Exception as e:
+                    logger.warning(f"Error refreshing elements (attempt {fetch_attempt+1}): {str(e)}")
+                    time.sleep(2)
             
             if not index_buttons:
-                logger.warning("Index buttons no longer found, refreshing page")
-                driver.refresh()
-                time.sleep(5)
-                
-                # Re-solve CAPTCHA if needed
-                if "imgCaptcha_new" in driver.page_source:
-                    if not solve_and_submit_captcha(driver):
-                        logger.error("Failed to re-solve CAPTCHA after page refresh")
-                        break
-                
-                # Re-find the buttons
-                index_buttons = driver.find_elements(By.XPATH, "//td/input[@value='IndexII']")
-                if not index_buttons:
-                    logger.error("Still no index buttons found after refresh")
-                    break
+                logger.error("Failed to find index buttons after multiple attempts")
+                break
             
             try:
                 # Always click the first button (sequential processing)
@@ -462,32 +757,45 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs):
                 logger.info(f"Clicked on IndexII button for document {i+1}")
                 
                 try:
-                    # Wait for and switch to new tab
-                    new_tab = wait_for_new_tab(driver, original_handles, timeout=15)
+                    # Wait for and switch to new tab with increased timeout
+                    new_tab = wait_for_new_tab(driver, original_handles, timeout=20)
                     driver.switch_to.window(new_tab)
                     logger.info(f"Switched to new tab: {driver.current_url}")
                     
-                    # Wait for content to load
-                    WebDriverWait(driver, 15).until(
-                        EC.presence_of_element_located((By.TAG_NAME, "body"))
-                    )
+                    # Wait for content to load with retry
+                    for content_attempt in range(3):
+                        try:
+                            WebDriverWait(driver, 15).until(
+                                EC.presence_of_element_located((By.TAG_NAME, "body"))
+                            )
+                            break
+                        except TimeoutException:
+                            if content_attempt == 2:  # Last attempt
+                                raise
+                            logger.warning(f"Content load timeout (attempt {content_attempt+1})")
+                            driver.refresh()
+                            time.sleep(3)
                     
                     # Take screenshot of the document
                     document_screenshot = os.path.join(output_dir, f"Document_{i+1}_screenshot.png")
                     driver.save_screenshot(document_screenshot)
                     
-                    # Save as HTML
+                    # Save as HTML with error handling
                     html_filename = os.path.join(output_dir, f"Document_{i+1}.html")
-                    with open(html_filename, "w", encoding="utf-8") as f:
-                        f.write(driver.page_source)
-                    logger.info(f"Saved HTML: {html_filename}")
+                    try:
+                        with open(html_filename, "w", encoding="utf-8") as f:
+                            f.write(driver.page_source)
+                        logger.info(f"Saved HTML: {html_filename}")
+                    except Exception as html_error:
+                        logger.error(f"Failed to save HTML: {str(html_error)}")
                     
-                    # Convert to PDF (optional)
+                    # Convert to PDF with error handling
                     try:
                         pdf_filename = os.path.join(output_dir, f"Document_{i+1}.pdf")
                         pdfkit_config = configure_pdfkit()
-                        pdfkit.from_string(driver.page_source, pdf_filename, configuration=pdfkit_config)
-                        logger.info(f"Saved PDF: {pdf_filename}")
+                        if pdfkit_config:
+                            pdfkit.from_string(driver.page_source, pdf_filename, configuration=pdfkit_config)
+                            logger.info(f"Saved PDF: {pdf_filename}")
                     except Exception as pdf_error:
                         logger.error(f"Failed to create PDF: {pdf_error}")
                     
@@ -784,7 +1092,7 @@ def list_jobs():
 
 @app.route('/', methods=['GET'])
 def home():
-    return """
+    return """HomePage, Go to /ui
     <html>
         <head>
             <title>Maharashtra IGR Document Downloader</title>
@@ -888,366 +1196,7 @@ def start_cleanup_scheduler():
 # HTML frontend code
 @app.route('/ui', methods=['GET'])
 def ui():
-    return """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Maharashtra IGR Document Downloader</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body { padding-top: 20px; }
-            .job-card { margin-bottom: 15px; }
-            .loading { display: none; }
-            .spinner-border { width: 1.5rem; height: 1.5rem; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="mb-4 text-center">Maharashtra IGR Document Downloader</h1>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>New Document Search</h5>
-                        </div>
-                        <div class="card-body">
-                            <form id="searchForm">
-                                <div class="mb-3">
-                                    <label for="year" class="form-label">Year</label>
-                                    <select class="form-select" id="year" required>
-                                        <option value="">Select Year</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="district" class="form-label">District</label>
-                                    <select class="form-select" id="district" required>
-                                        <option value="">Select District</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="tahsil" class="form-label">Tahsil</label>
-                                    <select class="form-select" id="tahsil" required>
-                                        <option value="">Select Tahsil</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="village" class="form-label">Village</label>
-                                    <select class="form-select" id="village" required>
-                                        <option value="">Select Village</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="propertyNo" class="form-label">Property No.</label>
-                                    <input type="text" class="form-control" id="propertyNo" placeholder="Enter property number" required>
-                                </div>
-                                
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="spinner-border spinner-border-sm loading" role="status" aria-hidden="true"></span>
-                                        <span class="btn-text">Download Documents</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5>Recent Jobs</h5>
-                            <button type="button" class="btn btn-sm btn-outline-secondary" id="refreshJobs">
-                                <span class="spinner-border spinner-border-sm loading" role="status" aria-hidden="true"></span>
-                                Refresh
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div id="jobsList">
-                                <div class="text-center py-3">Loading jobs...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Initialize years dropdown
-                const yearSelect = document.getElementById('year');
-                const currentYear = new Date().getFullYear();
-                for (let year = currentYear; year >= 1985; year--) {
-                    const option = document.createElement('option');
-                    option.value = year.toString();
-                    option.textContent = year.toString();
-                    yearSelect.appendChild(option);
-                }
-                
-                // Load districts
-                fetch('/api/get_districts')
-                    .then(response => response.json())
-                    .then(data => {
-                        const districtSelect = document.getElementById('district');
-                        data.districts.forEach(district => {
-                            const option = document.createElement('option');
-                            option.value = district;
-                            option.textContent = district;
-                            districtSelect.appendChild(option);
-                        });
-                    });
-                
-                // District change handler
-                document.getElementById('district').addEventListener('change', function() {
-                    const district = this.value;
-                    if (!district) return;
-                    
-                    // Clear tahsil and village dropdowns
-                    const tahsilSelect = document.getElementById('tahsil');
-                    tahsilSelect.innerHTML = '<option value="">Select Tahsil</option>';
-                    
-                    const villageSelect = document.getElementById('village');
-                    villageSelect.innerHTML = '<option value="">Select Village</option>';
-                    
-                    // Load tahsils for selected district
-                    fetch(`/api/get_tahsils?district=${encodeURIComponent(district)}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            data.tahsils.forEach(tahsil => {
-                                const option = document.createElement('option');
-                                option.value = tahsil;
-                                option.textContent = tahsil;
-                                tahsilSelect.appendChild(option);
-                            });
-                        });
-                });
-                
-                // Tahsil change handler
-                document.getElementById('tahsil').addEventListener('change', function() {
-                    const district = document.getElementById('district').value;
-                    const tahsil = this.value;
-                    if (!district || !tahsil) return;
-                    
-                    // Clear village dropdown
-                    const villageSelect = document.getElementById('village');
-                    villageSelect.innerHTML = '<option value="">Select Village</option>';
-                    
-                    // Load villages for selected tahsil
-                    fetch(`/api/get_villages?district=${encodeURIComponent(district)}&tahsil=${encodeURIComponent(tahsil)}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            data.villages.forEach(village => {
-                                const option = document.createElement('option');
-                                option.value = village;
-                                option.textContent = village;
-                                villageSelect.appendChild(option);
-                            });
-                        });
-                });
-                
-                // Form submission
-                document.getElementById('searchForm').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = {
-                        year: document.getElementById('year').value,
-                        district: document.getElementById('district').value,
-                        tahsil: document.getElementById('tahsil').value,
-                        village: document.getElementById('village').value,
-                        propertyNo: document.getElementById('propertyNo').value
-                    };
-                    
-                    // Show loading indicator
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    const loadingSpinner = submitBtn.querySelector('.loading');
-                    const btnText = submitBtn.querySelector('.btn-text');
-                    
-                    submitBtn.disabled = true;
-                    loadingSpinner.style.display = 'inline-block';
-                    btnText.textContent = 'Starting Job...';
-                    
-                    // Submit job
-                    fetch('/api/download_documents', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            alert('Job started successfully! Job ID: ' + data.job_id);
-                            loadJobs(); // Refresh jobs list
-                        } else {
-                            alert('Error: ' + data.message);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('An unexpected error occurred. Please try again.');
-                    })
-                    .finally(() => {
-                        // Reset button state
-                        submitBtn.disabled = false;
-                        loadingSpinner.style.display = 'none';
-                        btnText.textContent = 'Download Documents';
-                    });
-                });
-                
-                // Load jobs list
-                function loadJobs() {
-                    const jobsList = document.getElementById('jobsList');
-                    const refreshBtn = document.getElementById('refreshJobs');
-                    const loadingSpinner = refreshBtn.querySelector('.loading');
-                    
-                    loadingSpinner.style.display = 'inline-block';
-                    
-                    fetch('/api/list_jobs')
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.count === 0) {
-                                jobsList.innerHTML = '<div class="text-center py-3">No jobs found</div>';
-                                return;
-                            }
-                            
-                            // Clear existing jobs
-                            jobsList.innerHTML = '';
-                            
-                            // Add job cards
-                            data.jobs.forEach(job => {
-                                const details = job.details || {};
-                                const statusBadgeClass = getStatusBadgeClass(job.status);
-                                
-                                const jobCard = document.createElement('div');
-                                jobCard.className = 'card job-card';
-                                
-                                jobCard.innerHTML = `
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <span class="badge ${statusBadgeClass}">${job.status}</span>
-                                        <small>ID: ${job.job_id}</small>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text mb-1">
-                                            <strong>Property:</strong> ${details.propertyNo || 'N/A'} (${details.village || 'N/A'}, ${details.tahsil || 'N/A'})
-                                        </p>
-                                        <p class="card-text mb-1">
-                                            <strong>Year:</strong> ${details.year || 'N/A'}
-                                        </p>
-                                        <p class="card-text mb-2">
-                                            <strong>Progress:</strong> ${job.downloaded_documents || 0}/${job.total_documents || 0} documents
-                                        </p>
-                                        <div class="btn-group btn-group-sm w-100">
-                                            <button type="button" class="btn btn-outline-primary check-status" data-job-id="${job.job_id}">Check Status</button>
-                                            ${job.status === 'completed' ? `<a href="/api/download_results/${job.job_id}" class="btn btn-success">Download</a>` : ''}
-                                            <button type="button" class="btn btn-outline-danger delete-job" data-job-id="${job.job_id}">Delete</button>
-                                        </div>
-                                    </div>
-                                `;
-                                
-                                jobsList.appendChild(jobCard);
-                            });
-                            
-                            // Add event listeners to dynamic buttons
-                            document.querySelectorAll('.check-status').forEach(button => {
-                                button.addEventListener('click', function() {
-                                    const jobId = this.getAttribute('data-job-id');
-                                    checkJobStatus(jobId);
-                                });
-                            });
-                            
-                            document.querySelectorAll('.delete-job').forEach(button => {
-                                button.addEventListener('click', function() {
-                                    const jobId = this.getAttribute('data-job-id');
-                                    deleteJob(jobId);
-                                });
-                            });
-                        })
-                        .catch(error => {
-                            console.error('Error loading jobs:', error);
-                            jobsList.innerHTML = '<div class="alert alert-danger">Failed to load jobs</div>';
-                        })
-                        .finally(() => {
-                            loadingSpinner.style.display = 'none';
-                        });
-                }
-                
-                // Get appropriate badge class based on status
-                function getStatusBadgeClass(status) {
-                    switch (status) {
-                        case 'completed':
-                            return 'bg-success';
-                        case 'running':
-                            return 'bg-primary';
-                        case 'failed':
-                            return 'bg-danger';
-                        case 'starting':
-                            return 'bg-info';
-                        default:
-                            return 'bg-secondary';
-                    }
-                }
-                
-                // Check job status
-                function checkJobStatus(jobId) {
-                    fetch(`/api/job_status/${jobId}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            let message = `Status: ${data.status}\n`;
-                            message += `Documents: ${data.downloaded_documents || 0}/${data.total_documents || 0}\n`;
-                            
-                            if (data.error) {
-                                message += `\nError: ${data.error}`;
-                            }
-                            
-                            alert(message);
-                        })
-                        .catch(error => {
-                            console.error('Error checking status:', error);
-                            alert('Failed to check job status');
-                        });
-                }
-                
-                // Delete job
-                function deleteJob(jobId) {
-                    if (!confirm('Are you sure you want to delete this job and its files?')) {
-                        return;
-                    }
-                    
-                    fetch(`/api/cleanup_job/${jobId}`, {
-                        method: 'DELETE'
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            alert('Job deleted successfully');
-                            loadJobs(); // Refresh jobs list
-                        } else {
-                            alert('Error: ' + data.message);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error deleting job:', error);
-                        alert('Failed to delete job');
-                    });
-                }
-                
-                // Refresh jobs button
-                document.getElementById('refreshJobs').addEventListener('click', loadJobs);
-                
-                // Initial load
-                loadJobs();
-            });
-        </script>
-    </body>
-    </html>
-    """
+    return render_template('ui.html')
 
 if __name__ == '__main__':
     # Start the cleanup scheduler in a separate thread

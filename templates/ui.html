@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maharashtra IGR Document Downloader</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { padding-top: 20px; }
+            .job-card { margin-bottom: 15px; }
+            .loading { display: none; }
+            .spinner-border { width: 1.5rem; height: 1.5rem; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mb-4 text-center">Maharashtra IGR Document Downloader</h1>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>New Document Search</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="searchForm">
+                                <div class="mb-3">
+                                    <label for="year" class="form-label">Year</label>
+                                    <select class="form-select" id="year" required>
+                                        <option value="">Select Year</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="district" class="form-label">District</label>
+                                    <select class="form-select" id="district" required>
+                                        <option value="">Select District</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="tahsil" class="form-label">Tahsil</label>
+                                    <select class="form-select" id="tahsil" required>
+                                        <option value="">Select Tahsil</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="village" class="form-label">Village</label>
+                                    <select class="form-select" id="village" required>
+                                        <option value="">Select Village</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="propertyNo" class="form-label">Property No.</label>
+                                    <input type="text" class="form-control" id="propertyNo" placeholder="Enter property number" required>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="spinner-border spinner-border-sm loading" role="status" aria-hidden="true"></span>
+                                        <span class="btn-text">Download Documents</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5>Recent Jobs</h5>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="refreshJobs">
+                                <span class="spinner-border spinner-border-sm loading" role="status" aria-hidden="true"></span>
+                                Refresh
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div id="jobsList">
+                                <div class="text-center py-3">Loading jobs...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize years dropdown
+                const yearSelect = document.getElementById('year');
+                const currentYear = new Date().getFullYear();
+                for (let year = currentYear; year >= 1985; year--) {
+                    const option = document.createElement('option');
+                    option.value = year.toString();
+                    option.textContent = year.toString();
+                    yearSelect.appendChild(option);
+                }
+                
+                // Load districts
+                fetch('/api/get_districts')
+                    .then(response => response.json())
+                    .then(data => {
+                        const districtSelect = document.getElementById('district');
+                        data.districts.forEach(district => {
+                            const option = document.createElement('option');
+                            option.value = district;
+                            option.textContent = district;
+                            districtSelect.appendChild(option);
+                        });
+                    });
+                
+                // District change handler
+                document.getElementById('district').addEventListener('change', function() {
+                    const district = this.value;
+                    if (!district) return;
+                    
+                    // Clear tahsil and village dropdowns
+                    const tahsilSelect = document.getElementById('tahsil');
+                    tahsilSelect.innerHTML = '<option value="">Select Tahsil</option>';
+                    
+                    const villageSelect = document.getElementById('village');
+                    villageSelect.innerHTML = '<option value="">Select Village</option>';
+                    
+                    // Load tahsils for selected district
+                    fetch(`/api/get_tahsils?district=${encodeURIComponent(district)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            data.tahsils.forEach(tahsil => {
+                                const option = document.createElement('option');
+                                option.value = tahsil;
+                                option.textContent = tahsil;
+                                tahsilSelect.appendChild(option);
+                            });
+                        });
+                });
+                
+                // Tahsil change handler
+                document.getElementById('tahsil').addEventListener('change', function() {
+                    const district = document.getElementById('district').value;
+                    const tahsil = this.value;
+                    if (!district || !tahsil) return;
+                    
+                    // Clear village dropdown
+                    const villageSelect = document.getElementById('village');
+                    villageSelect.innerHTML = '<option value="">Select Village</option>';
+                    
+                    // Load villages for selected tahsil
+                    fetch(`/api/get_villages?district=${encodeURIComponent(district)}&tahsil=${encodeURIComponent(tahsil)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            data.villages.forEach(village => {
+                                const option = document.createElement('option');
+                                option.value = village;
+                                option.textContent = village;
+                                villageSelect.appendChild(option);
+                            });
+                        });
+                });
+                
+                // Form submission
+                document.getElementById('searchForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = {
+                        year: document.getElementById('year').value,
+                        district: document.getElementById('district').value,
+                        tahsil: document.getElementById('tahsil').value,
+                        village: document.getElementById('village').value,
+                        propertyNo: document.getElementById('propertyNo').value
+                    };
+                    
+                    // Show loading indicator
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const loadingSpinner = submitBtn.querySelector('.loading');
+                    const btnText = submitBtn.querySelector('.btn-text');
+                    
+                    submitBtn.disabled = true;
+                    loadingSpinner.style.display = 'inline-block';
+                    btnText.textContent = 'Starting Job...';
+                    
+                    // Submit job
+                    fetch('/api/download_documents', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert('Job started successfully! Job ID: ' + data.job_id);
+                            loadJobs(); // Refresh jobs list
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An unexpected error occurred. Please try again.');
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        loadingSpinner.style.display = 'none';
+                        btnText.textContent = 'Download Documents';
+                    });
+                });
+                
+                // Load jobs list
+                function loadJobs() {
+                    const jobsList = document.getElementById('jobsList');
+                    const refreshBtn = document.getElementById('refreshJobs');
+                    const loadingSpinner = refreshBtn.querySelector('.loading');
+                    
+                    loadingSpinner.style.display = 'inline-block';
+                    
+                    fetch('/api/list_jobs')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.count === 0) {
+                                jobsList.innerHTML = '<div class="text-center py-3">No jobs found</div>';
+                                return;
+                            }
+                            
+                            // Clear existing jobs
+                            jobsList.innerHTML = '';
+                            
+                            // Add job cards
+                            data.jobs.forEach(job => {
+                                const details = job.details || {};
+                                const statusBadgeClass = getStatusBadgeClass(job.status);
+                                
+                                const jobCard = document.createElement('div');
+                                jobCard.className = 'card job-card';
+                                
+                                jobCard.innerHTML = `
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <span class="badge ${statusBadgeClass}">${job.status}</span>
+                                        <small>ID: ${job.job_id}</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text mb-1">
+                                            <strong>Property:</strong> ${details.propertyNo || 'N/A'} (${details.village || 'N/A'}, ${details.tahsil || 'N/A'})
+                                        </p>
+                                        <p class="card-text mb-1">
+                                            <strong>Year:</strong> ${details.year || 'N/A'}
+                                        </p>
+                                        <p class="card-text mb-2">
+                                            <strong>Progress:</strong> ${job.downloaded_documents || 0}/${job.total_documents || 0} documents
+                                        </p>
+                                        <div class="btn-group btn-group-sm w-100">
+                                            <button type="button" class="btn btn-outline-primary check-status" data-job-id="${job.job_id}">Check Status</button>
+                                            ${job.status === 'completed' ? `<a href="/api/download_results/${job.job_id}" class="btn btn-success">Download</a>` : ''}
+                                            <button type="button" class="btn btn-outline-danger delete-job" data-job-id="${job.job_id}">Delete</button>
+                                        </div>
+                                    </div>
+                                `;
+                                
+                                jobsList.appendChild(jobCard);
+                            });
+                            
+                            // Add event listeners to dynamic buttons
+                            document.querySelectorAll('.check-status').forEach(button => {
+                                button.addEventListener('click', function() {
+                                    const jobId = this.getAttribute('data-job-id');
+                                    checkJobStatus(jobId);
+                                });
+                            });
+                            
+                            document.querySelectorAll('.delete-job').forEach(button => {
+                                button.addEventListener('click', function() {
+                                    const jobId = this.getAttribute('data-job-id');
+                                    deleteJob(jobId);
+                                });
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error loading jobs:', error);
+                            jobsList.innerHTML = '<div class="alert alert-danger">Failed to load jobs</div>';
+                        })
+                        .finally(() => {
+                            loadingSpinner.style.display = 'none';
+                        });
+                }
+                
+                // Get appropriate badge class based on status
+                function getStatusBadgeClass(status) {
+                    switch (status) {
+                        case 'completed':
+                            return 'bg-success';
+                        case 'running':
+                            return 'bg-primary';
+                        case 'failed':
+                            return 'bg-danger';
+                        case 'starting':
+                            return 'bg-info';
+                        default:
+                            return 'bg-secondary';
+                    }
+                }
+                
+                // Check job status
+                function checkJobStatus(jobId) {
+                    fetch(`/api/job_status/${jobId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            let message = `Status: ${data.status}\n`;
+                            message += `Documents: ${data.downloaded_documents || 0}/${data.total_documents || 0}\n`;
+                            
+                            if (data.error) {
+                                message += `\nError: ${data.error}`;
+                            }
+                            
+                            alert(message);
+                        })
+                        .catch(error => {
+                            console.error('Error checking status:', error);
+                            alert('Failed to check job status');
+                        });
+                }
+                
+                // Delete job
+                function deleteJob(jobId) {
+                    if (!confirm('Are you sure you want to delete this job and its files?')) {
+                        return;
+                    }
+                    
+                    fetch(`/api/cleanup_job/${jobId}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert('Job deleted successfully');
+                            loadJobs(); // Refresh jobs list
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error deleting job:', error);
+                        alert('Failed to delete job');
+                    });
+                }
+                
+                // Refresh jobs button
+                document.getElementById('refreshJobs').addEventListener('click', loadJobs);
+                
+                // Initial load
+                loadJobs();
+            });
+        </script>
+    </body>
+    </html>
