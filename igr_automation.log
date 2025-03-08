@@ -7634,3 +7634,647 @@ Exit with code 1, due to unknown error.
 2025-03-08 00:05:07,046 - INFO - Thread-7 (run_automation) - Browser closed
 2025-03-08 00:05:41,822 - INFO - Thread-57 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 00:05:41] "GET /api/list_jobs HTTP/1.1" 200 -
 2025-03-08 00:05:44,223 - INFO - Thread-58 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 00:05:44] "GET /api/download_results/job_1741372379_59ca3f4d HTTP/1.1" 200 -
+2025-03-08 14:09:12,354 - INFO - MainThread - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.43.18:5000
+2025-03-08 14:09:12,355 - INFO - MainThread - [33mPress CTRL+C to quit[0m
+2025-03-08 14:09:12,387 - INFO - MainThread -  * Restarting with watchdog (windowsapi)
+2025-03-08 14:09:13,901 - WARNING - MainThread -  * Debugger is active!
+2025-03-08 14:09:13,918 - INFO - MainThread -  * Debugger PIN: 721-981-521
+2025-03-08 14:09:19,280 - INFO - Thread-7 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:19] "GET / HTTP/1.1" 200 -
+2025-03-08 14:09:22,327 - INFO - Thread-8 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-08 14:09:27,666 - INFO - Thread-9 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:27] "GET / HTTP/1.1" 200 -
+2025-03-08 14:09:33,043 - INFO - Thread-11 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:33] "GET /ui HTTP/1.1" 200 -
+2025-03-08 14:09:34,374 - INFO - Thread-12 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:34] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-08 14:09:34,378 - INFO - Thread-13 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:34] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 14:09:40,416 - INFO - Thread-14 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:40] "GET /api/get_tahsils?district=पुणे HTTP/1.1" 200 -
+2025-03-08 14:09:44,204 - INFO - Thread-15 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:44] "GET /api/get_villages?district=पुणे&tahsil=मुळ्शी HTTP/1.1" 200 -
+2025-03-08 14:09:51,147 - INFO - Thread-16 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:51] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-08 14:09:51,156 - INFO - Thread-17 (run_automation) - Starting job job_1741423191_8be9f78e for property 137 in हिंजवडी, मुळ्शी, पुणे (2024)
+2025-03-08 14:09:51,161 - INFO - Thread-17 (run_automation) - ====== WebDriver manager ======
+2025-03-08 14:09:53,323 - INFO - Thread-18 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:09:53] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 14:09:53,674 - INFO - Thread-17 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 14:09:55,619 - INFO - Thread-17 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 14:09:57,202 - INFO - Thread-17 (run_automation) - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-08 14:10:01,822 - INFO - Thread-17 (run_automation) - Website opened successfully
+2025-03-08 14:10:02,579 - INFO - Thread-17 (run_automation) - Pop-up closed
+2025-03-08 14:10:03,171 - INFO - Thread-17 (run_automation) - Selected 'Rest of Maharashtra'
+2025-03-08 14:10:04,079 - INFO - Thread-17 (run_automation) - Year 2024 selected
+2025-03-08 14:10:05,239 - INFO - Thread-17 (run_automation) - District 'पुणे' selected
+2025-03-08 14:10:07,991 - INFO - Thread-17 (run_automation) - Tahsil 'मुळ्शी' selected
+2025-03-08 14:10:10,772 - INFO - Thread-17 (run_automation) - Village 'हिंजवडी' selected
+2025-03-08 14:10:10,946 - INFO - Thread-17 (run_automation) - Property number '137' entered
+2025-03-08 14:10:11,152 - INFO - Thread-17 (run_automation) - Attempting to solve CAPTCHA...
+2025-03-08 14:10:11,394 - INFO - Thread-17 (run_automation) - CAPTCHA attempt 1/5
+2025-03-08 14:10:13,996 - INFO - Thread-17 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:14,379 - INFO - Thread-17 (run_automation) - Technique 1: 'High contrast grayscale' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:14,697 - INFO - Thread-17 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:14,923 - INFO - Thread-17 (run_automation) - Technique 3: 'Sharpening filter' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:15,281 - INFO - Thread-17 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:15,648 - INFO - Thread-17 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:15,881 - INFO - Thread-17 (run_automation) - Technique 6: 'Inverted colors' - Result: 'C83C4D' (VALID FORMAT)
+2025-03-08 14:10:15,882 - INFO - Thread-17 (run_automation) - CAPTCHA solution: 'C83C4D'
+2025-03-08 14:10:16,152 - INFO - Thread-17 (run_automation) - Property number '137' entered
+2025-03-08 14:10:16,980 - INFO - Thread-17 (run_automation) - Search button clicked
+2025-03-08 14:10:16,981 - INFO - Thread-17 (run_automation) - Waiting for results...
+2025-03-08 14:10:18,494 - INFO - Thread-17 (run_automation) - CAPTCHA changed during wait (incorrect solution)
+2025-03-08 14:10:18,548 - INFO - Thread-17 (run_automation) - No results found after this attempt, trying again
+2025-03-08 14:10:18,549 - INFO - Thread-17 (run_automation) - CAPTCHA attempt 2/5
+2025-03-08 14:10:18,886 - INFO - Thread-17 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: '4D2763' (VALID FORMAT)
+2025-03-08 14:10:19,193 - INFO - Thread-17 (run_automation) - Technique 1: 'High contrast grayscale' - Result: '402763' (VALID FORMAT)
+2025-03-08 14:10:19,508 - INFO - Thread-17 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: '402763' (VALID FORMAT)
+2025-03-08 14:10:19,899 - INFO - Thread-17 (run_automation) - Technique 3: 'Sharpening filter' - Result: '4D2763' (VALID FORMAT)
+2025-03-08 14:10:20,190 - INFO - Thread-17 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: '4D2763' (VALID FORMAT)
+2025-03-08 14:10:20,403 - INFO - Thread-17 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: 'A4D2763' (INVALID FORMAT)
+2025-03-08 14:10:20,650 - INFO - Thread-17 (run_automation) - Technique 6: 'Inverted colors' - Result: '402763' (VALID FORMAT)
+2025-03-08 14:10:20,651 - INFO - Thread-17 (run_automation) - CAPTCHA solution: '4D2763'
+2025-03-08 14:10:20,916 - INFO - Thread-17 (run_automation) - Property number '137' entered
+2025-03-08 14:10:21,784 - INFO - Thread-17 (run_automation) - Search button clicked
+2025-03-08 14:10:21,785 - INFO - Thread-17 (run_automation) - Waiting for results...
+2025-03-08 14:10:33,661 - INFO - Thread-17 (run_automation) - Found 10 document links after 11 seconds
+2025-03-08 14:10:33,662 - INFO - Thread-17 (run_automation) - CAPTCHA solved successfully, results should be visible
+2025-03-08 14:10:36,839 - INFO - Thread-17 (run_automation) - Found 10 documents to download
+2025-03-08 14:10:36,840 - INFO - Thread-17 (run_automation) - Processing document 1/10...
+2025-03-08 14:10:37,893 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 1
+2025-03-08 14:10:39,530 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:10:39,690 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_1.html
+2025-03-08 14:10:40,959 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:10:47,002 - INFO - Thread-17 (run_automation) - Processing document 2/10...
+2025-03-08 14:10:48,064 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 2
+2025-03-08 14:10:49,013 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:10:49,169 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_2.html
+2025-03-08 14:10:49,769 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:10:55,811 - INFO - Thread-17 (run_automation) - Processing document 3/10...
+2025-03-08 14:10:56,882 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 3
+2025-03-08 14:10:58,325 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:10:58,653 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_3.html
+2025-03-08 14:10:59,332 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:05,527 - INFO - Thread-17 (run_automation) - Processing document 4/10...
+2025-03-08 14:11:06,582 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 4
+2025-03-08 14:11:07,802 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:08,165 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_4.html
+2025-03-08 14:11:08,761 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:14,820 - INFO - Thread-17 (run_automation) - Processing document 5/10...
+2025-03-08 14:11:15,887 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 5
+2025-03-08 14:11:16,754 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:17,210 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_5.html
+2025-03-08 14:11:17,785 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:23,837 - INFO - Thread-17 (run_automation) - Processing document 6/10...
+2025-03-08 14:11:24,906 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 6
+2025-03-08 14:11:26,578 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:26,748 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_6.html
+2025-03-08 14:11:27,443 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:33,552 - INFO - Thread-17 (run_automation) - Processing document 7/10...
+2025-03-08 14:11:34,636 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 7
+2025-03-08 14:11:36,027 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:36,613 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_7.html
+2025-03-08 14:11:37,210 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:43,286 - INFO - Thread-17 (run_automation) - Processing document 8/10...
+2025-03-08 14:11:44,357 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 8
+2025-03-08 14:11:46,869 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:47,470 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_8.html
+2025-03-08 14:11:48,196 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:11:54,276 - INFO - Thread-17 (run_automation) - Processing document 9/10...
+2025-03-08 14:11:55,342 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 9
+2025-03-08 14:11:56,360 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:11:57,093 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_9.html
+2025-03-08 14:11:57,741 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:12:03,818 - INFO - Thread-17 (run_automation) - Processing document 10/10...
+2025-03-08 14:12:04,887 - INFO - Thread-17 (run_automation) - Clicked on IndexII button for document 10
+2025-03-08 14:12:06,234 - INFO - Thread-17 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 14:12:06,631 - INFO - Thread-17 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741423191_8be9f78e\Document_10.html
+2025-03-08 14:12:07,334 - ERROR - Thread-17 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 14:12:13,402 - INFO - Thread-17 (run_automation) - Job completed successfully. Downloaded 10/10 documents.
+2025-03-08 14:12:16,030 - INFO - Thread-17 (run_automation) - Browser closed
+2025-03-08 14:15:32,926 - INFO - Thread-67 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:15:32] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 14:15:36,462 - INFO - Thread-68 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:15:36] "GET /api/download_results/job_1741423191_8be9f78e HTTP/1.1" 200 -
+2025-03-08 14:51:09,570 - INFO - MainThread - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.200:5000
+2025-03-08 14:51:09,570 - INFO - MainThread - [33mPress CTRL+C to quit[0m
+2025-03-08 14:51:09,589 - INFO - MainThread -  * Restarting with watchdog (windowsapi)
+2025-03-08 14:51:10,797 - WARNING - MainThread -  * Debugger is active!
+2025-03-08 14:51:10,806 - INFO - MainThread -  * Debugger PIN: 721-981-521
+2025-03-08 14:51:14,507 - INFO - Thread-6 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:51:14] "GET / HTTP/1.1" 200 -
+2025-03-08 14:51:30,618 - INFO - Thread-8 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:51:30] "GET /ui HTTP/1.1" 200 -
+2025-03-08 14:51:31,386 - INFO - Thread-9 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:51:31] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-08 14:51:31,387 - INFO - Thread-10 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 14:51:31] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 17:57:26,727 - INFO - MainThread - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.200:5000
+2025-03-08 17:57:26,727 - INFO - MainThread - [33mPress CTRL+C to quit[0m
+2025-03-08 17:57:26,747 - INFO - MainThread -  * Restarting with watchdog (windowsapi)
+2025-03-08 17:57:27,832 - WARNING - MainThread -  * Debugger is active!
+2025-03-08 17:57:27,839 - INFO - MainThread -  * Debugger PIN: 721-981-521
+2025-03-08 17:57:28,958 - INFO - Thread-6 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 17:57:28] "GET / HTTP/1.1" 200 -
+2025-03-08 17:57:30,862 - INFO - Thread-7 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 17:57:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-08 17:57:33,145 - INFO - Thread-8 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 17:57:33] "GET /ui HTTP/1.1" 200 -
+2025-03-08 17:57:33,923 - INFO - Thread-9 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 17:57:33] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 17:57:33,928 - INFO - Thread-10 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 17:57:33] "GET /api/get_districts HTTP/1.1" 200 -
+2025-03-08 18:09:06,774 - INFO - Thread-11 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:06] "GET /api/get_tahsils?district=पुणे HTTP/1.1" 200 -
+2025-03-08 18:09:09,440 - INFO - Thread-12 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:09] "GET /api/get_villages?district=पुणे&tahsil=मुळ्शी HTTP/1.1" 200 -
+2025-03-08 18:09:26,401 - INFO - Thread-13 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:26] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-08 18:09:26,407 - INFO - Thread-14 (run_automation) - Starting job job_1741437566_d071a80b for property 124 in हिंजवडी, मुळ्शी, पुणे (2024)
+2025-03-08 18:09:26,421 - INFO - Thread-14 (run_automation) - ====== WebDriver manager ======
+2025-03-08 18:09:28,116 - INFO - Thread-14 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:09:28,758 - INFO - Thread-15 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:28] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 18:09:29,343 - INFO - Thread-14 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:09:30,412 - INFO - Thread-14 (run_automation) - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-08 18:09:36,971 - INFO - Thread-14 (run_automation) - Website opened successfully
+2025-03-08 18:09:37,402 - INFO - Thread-14 (run_automation) - Pop-up closed
+2025-03-08 18:09:37,969 - INFO - Thread-14 (run_automation) - Selected 'Rest of Maharashtra'
+2025-03-08 18:09:40,277 - INFO - Thread-14 (run_automation) - Year 2024 selected
+2025-03-08 18:09:41,153 - INFO - Thread-16 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:41] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-08 18:09:41,155 - INFO - Thread-17 (run_automation) - Starting job job_1741437581_1163817a for property 137 in हिंजवडी, मुळ्शी, पुणे (2024)
+2025-03-08 18:09:41,157 - INFO - Thread-17 (run_automation) - ====== WebDriver manager ======
+2025-03-08 18:09:41,449 - INFO - Thread-14 (run_automation) - District 'पुणे' selected
+2025-03-08 18:09:42,742 - INFO - Thread-18 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:09:42] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 18:09:42,894 - INFO - Thread-17 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:09:43,842 - INFO - Thread-17 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:09:44,688 - INFO - Thread-14 (run_automation) - Tahsil 'मुळ्शी' selected
+2025-03-08 18:09:45,310 - INFO - Thread-17 (run_automation) - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-08 18:09:48,611 - INFO - Thread-14 (run_automation) - Village 'हिंजवडी' selected
+2025-03-08 18:09:48,699 - INFO - Thread-14 (run_automation) - Property number '124' entered
+2025-03-08 18:09:48,892 - INFO - Thread-14 (run_automation) - Attempting to solve CAPTCHA...
+2025-03-08 18:09:49,102 - INFO - Thread-14 (run_automation) - CAPTCHA attempt 1/5
+2025-03-08 18:09:51,010 - INFO - Thread-14 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: 'B0AB3A' (VALID FORMAT)
+2025-03-08 18:09:51,230 - INFO - Thread-14 (run_automation) - Technique 1: 'High contrast grayscale' - Result: 'BABA' (VALID FORMAT)
+2025-03-08 18:09:51,452 - INFO - Thread-14 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: 'BABA' (VALID FORMAT)
+2025-03-08 18:09:51,652 - INFO - Thread-14 (run_automation) - Technique 3: 'Sharpening filter' - Result: 'B0A83A' (VALID FORMAT)
+2025-03-08 18:09:51,846 - INFO - Thread-14 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: 'B0A83A' (VALID FORMAT)
+2025-03-08 18:09:52,044 - INFO - Thread-14 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: 'B0A83A' (VALID FORMAT)
+2025-03-08 18:09:52,250 - INFO - Thread-14 (run_automation) - Technique 6: 'Inverted colors' - Result: 'B0A83A' (VALID FORMAT)
+2025-03-08 18:09:52,251 - INFO - Thread-14 (run_automation) - CAPTCHA solution: 'B0A83A'
+2025-03-08 18:09:52,336 - INFO - Thread-17 (run_automation) - Website opened successfully
+2025-03-08 18:09:52,372 - INFO - Thread-14 (run_automation) - CAPTCHA changed before entering solution, retrying...
+2025-03-08 18:09:52,373 - INFO - Thread-14 (run_automation) - CAPTCHA attempt 2/5
+2025-03-08 18:09:52,808 - INFO - Thread-17 (run_automation) - Pop-up closed
+2025-03-08 18:09:52,838 - INFO - Thread-14 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: '320915' (VALID FORMAT)
+2025-03-08 18:09:53,157 - INFO - Thread-14 (run_automation) - Technique 1: 'High contrast grayscale' - Result: '320915' (VALID FORMAT)
+2025-03-08 18:09:53,389 - INFO - Thread-17 (run_automation) - Selected 'Rest of Maharashtra'
+2025-03-08 18:09:53,487 - INFO - Thread-14 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: '320915' (VALID FORMAT)
+2025-03-08 18:09:53,737 - INFO - Thread-14 (run_automation) - Technique 3: 'Sharpening filter' - Result: '320915' (VALID FORMAT)
+2025-03-08 18:09:54,064 - INFO - Thread-14 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: '32C915' (VALID FORMAT)
+2025-03-08 18:09:54,272 - INFO - Thread-17 (run_automation) - Year 2024 selected
+2025-03-08 18:09:54,315 - INFO - Thread-14 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: '320915' (VALID FORMAT)
+2025-03-08 18:09:54,540 - INFO - Thread-14 (run_automation) - Technique 6: 'Inverted colors' - Result: '32C915' (VALID FORMAT)
+2025-03-08 18:09:54,540 - INFO - Thread-14 (run_automation) - CAPTCHA solution: '320915'
+2025-03-08 18:09:54,732 - INFO - Thread-14 (run_automation) - Property number '124' entered
+2025-03-08 18:09:55,414 - INFO - Thread-17 (run_automation) - District 'पुणे' selected
+2025-03-08 18:09:55,517 - INFO - Thread-14 (run_automation) - Search button clicked
+2025-03-08 18:09:55,519 - INFO - Thread-14 (run_automation) - Waiting for results...
+2025-03-08 18:09:58,085 - INFO - Thread-17 (run_automation) - Tahsil 'मुळ्शी' selected
+2025-03-08 18:09:59,075 - INFO - Thread-14 (run_automation) - CAPTCHA changed during wait (incorrect solution)
+2025-03-08 18:09:59,102 - INFO - Thread-14 (run_automation) - No results found after this attempt, trying again
+2025-03-08 18:09:59,103 - INFO - Thread-14 (run_automation) - CAPTCHA attempt 3/5
+2025-03-08 18:09:59,264 - ERROR - Thread-17 (run_automation) - Failed to select tahsil: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.143); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x01056F01]
+	(No symbol) [0x0105900A]
+	(No symbol) [0x01059087]
+	(No symbol) [0x01097C61]
+	(No symbol) [0x0109872B]
+	(No symbol) [0x0108DE31]
+	(No symbol) [0x010BD014]
+	(No symbol) [0x0108D9A4]
+	(No symbol) [0x010BD244]
+	(No symbol) [0x010DE778]
+	(No symbol) [0x010BCDC6]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+
+2025-03-08 18:09:59,430 - ERROR - Thread-17 (run_automation) - Automation error: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.143); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x01056F01]
+	(No symbol) [0x0105900A]
+	(No symbol) [0x01059087]
+	(No symbol) [0x01097C61]
+	(No symbol) [0x0109872B]
+	(No symbol) [0x0108DE31]
+	(No symbol) [0x010BD014]
+	(No symbol) [0x0108D9A4]
+	(No symbol) [0x010BD244]
+	(No symbol) [0x010DE778]
+	(No symbol) [0x010BCDC6]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 628, in run_automation
+    WebDriverWait(driver, 10).until(
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 629, in <lambda>
+    lambda d: len(Select(d.find_element(By.ID, "ddlvillage")).options) > 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\support\select.py", line 47, in options
+    return self._el.find_elements(By.TAG_NAME, "option")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 421, in find_elements
+    return self._execute(Command.FIND_CHILD_ELEMENTS, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.143); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x01056F01]
+	(No symbol) [0x0105900A]
+	(No symbol) [0x01059087]
+	(No symbol) [0x01097C61]
+	(No symbol) [0x0109872B]
+	(No symbol) [0x0108DE31]
+	(No symbol) [0x010BD014]
+	(No symbol) [0x0108D9A4]
+	(No symbol) [0x010BD244]
+	(No symbol) [0x010DE778]
+	(No symbol) [0x010BCDC6]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+
+2025-03-08 18:09:59,520 - INFO - Thread-14 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: '75188A' (VALID FORMAT)
+2025-03-08 18:09:59,984 - INFO - Thread-14 (run_automation) - Technique 1: 'High contrast grayscale' - Result: '75188A' (VALID FORMAT)
+2025-03-08 18:10:00,218 - INFO - Thread-14 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: 'TS18BA' (VALID FORMAT)
+2025-03-08 18:10:00,462 - INFO - Thread-14 (run_automation) - Technique 3: 'Sharpening filter' - Result: '751884' (VALID FORMAT)
+2025-03-08 18:10:00,662 - INFO - Thread-14 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: '7T5188A' (INVALID FORMAT)
+2025-03-08 18:10:00,836 - INFO - Thread-14 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: '75188A' (VALID FORMAT)
+2025-03-08 18:10:01,021 - INFO - Thread-14 (run_automation) - Technique 6: 'Inverted colors' - Result: 'T5188A' (VALID FORMAT)
+2025-03-08 18:10:01,021 - INFO - Thread-14 (run_automation) - CAPTCHA solution: '75188A'
+2025-03-08 18:10:01,198 - INFO - Thread-14 (run_automation) - Property number '124' entered
+2025-03-08 18:10:01,948 - INFO - Thread-14 (run_automation) - Search button clicked
+2025-03-08 18:10:01,949 - INFO - Thread-14 (run_automation) - Waiting for results...
+2025-03-08 18:10:02,012 - INFO - Thread-17 (run_automation) - Browser closed
+2025-03-08 18:10:16,425 - INFO - Thread-14 (run_automation) - Found 10 document links after 14 seconds
+2025-03-08 18:10:16,426 - INFO - Thread-14 (run_automation) - CAPTCHA solved successfully, results should be visible
+2025-03-08 18:10:19,593 - INFO - Thread-14 (run_automation) - Found 10 documents to download
+2025-03-08 18:10:19,594 - INFO - Thread-14 (run_automation) - Processing document 1/10...
+2025-03-08 18:10:20,620 - INFO - Thread-14 (run_automation) - Clicked on IndexII button for document 1
+2025-03-08 18:10:23,068 - INFO - Thread-14 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:10:23,215 - INFO - Thread-14 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__124_job_1741437566_d071a80b\Document_1.html
+2025-03-08 18:10:24,250 - ERROR - Thread-14 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:10:30,331 - INFO - Thread-14 (run_automation) - Processing document 2/10...
+2025-03-08 18:10:31,363 - INFO - Thread-14 (run_automation) - Clicked on IndexII button for document 2
+2025-03-08 18:10:35,850 - INFO - Thread-14 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:10:36,013 - INFO - Thread-14 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__124_job_1741437566_d071a80b\Document_2.html
+2025-03-08 18:10:36,565 - ERROR - Thread-14 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:10:42,651 - INFO - Thread-14 (run_automation) - Processing document 3/10...
+2025-03-08 18:10:43,683 - INFO - Thread-14 (run_automation) - Clicked on IndexII button for document 3
+2025-03-08 18:10:46,807 - INFO - Thread-14 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:10:46,965 - INFO - Thread-14 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__124_job_1741437566_d071a80b\Document_3.html
+2025-03-08 18:10:47,530 - ERROR - Thread-14 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:10:53,594 - INFO - Thread-14 (run_automation) - Processing document 4/10...
+2025-03-08 18:10:54,620 - INFO - Thread-14 (run_automation) - Clicked on IndexII button for document 4
+2025-03-08 18:10:58,309 - INFO - Thread-14 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:10:58,505 - INFO - Thread-14 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__124_job_1741437566_d071a80b\Document_4.html
+2025-03-08 18:10:59,080 - ERROR - Thread-14 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:10:59,120 - ERROR - Thread-14 (run_automation) - Error processing document 4: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x0102F74E]
+	(No symbol) [0x010C3C8E]
+	(No symbol) [0x010CB8CA]
+	(No symbol) [0x010BCF93]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+
+2025-03-08 18:10:59,124 - ERROR - Thread-14 (run_automation) - Automation error: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x0102F74E]
+	(No symbol) [0x010C3C8E]
+	(No symbol) [0x010DE059]
+	(No symbol) [0x010BCDC6]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 807, in run_automation
+    driver.close()
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 495, in close
+    self.execute(Command.CLOSE)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x0102F74E]
+	(No symbol) [0x010C3C8E]
+	(No symbol) [0x010CB8CA]
+	(No symbol) [0x010BCF93]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\igr-document-downloader\selenium_automation.py", line 823, in run_automation
+    driver.save_screenshot(os.path.join(debug_dir, f"doc_error_{i+1}.png"))
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 843, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 819, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 853, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 864, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 384, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\karti\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+	GetHandleVerifier [0x011E0B43+25139]
+	(No symbol) [0x011713F4]
+	(No symbol) [0x010504E3]
+	(No symbol) [0x0102F74E]
+	(No symbol) [0x010C3C8E]
+	(No symbol) [0x010DE059]
+	(No symbol) [0x010BCDC6]
+	(No symbol) [0x0108BDE9]
+	(No symbol) [0x0108D124]
+	GetHandleVerifier [0x014E4373+3185251]
+	GetHandleVerifier [0x0150291A+3309578]
+	GetHandleVerifier [0x014FCF42+3286578]
+	GetHandleVerifier [0x01277AE0+643536]
+	(No symbol) [0x0117A20D]
+	(No symbol) [0x011770B8]
+	(No symbol) [0x01177257]
+	(No symbol) [0x01169E00]
+	BaseThreadInitThunk [0x768C5D49+25]
+	RtlInitializeExceptionChain [0x77C0CE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x77C0CDC1+561]
+
+2025-03-08 18:11:00,995 - INFO - Thread-69 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:11:00] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 18:11:01,351 - INFO - Thread-14 (run_automation) - Browser closed
+2025-03-08 18:11:03,057 - INFO - Thread-70 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:11:03] "POST /api/download_documents HTTP/1.1" 200 -
+2025-03-08 18:11:03,059 - INFO - Thread-71 (run_automation) - Starting job job_1741437663_34f716cf for property 137 in हिंजवडी, मुळ्शी, पुणे (2024)
+2025-03-08 18:11:03,059 - INFO - Thread-71 (run_automation) - ====== WebDriver manager ======
+2025-03-08 18:11:04,666 - INFO - Thread-71 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:11:05,144 - INFO - Thread-72 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:11:05] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 18:11:05,912 - INFO - Thread-71 (run_automation) - Get LATEST chromedriver version for google-chrome
+2025-03-08 18:11:15,225 - INFO - Thread-71 (run_automation) - Driver [C:\Users\karti\.wdm\drivers\chromedriver\win64\133.0.6943.141\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-08 18:11:21,061 - INFO - Thread-71 (run_automation) - Website opened successfully
+2025-03-08 18:11:21,633 - INFO - Thread-71 (run_automation) - Pop-up closed
+2025-03-08 18:11:22,215 - INFO - Thread-71 (run_automation) - Selected 'Rest of Maharashtra'
+2025-03-08 18:11:23,012 - INFO - Thread-71 (run_automation) - Year 2024 selected
+2025-03-08 18:11:24,117 - INFO - Thread-71 (run_automation) - District 'पुणे' selected
+2025-03-08 18:11:26,758 - INFO - Thread-71 (run_automation) - Tahsil 'मुळ्शी' selected
+2025-03-08 18:11:29,445 - INFO - Thread-71 (run_automation) - Village 'हिंजवडी' selected
+2025-03-08 18:11:29,567 - INFO - Thread-71 (run_automation) - Property number '137' entered
+2025-03-08 18:11:29,745 - INFO - Thread-71 (run_automation) - Attempting to solve CAPTCHA...
+2025-03-08 18:11:29,903 - INFO - Thread-71 (run_automation) - CAPTCHA attempt 1/5
+2025-03-08 18:11:30,204 - INFO - Thread-71 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: 'AD46BD' (VALID FORMAT)
+2025-03-08 18:11:30,462 - INFO - Thread-71 (run_automation) - Technique 1: 'High contrast grayscale' - Result: '4D46BD' (VALID FORMAT)
+2025-03-08 18:11:30,675 - INFO - Thread-71 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: '4D46BD' (VALID FORMAT)
+2025-03-08 18:11:30,864 - INFO - Thread-71 (run_automation) - Technique 3: 'Sharpening filter' - Result: 'ADA6BD' (VALID FORMAT)
+2025-03-08 18:11:31,070 - INFO - Thread-71 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: '4D46BD' (VALID FORMAT)
+2025-03-08 18:11:31,265 - INFO - Thread-71 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: 'AD46BD' (VALID FORMAT)
+2025-03-08 18:11:31,471 - INFO - Thread-71 (run_automation) - Technique 6: 'Inverted colors' - Result: '4D46BD' (VALID FORMAT)
+2025-03-08 18:11:31,471 - INFO - Thread-71 (run_automation) - CAPTCHA solution: '4D46BD'
+2025-03-08 18:11:31,597 - INFO - Thread-71 (run_automation) - CAPTCHA changed before entering solution, retrying...
+2025-03-08 18:11:31,599 - INFO - Thread-71 (run_automation) - CAPTCHA attempt 2/5
+2025-03-08 18:11:31,937 - INFO - Thread-71 (run_automation) - Technique 0: 'Standard grayscale with contrast' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:32,118 - INFO - Thread-71 (run_automation) - Technique 1: 'High contrast grayscale' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:32,305 - INFO - Thread-71 (run_automation) - Technique 2: 'Noise reduction with median filter' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:32,483 - INFO - Thread-71 (run_automation) - Technique 3: 'Sharpening filter' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:32,680 - INFO - Thread-71 (run_automation) - Technique 4: 'Adaptive thresholding' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:32,879 - INFO - Thread-71 (run_automation) - Technique 5: 'Bilateral filter simulation' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:33,064 - INFO - Thread-71 (run_automation) - Technique 6: 'Inverted colors' - Result: 'C99153' (VALID FORMAT)
+2025-03-08 18:11:33,064 - INFO - Thread-71 (run_automation) - CAPTCHA solution: 'C99153'
+2025-03-08 18:11:33,241 - INFO - Thread-71 (run_automation) - Property number '137' entered
+2025-03-08 18:11:33,992 - INFO - Thread-71 (run_automation) - Search button clicked
+2025-03-08 18:11:33,993 - INFO - Thread-71 (run_automation) - Waiting for results...
+2025-03-08 18:11:47,392 - INFO - Thread-71 (run_automation) - Found 10 document links after 13 seconds
+2025-03-08 18:11:47,393 - INFO - Thread-71 (run_automation) - CAPTCHA solved successfully, results should be visible
+2025-03-08 18:11:50,558 - INFO - Thread-71 (run_automation) - Found 10 documents to download
+2025-03-08 18:11:50,559 - INFO - Thread-71 (run_automation) - Processing document 1/10...
+2025-03-08 18:11:51,587 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 1
+2025-03-08 18:11:53,390 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:11:53,557 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_1.html
+2025-03-08 18:11:54,139 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:00,201 - INFO - Thread-71 (run_automation) - Processing document 2/10...
+2025-03-08 18:12:01,228 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 2
+2025-03-08 18:12:03,459 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:03,722 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_2.html
+2025-03-08 18:12:04,338 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:10,414 - INFO - Thread-71 (run_automation) - Processing document 3/10...
+2025-03-08 18:12:11,441 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 3
+2025-03-08 18:12:13,215 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:13,381 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_3.html
+2025-03-08 18:12:13,905 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:19,975 - INFO - Thread-71 (run_automation) - Processing document 4/10...
+2025-03-08 18:12:21,005 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 4
+2025-03-08 18:12:24,619 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:24,784 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_4.html
+2025-03-08 18:12:25,325 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:31,395 - INFO - Thread-71 (run_automation) - Processing document 5/10...
+2025-03-08 18:12:32,422 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 5
+2025-03-08 18:12:35,052 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:35,223 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_5.html
+2025-03-08 18:12:35,770 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:41,853 - INFO - Thread-71 (run_automation) - Processing document 6/10...
+2025-03-08 18:12:42,881 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 6
+2025-03-08 18:12:45,452 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:45,617 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_6.html
+2025-03-08 18:12:46,185 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:12:52,258 - INFO - Thread-71 (run_automation) - Processing document 7/10...
+2025-03-08 18:12:53,284 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 7
+2025-03-08 18:12:55,073 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:12:55,240 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_7.html
+2025-03-08 18:12:55,838 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:13:01,910 - INFO - Thread-71 (run_automation) - Processing document 8/10...
+2025-03-08 18:13:02,935 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 8
+2025-03-08 18:13:05,323 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:13:05,503 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_8.html
+2025-03-08 18:13:06,071 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:13:12,137 - INFO - Thread-71 (run_automation) - Processing document 9/10...
+2025-03-08 18:13:13,171 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 9
+2025-03-08 18:13:14,974 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:13:15,154 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_9.html
+2025-03-08 18:13:15,705 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:13:21,766 - INFO - Thread-71 (run_automation) - Processing document 10/10...
+2025-03-08 18:13:22,800 - INFO - Thread-71 (run_automation) - Clicked on IndexII button for document 10
+2025-03-08 18:13:26,323 - INFO - Thread-71 (run_automation) - Switched to new tab: https://freesearchigrservice.maharashtra.gov.in/isaritaHTMLReportSuchiKramank2_RegLive.aspx
+2025-03-08 18:13:26,467 - INFO - Thread-71 (run_automation) - Saved HTML: downloads\2024_प_ण__म_ळ_श__ह__जवड__137_job_1741437663_34f716cf\Document_10.html
+2025-03-08 18:13:27,053 - ERROR - Thread-71 (run_automation) - Failed to create PDF: wkhtmltopdf exited with non-zero code 1. error:
+QPainter::begin(): Returned false
+Exit with code 1, due to unknown error.
+
+2025-03-08 18:13:33,117 - INFO - Thread-71 (run_automation) - Job completed successfully. Downloaded 10/10 documents.
+2025-03-08 18:13:35,278 - INFO - Thread-121 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:13:35] "GET /api/list_jobs HTTP/1.1" 200 -
+2025-03-08 18:13:35,383 - INFO - Thread-71 (run_automation) - Browser closed
+2025-03-08 18:13:37,074 - INFO - Thread-122 (process_request_thread) - 127.0.0.1 - - [08/Mar/2025 18:13:37] "GET /api/download_results/job_1741437663_34f716cf HTTP/1.1" 200 -

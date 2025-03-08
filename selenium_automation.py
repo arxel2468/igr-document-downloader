@@ -302,6 +302,284 @@ def wait_for_new_tab(driver, original_handles, timeout=10):
     raise TimeoutException("New tab did not open within the timeout period")
 
 
+def process_documents_with_pagination(driver, output_dir, debug_dir, job_id, jobs):
+    """Process all documents across all pages with proper pagination handling"""
+    total_documents_processed = 0
+    total_documents_downloaded = 0
+    current_page = 1
+    more_pages = True
+    
+    logger.info("Starting document processing with pagination handling")
+    
+    while more_pages:
+        logger.info(f"Processing page {current_page}")
+        driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_initial.png"))
+        
+        # Get all IndexII buttons on the current page
+        index_buttons = driver.find_elements(By.XPATH, "//input[@type='button' and @value='IndexII']")
+        page_document_count = len(index_buttons)
+        
+        logger.info(f"Found {page_document_count} documents on page {current_page}")
+        
+        if page_document_count == 0:
+            logger.warning(f"No documents found on page {current_page}, checking if there are any pages")
+            # Check if there's pagination at all
+            pagination_links = driver.find_elements(By.XPATH, "//tr/td/a[contains(@href, 'RegistrationGrid') and contains(@href, 'Page$')]")
+            if not pagination_links and current_page == 1:
+                logger.info("No pagination found and no documents on first page")
+                break
+            elif not pagination_links:
+                logger.info("Reached the end of pagination")
+                break
+            else:
+                logger.error(f"Page {current_page} has no documents but pagination exists - unexpected state")
+                driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_error_no_documents.png"))
+                break
+        
+        # Process each document on the current page
+        for doc_index in range(page_document_count):
+            logger.info(f"Processing document {doc_index+1}/{page_document_count} on page {current_page}")
+            
+            # Re-fetch buttons to avoid stale references 
+            # (page might have reloaded if we're returning from a document view)
+            try:
+                index_buttons = driver.find_elements(By.XPATH, "//input[@type='button' and @value='IndexII']")
+                if not index_buttons or len(index_buttons) <= doc_index:
+                    logger.warning("IndexII buttons not found or index out of range, refreshing page")
+                    driver.refresh()
+                    time.sleep(5)
+                    index_buttons = driver.find_elements(By.XPATH, "//input[@type='button' and @value='IndexII']")
+                    if not index_buttons or len(index_buttons) <= doc_index:
+                        logger.error("Still can't find IndexII buttons after refresh")
+                        driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_doc_{doc_index+1}_missing_buttons.png"))
+                        continue
+            except Exception as e:
+                logger.error(f"Error re-fetching buttons: {str(e)}")
+                driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_doc_{doc_index+1}_button_error.png"))
+                continue
+            
+            # Get the specific button for this document
+            try:
+                button = index_buttons[doc_index]
+                
+                # Get the onclick attribute to identify this document uniquely
+                button_onclick = button.get_attribute("onclick")
+                logger.info(f"Button onclick: {button_onclick}")
+                
+                # Store original window handles
+                original_handles = driver.window_handles
+                
+                # Scroll to and click the button
+                driver.execute_script("arguments[0].scrollIntoView(true);", button)
+                time.sleep(1)
+                driver.execute_script("arguments[0].click();", button)
+                logger.info(f"Clicked IndexII button for document {doc_index+1} on page {current_page}")
+                
+                # Process the document in the new tab
+                try:
+                    # Wait for and switch to new tab
+                    new_tab = wait_for_new_tab(driver, original_handles, timeout=20)
+                    driver.switch_to.window(new_tab)
+                    logger.info(f"Switched to document tab: {driver.current_url}")
+                    
+                    # Wait for content to load
+                    WebDriverWait(driver, 15).until(
+                        EC.presence_of_element_located((By.TAG_NAME, "body"))
+                    )
+                    
+                    # Create a unique document identifier
+                    doc_identifier = f"page_{current_page}_doc_{doc_index+1}"
+                    
+                    # Save the document
+                    document_screenshot = os.path.join(output_dir, f"{doc_identifier}_screenshot.png")
+                    driver.save_screenshot(document_screenshot)
+                    
+                    # Save as HTML
+                    html_filename = os.path.join(output_dir, f"{doc_identifier}.html")
+                    try:
+                        with open(html_filename, "w", encoding="utf-8") as f:
+                            f.write(driver.page_source)
+                        logger.info(f"Saved HTML: {html_filename}")
+                    except Exception as html_error:
+                        logger.error(f"Failed to save HTML: {str(html_error)}")
+                    
+                    # Convert to PDF
+                    try:
+                        pdf_filename = os.path.join(output_dir, f"{doc_identifier}.pdf")
+                        pdfkit_config = configure_pdfkit()
+                        if pdfkit_config:
+                            pdfkit.from_string(driver.page_source, pdf_filename, configuration=pdfkit_config)
+                            logger.info(f"Saved PDF: {pdf_filename}")
+                    except Exception as pdf_error:
+                        logger.error(f"Failed to create PDF: {pdf_error}")
+                    
+                    # Increment successful download counter
+                    total_documents_downloaded += 1
+                    
+                    # Close the document tab and switch back to results tab
+                    driver.close()
+                    driver.switch_to.window(original_handles[0])
+                    logger.info("Returned to results page")
+                    
+                    # Wait for page to stabilize
+                    time.sleep(2)
+                    
+                except TimeoutException:
+                    logger.error(f"New tab did not open for document {doc_index+1} on page {current_page}")
+                    driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_doc_{doc_index+1}_tab_timeout.png"))
+                    
+                    # Make sure we're on the original tab
+                    if len(driver.window_handles) > 1:
+                        driver.switch_to.window(original_handles[0])
+                
+                except Exception as e:
+                    logger.error(f"Error processing document {doc_index+1} on page {current_page}: {str(e)}")
+                    driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_doc_{doc_index+1}_error.png"))
+                    
+                    # Make sure we're on the original tab
+                    if len(driver.window_handles) > 1:
+                        driver.switch_to.window(original_handles[0])
+            
+            except Exception as e:
+                logger.error(f"Error clicking button for document {doc_index+1} on page {current_page}: {str(e)}")
+                driver.save_screenshot(os.path.join(debug_dir, f"page_{current_page}_doc_{doc_index+1}_click_error.png"))
+                continue
+            
+            # Increment total documents processed counter
+            total_documents_processed += 1
+            
+            # Update job status
+            jobs[job_id]["total_documents"] = total_documents_processed
+            jobs[job_id]["downloaded_documents"] = total_documents_downloaded
+            
+            # Small pause between documents to avoid overwhelming the server
+            time.sleep(2)
+        
+        # Check if there are more pages to process
+        more_pages = False
+        
+        # Look for the next page link
+        try:
+            # Find the current page number in pagination
+            current_page_span = driver.find_element(By.XPATH, f"//tr/td/span[text()='{current_page}']")
+            
+            # Look for the next page link
+            next_page_number = current_page + 1
+            next_page_link = driver.find_elements(By.XPATH, f"//tr/td/a[contains(@href, 'RegistrationGrid') and contains(@href, 'Page${next_page_number}')]")
+            
+            if next_page_link:
+                logger.info(f"Found link to page {next_page_number}, clicking it")
+                driver.save_screenshot(os.path.join(debug_dir, f"before_click_page_{next_page_number}.png"))
+                
+                # Click the next page link
+                driver.execute_script("arguments[0].scrollIntoView(true);", next_page_link[0])
+                time.sleep(1)
+                driver.execute_script("arguments[0].click();", next_page_link[0])
+                
+                # Wait for page to load
+                try:
+                    # Wait for the new page to be active (span with new page number)
+                    WebDriverWait(driver, 15).until(
+                        EC.presence_of_element_located((By.XPATH, f"//tr/td/span[text()='{next_page_number}']"))
+                    )
+                    logger.info(f"Successfully navigated to page {next_page_number}")
+                    current_page = next_page_number
+                    more_pages = True
+                    
+                    # Take screenshot of the new page
+                    driver.save_screenshot(os.path.join(debug_dir, f"after_click_page_{current_page}.png"))
+                    
+                    # Small pause to let page stabilize
+                    time.sleep(3)
+                    
+                except TimeoutException:
+                    logger.error(f"Timeout waiting for page {next_page_number} to load")
+                    driver.save_screenshot(os.path.join(debug_dir, f"timeout_loading_page_{next_page_number}.png"))
+                    
+                    # Check if we're on an error page or if the page just didn't load properly
+                    if "error" in driver.page_source.lower() or "exception" in driver.page_source.lower():
+                        logger.error("Error page detected after pagination click")
+                        more_pages = False
+                    else:
+                        # Try to recover by refreshing
+                        driver.refresh()
+                        time.sleep(5)
+                        
+                        # Check if we're on the next page after refresh
+                        next_page_spans = driver.find_elements(By.XPATH, f"//tr/td/span[text()='{next_page_number}']")
+                        if next_page_spans:
+                            logger.info(f"After refresh, we're on page {next_page_number}")
+                            current_page = next_page_number
+                            more_pages = True
+                        else:
+                            logger.warning("Could not confirm page navigation after refresh, stopping pagination")
+                            more_pages = False
+            else:
+                # Check if there's a "..." link that might lead to more pages
+                ellipsis_link = driver.find_elements(By.XPATH, "//tr/td/a[contains(@href, 'RegistrationGrid') and contains(text(), '...')]")
+                
+                if ellipsis_link:
+                    logger.info("Found '...' link, clicking to see more pages")
+                    driver.save_screenshot(os.path.join(debug_dir, "before_click_ellipsis.png"))
+                    
+                    # Click the ellipsis link
+                    driver.execute_script("arguments[0].scrollIntoView(true);", ellipsis_link[0])
+                    time.sleep(1)
+                    driver.execute_script("arguments[0].click();", ellipsis_link[0])
+                    
+                    # Wait for page to load
+                    time.sleep(5)
+                    driver.save_screenshot(os.path.join(debug_dir, "after_click_ellipsis.png"))
+                    
+                    # Check if we have new pagination links
+                    pagination_links = driver.find_elements(By.XPATH, "//tr/td/a[contains(@href, 'RegistrationGrid') and contains(@href, 'Page$')]")
+                    
+                    if pagination_links:
+                        # Find the lowest page number available that's higher than our current page
+                        next_page = None
+                        for link in pagination_links:
+                            href = link.get_attribute("href")
+                            match = re.search(r"Page\$(\d+)", href)
+                            if match:
+                                page_num = int(match.group(1))
+                                if page_num > current_page and (next_page is None or page_num < next_page):
+                                    next_page = page_num
+                        
+                        if next_page:
+                            logger.info(f"After ellipsis, found new pages. Will navigate to page {next_page}")
+                            next_page_link = driver.find_element(By.XPATH, f"//tr/td/a[contains(@href, 'Page${next_page}')]")
+                            driver.execute_script("arguments[0].click();", next_page_link)
+                            
+                            # Wait for the new page to load
+                            WebDriverWait(driver, 15).until(
+                                EC.presence_of_element_located((By.XPATH, f"//tr/td/span[text()='{next_page}']"))
+                            )
+                            
+                            current_page = next_page
+                            more_pages = True
+                            time.sleep(3)  # Let page stabilize
+                        else:
+                            logger.warning("No valid next page found after ellipsis click")
+                            more_pages = False
+                    else:
+                        logger.warning("No pagination found after ellipsis click")
+                        more_pages = False
+                else:
+                    logger.info("No more pages found, pagination complete")
+                    more_pages = False
+                
+        except Exception as e:
+            logger.error(f"Error checking for more pages: {str(e)}")
+            driver.save_screenshot(os.path.join(debug_dir, f"pagination_error_after_page_{current_page}.png"))
+            more_pages = False
+    
+    # Return the results
+    return {
+        "total_processed": total_documents_processed,
+        "total_downloaded": total_documents_downloaded,
+        "pages_processed": current_page
+    }
+
 def solve_and_submit_captcha(driver, property_no, max_attempts=5):
     """Solves and submits the CAPTCHA with improved error handling and more retries."""
     
