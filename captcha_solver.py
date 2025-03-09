@@ -112,7 +112,7 @@ def get_captcha_hash(image_path):
         logger.error(f"Failed to hash CAPTCHA image: {str(e)}")
         return ""
 
-def solve_and_submit_captcha(driver, property_no, max_attempts=5):
+def solve_and_submit_captcha(driver, property_no, max_attempts=8):
     """Solves and submits the CAPTCHA with improved error handling and more retries."""
     
     # Take a screenshot of initial state
