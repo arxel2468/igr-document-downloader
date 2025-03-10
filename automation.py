@@ -68,15 +68,15 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs, d
         # Take screenshot of home page
         driver.save_screenshot(os.path.join(debug_dir, "homepage.png"))
         
-        # Close Pop-up if present
+        # Close Pop-up if present (but don't add any additional overlay handling)
         try:
-            close_button = WebDriverWait(driver, 3).until(
-                EC.element_to_be_clickable((By.CLASS_NAME, "btnclose"))
-            )
-            close_button.click()
-            logger.info("Pop-up closed")
-        except (TimeoutException, NoSuchElementException):
-            logger.info("No pop-up found, proceeding...")
+            close_buttons = driver.find_elements(By.CLASS_NAME, "btnclose")
+            if close_buttons:
+                close_buttons[0].click()
+                logger.info("Initial pop-up closed")
+                time.sleep(1)
+        except Exception as e:
+            logger.info(f"No initial pop-up found or error closing it: {str(e)}")
         
         # Click "Rest of Maharashtra" with retry logic
         for attempt in range(3):
