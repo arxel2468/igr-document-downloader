@@ -68,9 +68,15 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs, d
         # Take screenshot of home page
         driver.save_screenshot(os.path.join(debug_dir, "homepage.png"))
         
-        # Close Pop-up if present (but don't add any additional overlay handling)
+        # Close Pop-up if present
         try:
+            # Try multiple approaches to find close buttons
             close_buttons = driver.find_elements(By.CLASS_NAME, "btnclose")
+            if not close_buttons:
+                close_buttons = driver.find_elements(By.XPATH, "//button[contains(@class, 'close')]")
+            if not close_buttons:
+                close_buttons = driver.find_elements(By.XPATH, "//a[contains(@class, 'close')]")
+                
             if close_buttons:
                 close_buttons[0].click()
                 logger.info("Initial pop-up closed")
@@ -99,6 +105,8 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs, d
                     raise
                 logger.warning(f"Failed to click 'Rest of Maharashtra' (attempt {attempt+1}): {str(e)}")
                 time.sleep(2)
+                # Close any tabs that might have opened accidentally
+                close_extra_tabs(driver)
         
         # Take screenshot after "Rest of Maharashtra" selection
         driver.save_screenshot(os.path.join(debug_dir, "after_rest_maha.png"))
@@ -134,6 +142,9 @@ def run_automation(year, district, tahsil, village, property_no, job_id, jobs, d
 
         # Wait a moment for any final page updates
         time.sleep(3)
+        
+        # Close any tabs that might have opened
+        close_extra_tabs(driver)
 
         # Process all documents across all pages
         processing_results = process_all_index_buttons(driver, output_dir, debug_dir, job_id, jobs)
@@ -280,26 +291,43 @@ def fill_search_form(driver, year, district, tahsil, village, property_no, debug
         return False
 
 
+def close_extra_tabs(driver):
+    """Close any extra tabs that might have opened, keeping only the main tab."""
+    try:
+        if len(driver.window_handles) > 1:
+            # Remember the main tab (first one)
+            main_handle = driver.window_handles[0]
+            
+            # Close all other tabs
+            for handle in driver.window_handles:
+                if handle != main_handle:
+                    driver.switch_to.window(handle)
+                    driver.close()
+                    logger.info(f"Closed extra tab {handle}")
+            
+            # Switch back to main tab
+            driver.switch_to.window(main_handle)
+            logger.info("Switched back to main tab")
+    except Exception as e:
+        logger.warning(f"Error closing extra tabs: {str(e)}")
+        # Try to recover by focusing on first tab
+        try:
+            driver.switch_to.window(driver.window_handles[0])
+        except:
+            pass
+
 
 def cleanup_browser_session(driver):
     """Clean up browser session before returning to pool."""
     try:
         # Close all tabs except the first one
-        if len(driver.window_handles) > 1:
-            original_handle = driver.window_handles[0]
-            for handle in driver.window_handles:
-                if handle != original_handle:
-                    try:
-                        driver.switch_to.window(handle)
-                        driver.close()
-                    except:
-                        logger.warning(f"Failed to close tab {handle}")
-            
-            # Switch back to original tab
-            try:
-                driver.switch_to.window(original_handle)
-            except:
-                logger.warning("Failed to switch to original tab")
+        close_extra_tabs(driver)
+        
+        # Clear cookies
+        try:
+            driver.delete_all_cookies()
+        except:
+            logger.warning("Failed to clear cookies")
         
         # Navigate to blank page to release resources
         try:

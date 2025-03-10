@@ -1393,35 +1393,93 @@ def process_button_simply(driver, button, document_number, page_number, output_d
     original_url = driver.current_url
     
     try:
-        # Try to click the button directly
-        try:
-            # Scroll to make button visible
-            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button)
-            time.sleep(1)
-            
-            # Click the button
-            button.click()
-            logger.info(f"Clicked IndexII button for document {document_number}")
-            time.sleep(3)
-        except Exception as click_error:
-            # If direct click fails, try JavaScript click
-            try:
-                logger.info(f"Direct click failed, trying JavaScript click for document {document_number}")
-                driver.execute_script("arguments[0].click();", button)
-                time.sleep(3)
-            except Exception as js_error:
-                logger.error(f"JavaScript click also failed for document {document_number}")
-                return False
+        # Extract onclick attribute for direct JavaScript execution (most reliable)
+        onclick = button.get_attribute("onclick")
+        click_successful = False
         
-        # Check if new tab opened
+        # Method 1: Try using __doPostBack if available
+        if onclick and "__doPostBack" in onclick:
+            match = re.search(r"__doPostBack\('([^']+)',\s*'([^']+)'\)", onclick)
+            if match:
+                target, argument = match.groups()
+                logger.info(f"Executing __doPostBack for document {document_number}")
+                
+                # Execute JavaScript directly
+                driver.execute_script(f"__doPostBack('{target}', '{argument}')")
+                time.sleep(2.5)  # Wait a bit longer
+                
+                # Check for new tab
+                new_handles = driver.window_handles
+                if len(new_handles) > len(original_handles):
+                    click_successful = True
+                    logger.info(f"JavaScript execution opened new tab for document {document_number}")
+                elif driver.current_url != original_url:
+                    click_successful = True
+                    logger.info(f"JavaScript execution changed URL for document {document_number}")
+        
+        # Method 2: Try direct click if JavaScript didn't work
+        if not click_successful:
+            try:
+                # Scroll to make button visible
+                driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button)
+                time.sleep(1)
+                
+                # Click the button
+                button.click()
+                logger.info(f"Clicked IndexII button for document {document_number}")
+                time.sleep(2.5)  # Wait a bit longer
+                
+                # Check for new tab
+                new_handles = driver.window_handles
+                if len(new_handles) > len(original_handles):
+                    click_successful = True
+                    logger.info(f"Direct click opened new tab for document {document_number}")
+                elif driver.current_url != original_url:
+                    click_successful = True
+                    logger.info(f"Direct click changed URL for document {document_number}")
+            except Exception as click_error:
+                # If direct click fails, try JavaScript click
+                try:
+                    logger.info(f"Direct click failed, trying JavaScript click for document {document_number}")
+                    driver.execute_script("arguments[0].click();", button)
+                    time.sleep(2.5)  # Wait a bit longer
+                    
+                    # Check for new tab
+                    new_handles = driver.window_handles
+                    if len(new_handles) > len(original_handles):
+                        click_successful = True
+                        logger.info(f"JavaScript click opened new tab for document {document_number}")
+                    elif driver.current_url != original_url:
+                        click_successful = True
+                        logger.info(f"JavaScript click changed URL for document {document_number}")
+                except Exception as js_error:
+                    logger.error(f"JavaScript click also failed for document {document_number}")
+        
+        # If all click methods failed
+        if not click_successful:
+            logger.warning(f"All click methods failed for document {document_number}")
+            return False
+        
+        # Handle new tab or page change
         new_handles = driver.window_handles
         
         # Case 1: New tab opened
         if len(new_handles) > len(original_handles):
             logger.info(f"New tab opened for document {document_number}")
             
-            # Switch to new tab
-            new_handle = [h for h in new_handles if h not in original_handles][0]
+            # Find the new tab handle
+            new_handle = None
+            for handle in new_handles:
+                if handle not in original_handles:
+                    new_handle = handle
+                    break
+            
+            if not new_handle:
+                logger.error(f"Could not identify new tab for document {document_number}")
+                return False
+            
+            # Switch to new tab (deliberately using new_handle instead of relying on list comprehension)
+            logger.info(f"Switching to new tab for document {document_number}")
             driver.switch_to.window(new_handle)
             
             # Wait for document to load
@@ -1458,25 +1516,22 @@ def process_button_simply(driver, button, document_number, page_number, output_d
                     driver.save_screenshot(screenshot_path)
                     logger.info(f"Saved screenshot instead at {screenshot_path}")
                     success = True
-                
-                # Close tab and return to original
-                driver.close()
-                driver.switch_to.window(original_handle)
-                return success
             except Exception as e:
                 logger.error(f"Error processing document in new tab: {str(e)}")
-                
-                # Make sure we close the tab and go back
-                try:
-                    driver.close()
-                    driver.switch_to.window(original_handle)
-                except:
-                    # If we can't close/switch properly, try to get back to a working state
-                    for handle in driver.window_handles:
-                        if handle == original_handle:
-                            driver.switch_to.window(handle)
-                            break
-                return False
+                success = False
+            
+            # Always close the new tab and switch back regardless of success/failure
+            logger.info(f"Closing tab for document {document_number}")
+            driver.close()
+            driver.switch_to.window(original_handle)
+            
+            # Verify we're back on the original tab
+            if driver.current_url != original_url:
+                logger.warning(f"URL changed after switching back from document {document_number}, refreshing")
+                driver.get(original_url)
+                time.sleep(2)
+            
+            return success
         
         # Case 2: URL changed but no new tab
         elif driver.current_url != original_url:
@@ -1514,19 +1569,21 @@ def process_button_simply(driver, button, document_number, page_number, output_d
             
             # Navigate back to results
             try:
+                logger.info(f"Navigating back from document {document_number}")
                 driver.back()
-                time.sleep(3)
+                time.sleep(2)
                 
                 # Make sure we're back on results page
                 if not verify_results_page(driver):
                     logger.warning("Back navigation didn't return to results, refreshing")
                     driver.refresh()
-                    time.sleep(3)
+                    time.sleep(2)
             except:
                 # If back navigation fails, try to reload the original URL
                 try:
+                    logger.warning(f"Back navigation failed for document {document_number}, loading original URL")
                     driver.get(original_url)
-                    time.sleep(3)
+                    time.sleep(2)
                 except:
                     pass
             
@@ -1540,26 +1597,34 @@ def process_button_simply(driver, button, document_number, page_number, output_d
     except Exception as e:
         logger.error(f"Error processing document {document_number}: {str(e)}")
         
-        # Try to recover to original state
+        # Always try to recover to original state
         try:
-            # If new tabs were opened, close them
-            if len(driver.window_handles) > len(original_handles):
-                for handle in driver.window_handles:
-                    if handle != original_handle:
-                        driver.switch_to.window(handle)
-                        driver.close()
+            # Check if we have new tabs to close
+            current_handles = driver.window_handles
+            if len(current_handles) > len(original_handles):
+                # Close any new tabs that were opened
+                for handle in current_handles:
+                    if handle != original_handle and handle in driver.window_handles:
+                        try:
+                            driver.switch_to.window(handle)
+                            driver.close()
+                        except:
+                            logger.warning(f"Failed to close extra tab during error recovery")
                 
-                driver.switch_to.window(original_handle)
+                # Make sure we're on the original tab
+                if original_handle in driver.window_handles:
+                    driver.switch_to.window(original_handle)
             
             # If we navigated away, go back to original URL
             if driver.current_url != original_url:
                 driver.get(original_url)
-                time.sleep(3)
-        except:
-            # Last resort - just try to get back to original URL
+                time.sleep(2)
+        except Exception as recovery_error:
+            logger.error(f"Error during recovery: {str(recovery_error)}")
+            # Last resort - try to get back to original URL
             try:
                 driver.get(original_url)
-                time.sleep(3)
+                time.sleep(2)
             except:
                 pass
         
